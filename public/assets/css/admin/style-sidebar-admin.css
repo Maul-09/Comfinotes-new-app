@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'outfit', sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+/* ----------------------| Start Sidebar |------------------------ */
+
+.sidebar{
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    border-right: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.sidebar .title-side{
+    padding: 25px;
+}
+
+.sidebar .title-side .logo-admin{
+    width: 185px;
+    margin: 8px;
+}
+
+.sidebar .menu{
+    padding: 15px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sidebar .menu li{
+    list-style: none;
+    cursor: pointer;
+    height: 50px;
+    margin: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--color-dark-grey);
+    transition: 0.5s ease;
+}
+
+.sidebar .menu li:hover{
+    background-color: var(--color-white-blue);
+    margin: 8px;
+    padding-left: 10px;
+    color: var(--color-blue-light);
+    border-left: 7px solid var(--color-blue-light);
+}
+
+.sidebar .menu li iconify-icon{
+    font-size: 30px;
+}
+
+.sidebar .menu li a{
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--color-dark-grey);
+    text-decoration: none;
+    transition: 0.5s ease;
+}
+
+.sidebar .menu li a:hover{
+    color: var(--color-blue-light);
+}
+
+/* ----------------------| End Sidebar |------------------------ */

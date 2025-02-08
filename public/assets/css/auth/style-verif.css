@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'outfit', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.container-verif{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-white-blue);
+
+}
+
+.head-logo{
+    padding: 25px;
+}
+
+.head-logo img{
+    width: 180px;
+}
+
+.form-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+
+}
+
+.form-manage{
+    width: 430px;
+    height: fit-content;
+    padding: 15px;
+    background-color: var(--color-light);
+}
+
+.form-manage .form-title{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-manage .form-title h1{
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}
+
+.form-manage .form-title p{
+    font-size: 0.8em;
+    text-align: center;
+    color: var(--color-light-grey)
+}
+
+.form-manage .form-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.form-manage .form-image .icon-1{
+    width: 130px;
+}
+
+.label-button-verif{
+    display: flex;
+    margin: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.label-button-verif .btn-continue{
+    border: none;
+    background-color: var(--hover-blue-light);
+    border-radius: 12px;
+    font-size: 0.9em;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--color-light);
+    width: 330px;
+    padding: 15px 10px;
+    transition: 0.5s ease;
+}
+
+.label-button-verif .btn-continue:hover{
+    background-color: var(--color-blue-light);
+}
+
+.label-button-verif .verifikasi{
+    font-size: 0.9em;
+    margin: 20px 0;
+}
+
+.label-button-verif .verifikasi a{
+    text-decoration: none;
+}
