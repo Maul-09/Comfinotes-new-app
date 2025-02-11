@@ -143,20 +143,15 @@ hr{
     text-decoration: none;
     color: var(--color-dark-grey);
     gap: 0.5em;
-    font-size: 1.1em;
+    font-size: 1em;
     cursor: pointer;
     transition: 0.3s ease;
 }
 
-.menu-items:hover{
-    color: var(--color-blue-light);
-}
-
-
 .logout-button {
     background: none;
     border: none;
-    font-size: 1.1em;
+    font-size: 1em;
     color: var(--color-light-red);
     text-align: left;
     width: 100%;
@@ -537,7 +532,7 @@ hr{
 .card-content{
     width: 100%;
     height: fit-content;
-    padding: 30px;
+    padding: 20px;
 }
 
 .card-box{
@@ -631,11 +626,11 @@ hr{
     height: fit-content;
     display: flex;
     gap: 25px;
-    padding: 0 30px;
+    padding: 0 20px;
 }
 
 .chart-content .chart-items{
-    width: 800px;
+    width: 850px;
     height: 350px;
     padding: 25px;
     background-color: var(--color-light);
@@ -668,14 +663,80 @@ hr{
 
 
 
-.chart-date{
-    width: 400px;
-    height: 350px;
+.calendar-container {
+    width: 370px;
     background: var(--color-light);
-    border-radius: 8px;
-    padding: 10px;
-
+    padding: 20px;
+    border-radius: 10px;
 }
 
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.calendar-header h3{
+    color: var(--color-dark);
+    font-size: 1.2em;
+}
+
+.calendar-header button {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calendar-header .icon-calender{
+    font-size: 1.5em;
+    color: var(--color-dark-grey);
+}
+
+.weekdays, .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.weekdays div {
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--color-dark);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.day {
+    width: 35px;
+    height: 35px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    color: var(--color-dark-grey);
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.day:hover {
+    background: var(--color-blue-light);
+    color: var(--color-light);
+}
+
+.empty {
+    visibility: hidden;
+}
+
+.today {
+    background: var(--color-blue-light) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+}
 
 /* ----------------------| End Main Content |------------------------ */

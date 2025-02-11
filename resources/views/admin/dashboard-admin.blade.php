@@ -117,7 +117,7 @@
                 <div class="chart-main">
                     <div class="char-main-title">
                         <span>Total Revenue</span>
-                        <h2>IDR25,500,000</h2>
+                        <h2>IDR25.500.000</h2>
                     </div>
                     <div class="chart-list">
                         <ul class="chart-menu">
@@ -128,8 +128,19 @@
                 </div>
             </div>
 
-            <div class="chart-date">
-
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <h3 id="month-year"></h3>
+                    <div class="button-previous">
+                        <button onclick="changeMonth(-1)"><iconify-icon icon="fe:arrow-left" class="icon-calender"></button>
+                        <button onclick="changeMonth(1)"><iconify-icon icon="fe:arrow-right" class="icon-calender"></button>
+                    </div>
+                </div>
+                <div class="weekdays">
+                    <div>Su</div> <div>Mo</div> <div>Tu</div> <div>We</div>
+                    <div>Th</div> <div>Fr</div> <div>Sa</div>
+                </div>
+                <div class="days" id="calendar-days"></div>
             </div>
         </div>
     </div>
