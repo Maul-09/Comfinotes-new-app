@@ -10,7 +10,7 @@
     <title>{{ $title }}</title>
 </head>
 <body>
-<x-user-layout></x-user-layout>
+<x-sidebar-user></x-sidebar-user>
 
     {{ $slot }}
 

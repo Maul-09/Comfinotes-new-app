@@ -18,23 +18,23 @@
     border-right: 2px solid rgba(0, 0, 0, 0.05);
 }
 
-.sidebar .title-side-admin{
+.sidebar-admin .title-side-admin{
     padding: 25px;
 }
 
-.sidebar .title-side .logo-admin{
+.sidebar-admin .title-side-admin .logo-admin{
     width: 185px;
     margin: 8px;
 }
 
-.sidebar .menu{
+.sidebar-admin .menu{
     padding: 15px 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.sidebar .menu li{
+.sidebar-admin .menu li{
     list-style: none;
     cursor: pointer;
     height: 50px;
@@ -46,7 +46,7 @@
     transition: 0.5s ease;
 }
 
-.sidebar .menu li:hover{
+.sidebar-admin .menu li:hover{
     background-color: var(--color-white-blue);
     margin: 8px;
     padding-left: 10px;
@@ -54,11 +54,11 @@
     border-left: 7px solid var(--color-blue-light);
 }
 
-.sidebar .menu li iconify-icon{
+.sidebar-admin .menu li iconify-icon{
     font-size: 30px;
 }
 
-.sidebar .menu li a{
+.sidebar-admin .menu li a{
     font-size: 1.2em;
     font-weight: 500;
     color: var(--color-dark-grey);
@@ -66,7 +66,7 @@
     transition: 0.5s ease;
 }
 
-.sidebar .menu li a:hover{
+.sidebar-admin .menu li a:hover{
     color: var(--color-blue-light);
 }
 
