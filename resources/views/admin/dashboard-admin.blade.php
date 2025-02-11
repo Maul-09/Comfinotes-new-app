@@ -147,6 +147,40 @@
                 <div class="days" id="calendar-days"></div>
             </div>
         </div>
+
+        <div class="history-record">
+            <div class="history-items">
+                <div class="record-head">
+                    <div class="record-title">
+                        <h2>All Financial Record</h2>
+                        <span>View all event financial history</span>
+                    </div>
+                    <button class="button-dropdown-2">
+                        Today<iconify-icon icon="ep:arrow-down" class="icon-card-5">
+                    </button>
+                </div>
+                <div class="record-table">
+                    <table>
+                        <tr>
+                            <th>No</th>
+                            <th>Group</th>
+                            <th>Amount</th>
+                            <th>Event Name</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr>
+                            <th>1</th>
+                            <th>Divisi Logistik</th>
+                            <th>IDR 1.000.000</th>
+                            <th>Mukbang Besar</th>
+                            <th>12 Januari 2025</th>
+                            <th>Succes</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 
 

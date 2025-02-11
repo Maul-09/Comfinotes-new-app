@@ -11,7 +11,7 @@
 /* ----------------------| Start Hedaer Menu |------------------------ */
 
 .main-content{
-    width: 1286px;
+    width: 1265px;
     height: 100%;
     position: relative;
     top: 0;
@@ -704,8 +704,6 @@ hr{
     gap: 25px;
 }
 
-
-
 .calendar-container {
     width: 370px;
     background: var(--color-light);
@@ -780,6 +778,62 @@ hr{
     color: white;
     border-radius: 50%;
     font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------- */
+
+.history-record{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    padding: 20px;
+}
+
+.history-record .history-items{
+    width: 1245px;
+    height: 350px;
+    padding: 25px;
+    background-color: var(--color-light);
+    border-radius: 8px;
+}
+
+.history-items .record-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.record-head .record-title{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.record-head .record-title h2{
+    font-size: 1.3em;
+    color: var(--color-dark);
+}
+
+.record-head .record-title span{
+    font-size: 0.75em;
+    color: var(--color-dark-grey);
+}
+
+.record-head .button-dropdown-2{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.9em;
+    cursor: pointer;
+    background: var(--color-light);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: 0.5s ease;
+}
+
+.record-head .button-dropdown-2:hover{
+    background-color: var(--color-light-grey);
 }
 
 /* ----------------------| End Main Content |------------------------ */
