@@ -617,6 +617,7 @@ hr{
     margin: 10px;
     font-size: 1.5em;
     font-weight: 700;
+    color: var(--color-dark);
 }
 
 /* --------------------------------------------------------------- */
@@ -644,10 +645,52 @@ hr{
     margin-bottom: 20px;
 }
 
+.chart-header h2{
+    font-size: 1.2em;
+    color: var(--color-dark);
+}
+
 .chart-items .chart-main{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.chart-header .chart-button{
+    display: flex;
+    gap: 15px;
+}
+.chart-button .button-dropdown,
+.chart-button .button-report{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 13px 18px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: 0.5s ease;
+}
+
+.chart-button .button-dropdown{
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.chart-button .button-report{
+    background-color: var(--color-blue-light);
+    color: var(--color-light);
+    font-size: 1em;
+}
+
+.chart-button .button-dropdown:hover{
+    background-color: var(--color-light-grey);
+}
+
+.chart-button .button-report:hover{
+    background-color: var(--hover-blue-light);
 }
 
 .chart-main .char-main-title{
@@ -680,7 +723,7 @@ hr{
 
 .calendar-header h3{
     color: var(--color-dark);
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 .calendar-header button {

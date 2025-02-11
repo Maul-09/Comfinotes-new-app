@@ -84,7 +84,7 @@
 
                 <div class="card-items">
                     <div class="card-bg-icon">
-                        <iconify-icon icon="hugeicons:money-04" class="icon-card-4"></iconify-icon>
+                        <iconify-icon icon="hugeicons:money-receive-flow-02" class="icon-card-4"></iconify-icon>
                     </div>
                     <span>Income</span>
                     <h3>IDR34.150.000</h3>
@@ -125,6 +125,10 @@
                             <li class="list-2">Expenses</li>
                         </u>
                     </div>
+                </div>
+
+                <div class="graphic">
+
                 </div>
             </div>
 
