@@ -1,4 +1,5 @@
 <x-auth-layout>
+    <x-slot:title>Forgot Page - Comfinote's</x-slot:title>
         <div class="head-logo">
             <img src="assets/image/logo-2.png" alt="">
         </div>

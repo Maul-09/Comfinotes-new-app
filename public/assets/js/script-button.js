@@ -21,7 +21,7 @@ document.addEventListener('click', (event) => {
 document.addEventListener("DOMContentLoaded", function () {
     const notifIcon = document.getElementById("icon-notif");
     const notifDropdown = document.getElementById("notif-dropdown");
-  
+
     notifIcon.addEventListener("click", function () {
       if (notifDropdown.style.display === "block") {
         notifDropdown.style.display = "none";
@@ -29,26 +29,26 @@ document.addEventListener("DOMContentLoaded", function () {
         notifDropdown.style.display = "block";
       }
     });
-  
+
     document.addEventListener("click", function (event) {
       if (!notifIcon.contains(event.target) && !notifDropdown.contains(event.target)) {
         notifDropdown.style.display = "none";
       }
     });
   });
-  
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const togglePassword = document.getElementById("toggle-password");
-    const passwordInput = document.getElementById("password");
-  
-    togglePassword.addEventListener("click", function () {
-      const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
-      passwordInput.setAttribute("type", type);
-  
-      // Toggle eye icon
-      this.classList.toggle("fa-eye");
-      this.classList.toggle("fa-eye-slash");
+
+
+document.querySelectorAll(".toggle-password").forEach(toggle => {
+    toggle.addEventListener("click", function(){
+        const passwordField = this.previousElementSibling;
+
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            this.setAttribute("icon", "proicons:eye");
+        } else {
+            passwordField.type = "password";
+            this.setAttribute("icon", "proicons:eye-off");
+        }
     });
-  });
-  
+})

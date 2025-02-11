@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/admin/style-beranda-admin.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/admin/style-sidebar-admin.css') }}">
     <link rel="icon" href="{{ asset('assets/image/logo-1.png') }}">
-    <title>Admin Dashboard - Comfinotes</title>
+    <title>{{ $title }}</title>
 </head>
 <body>
 <x-sidebar-admin></x-sidebar-admin>

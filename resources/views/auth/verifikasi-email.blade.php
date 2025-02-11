@@ -1,4 +1,5 @@
 <x-auth-layout>
+    <x-slot:title>Verif Page - Comfinote's</x-slot:title>
     <div class="container-verif">
         <div class="head-logo">
             <img src="assets/image/logo-2.png" alt="">

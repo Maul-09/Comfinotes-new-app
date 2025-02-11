@@ -12,7 +12,7 @@
 
 .main-content{
     width: 1286px;
-    height: 100vh;
+    height: 100%;
     position: relative;
     top: 0;
     left: 250px;
@@ -23,7 +23,7 @@
     display: flex;
     justify-content: space-between;
     background: var(--color-light);
-    padding: 25px;
+    padding: 15px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -239,7 +239,7 @@ hr{
 }
 
 .notif .bell{
-    font-size: 1.8em;
+    font-size: 1.6em;
     color: var(--color-dark-grey);
     cursor: pointer;
 }
@@ -247,8 +247,8 @@ hr{
 .notif .notif-point{
     display: flex;
     position: absolute;
-    top: 36px;
-    right: 130px;
+    top: 32px;
+    right: 118px;
     font-size: 0.5em;
     font-weight: 700;
     background-color: var(--color-light-red);
@@ -531,3 +531,151 @@ hr{
 }
 
 /* ----------------------| End Hedaer Menu |------------------------ */
+
+/* ----------------------| Start Main Content |------------------------ */
+
+.card-content{
+    width: 100%;
+    height: fit-content;
+    padding: 30px;
+}
+
+.card-box{
+    display: flex;
+    gap: 15px;
+}
+
+.card-box .card-items{
+    width: 300px;
+    height: 200px;
+    padding: 15px;
+    background-color: var(--color-light);
+    border-radius: 12px;
+}
+
+.card-box .card-items .card-icon{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-items .card-bg-icon{
+    width: 50px;
+    margin: 10px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--color-white-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-items .button-plus{
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 8px;
+    background: var(--color-blue-egg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+}
+
+.card-items .button-plus:hover{
+    background-color: #43b3a9;
+}
+
+.card-items .card-bg-icon .icon-card-1{
+    font-size: 1.8em;
+    color: var(--color-blue-light);
+}
+
+.card-icon .card-bg-icon .icon-card-2{
+    font-size: 1.8em;
+    color: var(--color-blue-sky);
+}
+
+.card-icon .button-plus .icon-card-3{
+    font-size: 1.3em;
+    color: var(--color-light);
+}
+
+.card-items .card-bg-icon .icon-card-4{
+    font-size: 1.8em;
+    color: var(--color-blue-egg);
+}
+
+.card-items .card-bg-icon .icon-card-5{
+    font-size: 1.8em;
+    color: var(--color-light-red);
+}
+
+.card-items span{
+    margin: 10px;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--color-dark-grey);
+}
+
+.card-items h3{
+    margin: 10px;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+/* --------------------------------------------------------------- */
+
+.chart-content{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    gap: 25px;
+    padding: 0 30px;
+}
+
+.chart-content .chart-items{
+    width: 800px;
+    height: 350px;
+    padding: 25px;
+    background-color: var(--color-light);
+    border-radius: 8px;
+}
+
+.chart-items .chart-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.chart-items .chart-main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chart-main .char-main-title{
+
+}
+
+.chart-main .chart-menu{
+    padding-right: 2em;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+
+
+.chart-date{
+    width: 400px;
+    height: 350px;
+    background: var(--color-light);
+    border-radius: 8px;
+    padding: 10px;
+
+}
+
+
+/* ----------------------| End Main Content |------------------------ */

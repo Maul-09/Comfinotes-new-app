@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/auth/style-reset-password.css') }}">
     <link rel="stylesheet" href="{{  asset('assets/css/auth/style-verif.css') }}">
     <link rel="icon" href="{{ asset('assets/image/logo-1.png') }}">
-    <title>Authentication - Comfinotes</title>
+    <title>{{ $title }}</title>
 </head>
 <body>
 

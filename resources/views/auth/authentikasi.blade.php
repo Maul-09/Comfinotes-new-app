@@ -1,4 +1,5 @@
 <x-auth-layout>
+    <x-slot:title>Login Page - Comfinote's</x-slot:title>
     <div class="container">
         <div class="head-content">
             <div class="head-title">
@@ -32,7 +33,7 @@
                         <div class="input-container-login">
                             <iconify-icon icon="tabler:lock"></iconify-icon>
                             <input type="password" name="password" placeholder="Input Password" id="password" required>
-                            <iconify-icon icon="proicons:eye-off" class="toggle-password"></iconify-icon>
+                            <iconify-icon icon="proicons:eye-off" class="toggle-password" id="toggle-password"></iconify-icon>
                         </div>
                     </div>
 

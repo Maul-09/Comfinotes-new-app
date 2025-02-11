@@ -1,4 +1,6 @@
 <x-admin-layout>
+<x-slot:title>Admin Dashboard - Comfinotes</x-slot:title>
+
     <div class="main-content">
         <div class="header-menu">
             <div class="header-title">
@@ -7,7 +9,7 @@
             </div>
             <div class="notif-content">
                 <div class="notif">
-                    <iconify-icon icon="octicon:bell-24" id="icon-notif" class="bell"></iconify-icon>
+                    <iconify-icon icon="pepicons-pencil:bell" id="icon-notif" class="bell"></iconify-icon>
                     <p class="notif-point"></p>
                     <div class="notif-dropdown" id="notif-dropdown">
                         <h2>Notification</h2>
@@ -56,7 +58,83 @@
                 </div>
             </div>
         </div>
+
+        <div class="card-content">
+            <div class="card-box">
+                <div class="card-items">
+                    <div class="card-bg-icon">
+                        <iconify-icon icon="iconoir:send-mail" class="icon-card-1"></iconify-icon>
+                    </div>
+                    <span>Total Submisions</span>
+                    <h3>250</h3>
+                </div>
+
+                <div class="card-items">
+                    <div class="card-icon">
+                        <div class="card-bg-icon">
+                            <iconify-icon icon="uit:wallet" class="icon-card-2"></iconify-icon>
+                        </div>
+                        <div class="button-plus">
+                            <iconify-icon icon="mdi:plus" class="icon-card-3"></iconify-icon>
+                        </div>
+                    </div>
+                    <span>Total Revenue</span>
+                    <h3>IDR25.500.000</h3>
+                </div>
+
+                <div class="card-items">
+                    <div class="card-bg-icon">
+                        <iconify-icon icon="hugeicons:money-04" class="icon-card-4"></iconify-icon>
+                    </div>
+                    <span>Income</span>
+                    <h3>IDR34.150.000</h3>
+                </div>
+
+                <div class="card-items">
+                    <div class="card-bg-icon">
+                        <iconify-icon icon="hugeicons:money-send-flow-02" class="icon-card-5"></iconify-icon>
+                    </div>
+                    <span>Expenses</span>
+                    <h3>IDR8.650.000</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-content">
+            <div class="chart-items">
+                <div class="chart-header">
+                    <h2>Analytics</h2>
+                    <div class="chart-button">
+                        <button class="button-report">
+                            <iconify-icon icon="material-symbols:download" class="icon-card-5"></iconify-icon>Download Report
+                        </button>
+                        <button class="button-dropdown">
+                            Today<iconify-icon icon="ep:arrow-down" class="icon-card-5"></iconify-icon>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="chart-main">
+                    <div class="char-main-title">
+                        <span>Total Revenue</span>
+                        <h2>IDR25,500,000</h2>
+                    </div>
+                    <div class="chart-list">
+                        <ul class="chart-menu">
+                            <li class="list-1">Revenue</li>
+                            <li class="list-2">Expenses</li>
+                        </u>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-date">
+
+            </div>
+        </div>
     </div>
+
+
 
 
     <!-- Start Modal content -->

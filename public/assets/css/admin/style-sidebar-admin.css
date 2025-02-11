@@ -11,14 +11,14 @@
 
 /* ----------------------| Start Sidebar |------------------------ */
 
-.sidebar{
+.sidebar-admin{
     position: fixed;
     width: 250px;
     height: 100vh;
     border-right: 2px solid rgba(0, 0, 0, 0.05);
 }
 
-.sidebar .title-side{
+.sidebar .title-side-admin{
     padding: 25px;
 }
 

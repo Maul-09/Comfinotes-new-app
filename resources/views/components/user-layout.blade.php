@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="{{ asset('assets/css/user/style-beranda-user.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/user/style-sidebar-user.css') }}">
     <link rel="icon" href="{{ asset('assets/image/logo-1.png') }}">
-    <title>User Dashboard - Comfinotes</title>
+    <title>{{ $title }}</title>
 </head>
 <body>
-<x-sidebar-user></x-sidebar-user>
+<x-user-layout></x-user-layout>
 
     {{ $slot }}
 
