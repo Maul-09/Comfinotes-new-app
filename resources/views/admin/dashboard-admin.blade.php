@@ -123,7 +123,7 @@
                         <ul class="chart-menu">
                             <li class="list-1">Revenue</li>
                             <li class="list-2">Expenses</li>
-                        </u>
+                        </ul>
                     </div>
                 </div>
 
@@ -160,25 +160,46 @@
                     </button>
                 </div>
                 <div class="record-table">
-                    <table>
-                        <tr>
-                            <th>No</th>
-                            <th>Group</th>
-                            <th>Amount</th>
-                            <th>Event Name</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                        </tr>
-                        <tr>
-                            <th>1</th>
-                            <th>Divisi Logistik</th>
-                            <th>IDR 1.000.000</th>
-                            <th>Mukbang Besar</th>
-                            <th>12 Januari 2025</th>
-                            <th>Succes</th>
-                        </tr>
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable(0)">No</th>
+                                <th onclick="sortTable(1)">Group</th>
+                                <th onclick="sortTable(2)">Amount</th>
+                                <th onclick="sortTable(3)">Event Name</th>
+                                <th onclick="sortTable(4)">Date</th>
+                                <th onclick="sortTable(5)">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Divisi Logistik</td>
+                                <td>- IDR 1.000.000</td>
+                                <td>Mukbang Besar</td>
+                                <td>12, Januari 2025</td>
+                                <td class="status success">Success</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Tim Kreatif</td>
+                                <td>+ IDR 750.000</td>
+                                <td>Workshop Digital</td>
+                                <td>20, Februari 2025</td>
+                                <td class="status pending">Pending</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Finance</td>
+                                <td>- IDR 500.000</td>
+                                <td>Meeting Akbar</td>
+                                <td>15, Maret 2025</td>
+                                <td class="status cancel">cancel</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
+
             </div>
         </div>
     </div>
