@@ -175,7 +175,7 @@
                             <tr>
                                 <td>1</td>
                                 <td>Divisi Logistik</td>
-                                <td>- IDR 1.000.000</td>
+                                <td>- IDR 2.000.000</td>
                                 <td>Mukbang Besar</td>
                                 <td>12, Januari 2025</td>
                                 <td class="status success">Success</td>
