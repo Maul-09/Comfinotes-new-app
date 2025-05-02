@@ -62,14 +62,6 @@
         <div class="card-content">
             <div class="card-box">
                 <div class="card-items">
-                    <div class="card-bg-icon">
-                        <iconify-icon icon="iconoir:send-mail" class="icon-card-1"></iconify-icon>
-                    </div>
-                    <span>Total Submisions</span>
-                    <h3>250</h3>
-                </div>
-
-                <div class="card-items">
                     <div class="card-icon">
                         <div class="card-bg-icon">
                             <iconify-icon icon="uit:wallet" class="icon-card-2"></iconify-icon>
@@ -80,6 +72,13 @@
                     </div>
                     <span>Total Revenue</span>
                     <h3>IDR25.500.000</h3>
+                </div>
+                <div class="card-items">
+                    <div class="card-bg-icon">
+                        <iconify-icon icon="iconoir:send-mail" class="icon-card-1"></iconify-icon>
+                    </div>
+                    <span>Total Submisions</span>
+                    <h3>250</h3>
                 </div>
 
                 <div class="card-items">
@@ -108,9 +107,16 @@
                         <button class="button-report">
                             <iconify-icon icon="material-symbols:download" class="icon-card-5"></iconify-icon>Download Report
                         </button>
-                        <button class="button-dropdown">
-                            Today<iconify-icon icon="ep:arrow-down" class="icon-card-5"></iconify-icon>
-                        </button>
+                        <div class="dropdown-table">
+                            <button class="button-dropdown">
+                                Today <iconify-icon icon="ep:arrow-down" class="icon-card-5"></span>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="#">Today</a>
+                                <a href="#">This Week</a>
+                                <a href="#">This Month</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -155,9 +161,16 @@
                         <h2>All Financial Record</h2>
                         <span>View all event financial history</span>
                     </div>
-                    <button class="button-dropdown-2">
-                        Today<iconify-icon icon="ep:arrow-down" class="icon-card-5">
-                    </button>
+                    <div class="dropdown-table">
+                        <button class="button-dropdown">
+                            Today <iconify-icon icon="ep:arrow-down" class="icon-card-5"></span>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#">Today</a>
+                            <a href="#">This Week</a>
+                            <a href="#">This Month</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="record-table">
                     <table class="styled-table">

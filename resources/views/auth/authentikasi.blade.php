@@ -8,10 +8,10 @@
             <div class="content-circle">
                 <div class="cirle-1">
                     <div class="circle-2">
-                        <img src="{{ asset('assets/image/Total-Submissions.png') }}" alt="image-1" class="logo-1">
-                        <img src="{{ asset('assets/image/Total-Revenue.png') }}" alt="image-2" class="logo-2">
-                        <img src="{{ asset('assets/image/Expenses.png') }}" alt="image-3" class="logo-3">
-                        <img src="{{ asset('assets/image/Member.png') }}" alt="image-4" class="logo-4">
+                        <img src="{{ asset('assets/image/submissions.png') }}" alt="image-1" class="logo-1">
+                        <img src="{{ asset('assets/image/revenue.png') }}" alt="image-2" class="logo-2">
+                        <img src="{{ asset('assets/image/expense.png') }}" alt="image-3" class="logo-3">
+                        <img src="{{ asset('assets/image/income.png') }}" alt="image-4" class="logo-4">
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                             <input type="checkbox">
                             <span class="checkmark"></span>
                         </label>
-                        <a href="{{ route('forgot-password') }}" class="forgot">Forgot Password</a>
+                        <a href="#" class="forgot">Forgot Password</a>
                     </div>
                     <button type="submit" class="btn-submit">Sign In</button>
                 </form>

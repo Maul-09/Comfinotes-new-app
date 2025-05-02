@@ -46,6 +46,8 @@
     transition: 0.5s ease;
 }
 
+
+.active-btn,
 .sidebar-user .menu li:hover{
     background-color: var(--color-white-blue);
     margin: 8px;
@@ -65,9 +67,4 @@
     text-decoration: none;
     transition: 0.5s ease;
 }
-
-.sidebar-user .menu li a:hover{
-    color: var(--color-blue-light);
-}
-
 /* ----------------------| End Sidebar |------------------------ */

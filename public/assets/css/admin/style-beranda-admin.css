@@ -631,7 +631,7 @@ hr{
 
 .chart-content .chart-items{
     width: 850px;
-    height: 350px;
+    height: 360px;
     padding: 25px;
     background-color: var(--color-light);
     border-radius: 8px;
@@ -659,13 +659,13 @@ hr{
     display: flex;
     gap: 15px;
 }
-.chart-button .button-dropdown,
+
 .chart-button .button-report{
     display: flex;
     align-items: center;
     gap: 5px;
     cursor: pointer;
-    padding: 13px 18px;
+    padding: 10px 20px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     transition: 0.5s ease;
@@ -690,6 +690,57 @@ hr{
 
 .chart-button .button-report:hover{
     background-color: var(--hover-blue-light);
+}
+
+.chart-button .dropdown-table {
+    position: relative;
+    display: inline-block;
+}
+
+.chart-button .button-dropdown{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.9em;
+    cursor: pointer;
+    background: var(--color-light);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: 0.5s ease;
+}
+
+.chart-button .button-dropdown:hover{
+    background-color: var(--color-light-grey);
+}
+
+.chart-button .dropdown-content {
+    display: none;
+    position: absolute;
+    background: var(--color-light);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    min-width: 150px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    top: 44px;
+    left: -38px;
+}
+
+.chart-button .dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+
+.chart-button .dropdown-content a:hover {
+    background: var(--color-light-grey);
+}
+
+.record-head .show {
+    display: block;
 }
 
 .chart-main .char-main-title{
@@ -726,6 +777,7 @@ hr{
 
 .calendar-container {
     width: 370px;
+    height: 360px;
     background: var(--color-light);
     padding: 20px;
     border-radius: 10px;
@@ -839,7 +891,12 @@ hr{
     color: var(--color-dark-grey);
 }
 
-.record-head .button-dropdown-2{
+.record-head .dropdown-table {
+    position: relative;
+    display: inline-block;
+}
+
+.record-head .button-dropdown{
     display: flex;
     align-items: center;
     gap: 15px;
@@ -852,8 +909,37 @@ hr{
     transition: 0.5s ease;
 }
 
-.record-head .button-dropdown-2:hover{
+.record-head .button-dropdown:hover{
     background-color: var(--color-light-grey);
+}
+
+.record-head .dropdown-content {
+    display: none;
+    position: absolute;
+    background: var(--color-light);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    min-width: 150px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    top: 44px;
+    left: -38px;
+}
+
+.record-head .dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+
+.record-head .dropdown-content a:hover {
+    background: var(--color-light-grey);
+}
+
+.record-head .show {
+    display: block;
 }
 
 .record-table {
