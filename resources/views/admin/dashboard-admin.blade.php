@@ -191,7 +191,7 @@
                                 <td>- IDR 2.000.000</td>
                                 <td>Mukbang Besar</td>
                                 <td>12, Januari 2025</td>
-                                <td class="status success">Success</td>
+                                <td class="status"><p class="success">Success</p></td>
                             </tr>
                             <tr>
                                 <td>2</td>
@@ -199,7 +199,7 @@
                                 <td>+ IDR 750.000</td>
                                 <td>Workshop Digital</td>
                                 <td>20, Februari 2025</td>
-                                <td class="status pending">Pending</td>
+                                <td class="status"><p class="pending">pending</p></td>
                             </tr>
                             <tr>
                                 <td>3</td>
@@ -207,7 +207,7 @@
                                 <td>- IDR 500.000</td>
                                 <td>Meeting Akbar</td>
                                 <td>15, Maret 2025</td>
-                                <td class="status cancel">cancel</td>
+                                <td class="status"><p class="cancel">cancel</p></td>
                             </tr>
                         </tbody>
                     </table>

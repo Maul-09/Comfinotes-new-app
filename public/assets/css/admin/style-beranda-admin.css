@@ -979,19 +979,38 @@ hr{
     padding: 12px 16px;
 }
 
-.status.success {
+.status .success {
     background-color: var(--color-blue-egg);
     color: var(--color-light);
+    padding: 8px 0px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 20px;
 }
 
-.status.pending {
+.status p{
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.status p:hover{
+  transform: scale(1.05);
+}
+
+.status .pending {
     background-color: var(--color-orange-light);
     color: var(--color-light);
+    padding: 10px 0px;
+    text-align: center;
+    border-radius: 20px;
 }
 
-.status.cancel {
+.status .cancel {
     background-color: var(--color-light-red);
     color: var(--color-light);
+    padding: 10px 0px;
+    text-align: center;
+    border-radius: 20px;
 }
 
 /* ----------------------| End Main Content |------------------------ */
