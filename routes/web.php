@@ -8,19 +8,20 @@ use App\Http\Controllers\Auth\AuthController;
 
 // User Controller ==============================================================================================
 use App\Http\Controllers\User\UserController;
-use App\Http\Controllers\Auth\PasswordResetLinkController;
+// use App\Http\Controllers\Auth\PasswordResetLinkController;
 
 // ==============================================================================================
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController;
+// use App\Http\Controllers\ProfileController;
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 
 Route::controller(AuthController::class)->group(function(){
@@ -30,9 +31,9 @@ Route::controller(AuthController::class)->group(function(){
     Route::get('/verif-email', 'Verif')->name('verif-email');
 });
 
-Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])
-    ->middleware('guest')
-    ->name('password.request');
+// Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])
+//     ->middleware('guest')
+//     ->name('password.request');
 
 Route::controller(AdminController::class)->group(function(){
     Route::get('/dashboard-admin', 'Admin')->name('dashboard-admin');
@@ -49,7 +50,3 @@ Route::controller(UserController::class)->group(function(){
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
 
-
-
-
-require __DIR__.'/auth.php';

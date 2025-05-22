@@ -19,7 +19,7 @@
         <div class="main-content">
             <div class="form-login">
                 <div class="form-title">
-                    <h1>Sign In to your Account</h1>
+                    <h1>Masuk ke Akun Anda</h1>
                     <p>Welcome back! please enter your detail</p>
                 </div>
                 <form action="" method="POST" class="form-content">
@@ -42,7 +42,7 @@
                             <input type="checkbox">
                             <span class="checkmark"></span>
                         </label>
-                        <a href="#" class="forgot">Forgot Password</a>
+                        <a href="{{ route('forgot-password') }}" class="forgot">Forgot Password</a>
                     </div>
                     <button type="submit" class="btn-submit">Sign In</button>
                 </form>
