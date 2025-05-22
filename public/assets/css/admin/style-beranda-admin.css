@@ -692,41 +692,6 @@ hr{
     background-color: var(--hover-blue-light);
 }
 
-.chart-button .dropdown-table {
-    position: relative;
-    display: inline-block;
-}
-
-.chart-button .button-dropdown{
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 0.9em;
-    cursor: pointer;
-    background: var(--color-light);
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    padding: 10px 20px;
-    transition: 0.5s ease;
-}
-
-.chart-button .button-dropdown:hover{
-    background-color: var(--color-light-grey);
-}
-
-.chart-button .dropdown-content {
-    display: none;
-    position: absolute;
-    background: var(--color-light);
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    min-width: 150px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    top: 44px;
-    left: -38px;
-}
-
 .chart-button .dropdown-content a {
     display: block;
     padding: 10px 15px;
@@ -891,12 +856,12 @@ hr{
     color: var(--color-dark-grey);
 }
 
-.record-head .dropdown-table {
+.dropdown-table {
     position: relative;
     display: inline-block;
 }
 
-.record-head .button-dropdown{
+.button-dropdown{
     display: flex;
     align-items: center;
     gap: 15px;
@@ -909,11 +874,11 @@ hr{
     transition: 0.5s ease;
 }
 
-.record-head .button-dropdown:hover{
+.button-dropdown:hover{
     background-color: var(--color-light-grey);
 }
 
-.record-head .dropdown-content {
+.dropdown-content {
     display: none;
     position: absolute;
     background: var(--color-light);
@@ -924,6 +889,10 @@ hr{
     z-index: 1000;
     top: 44px;
     left: -38px;
+}
+
+.dropdown-content.show {
+    display: block;
 }
 
 .record-head .dropdown-content a {

@@ -108,15 +108,15 @@
                             <iconify-icon icon="material-symbols:download" class="icon-card-5"></iconify-icon>Download Report
                         </button>
                         <div class="dropdown-table">
-                            <button class="button-dropdown">
-                                Today <iconify-icon icon="ep:arrow-down" class="icon-card-5"></span>
-                            </button>
-                            <div class="dropdown-content">
-                                <a href="#">Today</a>
-                                <a href="#">This Week</a>
-                                <a href="#">This Month</a>
-                            </div>
+                        <button class="button-dropdown">
+                            Today <iconify-icon icon="ep:arrow-down" class="icon-card-5"></span>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#">Today</a>
+                            <a href="#">This Week</a>
+                            <a href="#">This Month</a>
                         </div>
+                    </div>
                     </div>
                 </div>
 
