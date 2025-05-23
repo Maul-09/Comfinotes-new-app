@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -12,18 +13,32 @@ class AuthController extends Controller
         return view('auth.authentikasi');
     }
 
-    public function Forgot()
+    public function Logout(Request $request)
     {
-        return view('auth.forgot-password');
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login');
     }
 
-    public function Verif()
+    protected function authenticated(Request $request, $user)
     {
-        return view('auth.verifikasi-email');
+        switch ($user->role) {
+            case 'admin':
+                return redirect()->route('admin.dashboard');
+
+            case 'bendahara':
+                return redirect()->route('bendahara.dashboard');
+
+            case 'user':
+                return redirect()->route('user.dashboard');
+
+            default:
+                Auth::logout();
+                abort(403, 'Role tidak dikenali.');
+        }
     }
 
-    public function Reset()
-    {
-        return view('auth.reset-password');
-    }
 }

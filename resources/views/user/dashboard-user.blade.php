@@ -59,6 +59,7 @@
         </div>
     </div>
 
+
     <!-- Start Modal content -->
 
     <div class="logout-notification" id="logout-notification">
@@ -97,4 +98,6 @@
             <a href="#" class="link-info">See Details</a>
         </div>
     </div>
+
+
 </x-user-layout>
