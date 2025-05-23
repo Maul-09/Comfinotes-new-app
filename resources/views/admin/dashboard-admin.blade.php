@@ -5,7 +5,7 @@
         <div class="header-menu">
             <div class="header-title">
                 <h1>Community</h1>
-                <p>Detailed information about your group and account</p>
+                <p>Informasi terperinci tentang keuangan komunitas Anda</p>
             </div>
             <div class="notif-content">
                 <div class="notif">

@@ -5,7 +5,7 @@
         <div class="header-menu">
             <div class="header-title">
                 <h1>Dashboard</h1>
-                <p>Detailed information about your community’s finances</p>
+                <p>Informasi terperinci tentang keuangan komunitas Anda</p>
             </div>
             <div class="notif-content">
                 <div class="notif">
