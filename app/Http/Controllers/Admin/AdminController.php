@@ -11,8 +11,4 @@ class AdminController extends Controller
     {
         return view('admin.dashboard-admin');
     }
-
-    public function Comunnity(){
-        return view('admin.comunnity');
-    }
 }

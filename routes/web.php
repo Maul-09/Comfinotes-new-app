@@ -5,7 +5,7 @@ use App\Http\Controllers\Admin\AdminController;
 
 // Auth Controller ==============================================================================================
 use App\Http\Controllers\Auth\AuthController;
-
+use App\Http\Controllers\bendahara\bendaharaController;
 // User Controller ==============================================================================================
 use App\Http\Controllers\User\UserController;
 // use App\Http\Controllers\Auth\PasswordResetLinkController;
@@ -31,13 +31,16 @@ Route::controller(AuthController::class)->group(function(){
     Route::get('/verif-email', 'Verif')->name('verif-email');
 });
 
+Route::controller(bendaharaController::class)->group( function(){
+    Route::get('/dashboard-bendahara', 'Bendahara')->name('dashboard-bendahara');
+});
+
 // Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])
 //     ->middleware('guest')
 //     ->name('password.request');
 
 Route::controller(AdminController::class)->group(function(){
     Route::get('/dashboard-admin', 'Admin')->name('dashboard-admin');
-    Route::get('/comunnity-admin', 'Comunnity')->name('comunnity-admin');
 });
 
 Route::controller(UserController::class)->group(function(){

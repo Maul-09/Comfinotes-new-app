@@ -20,7 +20,7 @@
             <div class="form-login">
                 <div class="form-title">
                     <h1>Masuk ke Akun Anda</h1>
-                    <p>Welcome back! please enter your detail</p>
+                    <p>Selamat datang kembali! silakan masukkan detail Anda</p>
                 </div>
                 <form action="" method="POST" class="form-content">
                     <div class="label-form">
