@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
 class AuthController extends Controller
 {
-    public function Auth()
+    public function Login()
     {
         return view('auth.authentikasi');
     }

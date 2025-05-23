@@ -10,61 +10,61 @@
 
 .container-verif{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: var(--color-white-blue);
 
 }
 
-.head-logo{
+.head-logo-verif{
     padding: 25px;
 }
 
-.head-logo img{
+.head-logo-verif img{
     width: 180px;
 }
 
-.form-section{
+.form-section-verif{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 80vh;
+    height: 600px;
 
 }
 
-.form-manage{
+.form-manage-verif{
     width: 430px;
     height: fit-content;
     padding: 15px;
     background-color: var(--color-light);
 }
 
-.form-manage .form-title{
+.form-title-verif{
     margin: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.form-manage .form-title h1{
+.form-manage-verif .form-title-verif h1{
     font-size: 1.3em;
     margin-bottom: 5px;
 }
 
-.form-manage .form-title p{
+.form-manage-verif .form-title-verif p{
     font-size: 0.8em;
     text-align: center;
-    color: var(--color-light-grey)
+    color: var(--text-color)
 }
 
-.form-manage .form-image{
+.form-manage-verif .form-image-verif{
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 15px;
 }
 
-.form-manage .form-image .icon-1{
+.form-manage-verif .form-image-verif .icon-1{
     width: 130px;
 }
 
@@ -83,6 +83,8 @@
     font-size: 0.9em;
     cursor: pointer;
     font-weight: 600;
+    text-decoration: none;
+    text-align: center;
     color: var(--color-light);
     width: 330px;
     padding: 15px 10px;
@@ -94,10 +96,103 @@
 }
 
 .label-button-verif .verifikasi{
-    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1em;
     margin: 20px 0;
 }
 
 .label-button-verif .verifikasi a{
     text-decoration: none;
+}
+
+.inline{
+    display: inline;
+    margin: 0;
+}
+
+.button-resend{
+    border: none;
+    background: none;
+    font-weight: 500;
+    font-size: 1em;
+    cursor: pointer;
+    color: var(--color-blue-light);
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+
+}
+
+@media screen and (max-width: 480px) {
+    .container-verif{
+        width: 100%;
+
+    }
+
+    .head-logo-verif{
+        padding: 15px;
+    }
+
+    .head-logo-verif img{
+        width: 150px;
+    }
+
+    .form-section-verif{
+        width: 100%;
+
+    }
+
+    .form-manage-verif{
+        width: 325px;
+        padding: 15px;
+    }
+
+    .form-manage-verif .form-title-verif{
+        margin: 10px;
+    }
+
+    .form-manage-verif .form-title-verif h1{
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    .form-manage-verif .form-title-verif p{
+        font-size: 0.7em;
+    }
+
+    .input-container-verif {
+        width: 360px;
+        padding: 10px 15px;
+    }
+
+    .input-container-verif iconify-icon {
+        font-size: 1.5em;
+        margin-right: 12px;
+    }
+
+    .input-container-verif input {
+        font-size: 14px;
+    }
+
+    .label-button-verif .btn-continue{
+        font-size: 0.9em;
+        width: 270px;
+        padding: 15px 10px;
+        margin: 0 0 5px;
+    }
+
+    .label-button-verif .verifikasi{
+        font-size: 0.8em;
+        margin: 15px 0;
+    }
 }

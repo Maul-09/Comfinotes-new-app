@@ -52,3 +52,31 @@ document.querySelectorAll(".toggle-password").forEach(toggle => {
         }
     });
 })
+
+
+document.querySelectorAll(".button-dropdown").forEach(button => {
+    button.addEventListener("click", function(event) {
+        document.querySelectorAll(".dropdown-content").forEach(dropdown => {
+            if (!button.closest(".dropdown-table").contains(dropdown)) {
+                dropdown.classList.remove("show");
+            }
+        });
+
+        const dropdown = button.closest(".dropdown-table").querySelector(".dropdown-content");
+        if (dropdown) {
+            dropdown.classList.toggle("show");
+        }
+
+        event.stopPropagation();
+    });
+});
+
+window.addEventListener("click", function () {
+    document.querySelectorAll(".dropdown-content").forEach(dropdown => {
+        dropdown.classList.remove("show");
+    });
+});
+
+
+
+

@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'outfit', sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+/* ----------------------| Start Sidebar |------------------------ */
+
+.sidebar-bendahara{
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    border-right: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-bendahara .title-side-bendahara{
+    padding: 25px;
+}
+
+.sidebar-bendahara .title-side-bendahara .logo-bendahara{
+    width: 185px;
+    margin: 8px;
+}
+
+.sidebar-bendahara .menu{
+    padding: 15px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sidebar-bendahara .menu li{
+    list-style: none;
+    cursor: pointer;
+    height: 50px;
+    margin: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--color-dark-grey);
+    transition: 0.5s ease;
+}
+
+.active-btn,
+.sidebar-bendahara .menu li:hover{
+    background-color: var(--color-white-blue);
+    margin: 8px;
+    padding-left: 10px;
+    color: var(--color-blue-light);
+    border-left: 7px solid var(--color-blue-light);
+}
+
+.sidebar-bendahara .menu li iconify-icon{
+    font-size: 30px;
+}
+
+.sidebar-bendahara .menu li a{
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--color-dark-grey);
+    text-decoration: none;
+    transition: 0.5s ease;
+}
+
+.sidebar-bendahara .menu li a:hover{
+    color: var(--color-blue-light);
+}
+
+/* ----------------------| End Sidebar |------------------------ */
+
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+
+}
+
+@media screen and (max-width: 480px) {
+
+}

@@ -46,6 +46,8 @@
     transition: 0.5s ease;
 }
 
+
+.active-btn,
 .sidebar-user .menu li:hover{
     background-color: var(--color-white-blue);
     margin: 8px;
@@ -65,9 +67,21 @@
     text-decoration: none;
     transition: 0.5s ease;
 }
+/* ----------------------| End Sidebar |------------------------ */
 
-.sidebar-user .menu li a:hover{
-    color: var(--color-blue-light);
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+
 }
 
-/* ----------------------| End Sidebar |------------------------ */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+
+}
+
+@media screen and (max-width: 480px) {
+
+}

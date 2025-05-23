@@ -1,6 +1,7 @@
 :root{
     --color-blue-light: #2563EB;
     --color-blue-sky: #38BDF8;
+    --background-color-1: #EAFFFD;
     --color-blue-egg: #5BCFC5;
     --color-light: #fff;
     --color-dark: #272742;
@@ -10,4 +11,6 @@
     --color-orange-light: #F6A723;
     --color-white-blue: #F8FAFC;
     --hover-blue-light: #252FEB;
+
+    --text-color : #64748B;
 }
