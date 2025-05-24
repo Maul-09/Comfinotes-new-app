@@ -10,7 +10,7 @@ class RoleMiddleware
     public function handle($request, Closure $next, $role)
     {
         if (!Auth::check()) {
-        return redirect()->route('login')->with('alert-warning', 'Silakan signup terlebih dahulu.');
+        return redirect()->route('login')->with('alert-warning', 'Silakan signin terlebih dahulu.');
     }
 
         if (Auth::user()->role !== $role) {

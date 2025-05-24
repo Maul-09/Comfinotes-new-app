@@ -7,7 +7,7 @@ use Illuminate\Routing\Controller;
 
 class VerifEmailController extends Controller
 {
-    public function Verif()
+    public function verif()
     {
         return view('auth.verifikasi-email');
     }

@@ -1,5 +1,15 @@
 <x-auth-layout>
     <x-slot:title>Login Page - Comfinote's</x-slot:title>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <div class="container">
         <div class="head-content">
             <div class="head-title">
@@ -22,11 +32,12 @@
                     <h1>Masuk ke Akun Anda</h1>
                     <p>Selamat datang kembali! silakan masukkan detail Anda</p>
                 </div>
-                <form action="" method="POST" class="form-content">
+                <form action="{{ route('auth.login') }}" method="POST" class="form-content">
+                    @csrf
                     <div class="label-form">
                         <div class="input-container-login">
                             <iconify-icon icon="solar:user-linear"></iconify-icon>
-                            <input type="text" name="username" placeholder="Input Username" id="username" required>
+                            <input type="email" name="email" placeholder="Input Username/Email" id="username" required>
                         </div>
                     </div>
                     <div class="label-form">

@@ -47,9 +47,10 @@
                                 <div class="drop-menu">
                                     <a href="#" class="menu-items"><iconify-icon icon="solar:user-linear" class="icon-user-1"></iconify-icon>Profile</a>
                                     <hr>
-                                    <button type="button" class="menu-items logout-button" onclick="confirmLogout()">
-                                        <iconify-icon icon="mdi-light:logout" class="icon-user-2"></iconify-icon>Logout
-                                    </button>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
+                                        @csrf
+                                        <button type="submit" class="btn-confirm">Sign Out</button>
+                                    </form>
                                 </div>
                             </div>
                         </li>

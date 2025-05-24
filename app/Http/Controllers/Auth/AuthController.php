@@ -25,11 +25,11 @@ class AuthController extends Controller
 
             $role = Auth::user()->role;
             if ($role === 'admin') {
-                return redirect()->route('admin.dashboard');
+                return redirect()->route('dashboard-admin');
             } elseif ($role === 'bendahara') {
-                return redirect()->route('bendahara.dashboard');
+                return redirect()->route('dashboard-bendahara');
             } elseif ($role === 'user') {
-                return redirect()->route('user.dashboard');
+                return redirect()->route('dashboard-user');
             }
 
             Auth::logout();

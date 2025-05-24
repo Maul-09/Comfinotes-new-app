@@ -1,13 +1,10 @@
 <?php
 
-// Bendahara Controller ==============================================================================================
-use App\Http\Controllers\bendahara\BendaharaController;
-
 use Illuminate\Support\Facades\Route;
 
 
-Route::controller(BendaharaController::class)->group( function(){
-    Route::get('/dashboard-bendahara', 'Bendahara')->name('dashboard-bendahara');
+Route::middleware(['web', 'auth', 'role:bendahara'])->group(function(){
+    Route::get('/dashboard-bendahara', fn() => view('bendahara.dashboard-bendahara'))->name('dashboard-bendahara');
 });
 
 ?>

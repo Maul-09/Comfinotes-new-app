@@ -236,8 +236,6 @@
         </div>
     </div>
 
-
-
     <div id="modal-notifications" class="modal">
         <div class="modal-content">
             <span class="close-button" onclick="closeModal('modal-notifications')">&times;</span>

@@ -7,7 +7,7 @@ use Illuminate\Routing\Controller;
 
 class ForgotPasswordController extends Controller
 {
-    public function Forgot()
+    public function forgot()
     {
         return view('auth.forgot-password');
     }
