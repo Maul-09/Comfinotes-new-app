@@ -1,0 +1,41 @@
+.alert {
+    position: fixed;
+    top: 20px;
+    right: -400px;
+    background-color: #333;
+    color: white;
+    padding: 16px 20px;
+    border-radius: 8px;
+    max-width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-family: sans-serif;
+    z-index: 9999;
+    overflow: hidden;
+    transition: right 0.4s ease;
+  }
+
+  .alert.show {
+    right: 20px;
+  }
+
+  .message {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .progress-bar {
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: transform linear;
+  }
+
+  .alert.success  { background-color: #16a34a; }
+  .alert.error    { background-color: #dc2626; }
+  .alert.info     { background-color: #2563eb; }
+
+  .hidden {
+    display: none;
+  }

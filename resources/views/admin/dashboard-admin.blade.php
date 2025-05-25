@@ -1,5 +1,12 @@
 <x-admin-layout>
     <x-slot:title>Admin Dashboard - Comfinote's</x-slot:title>
+    @if (session('success'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+            showAlert("{{ session('success') }}", "success", 4000);
+            });
+        </script>
+    @endif
 
     <div class="main-content">
         <div class="header-menu">

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -20,10 +22,27 @@ class AuthController extends Controller
             'password' => ['required'],
         ]);
 
+         $user = User::where('email', $credentials['email'])->first();
+
+        if (!$user) {
+            return back()->withErrors([
+                'email' => 'Email Anda belum terdaftar.',
+            ])->withInput();
+        }
+
+        if (!Hash::check($credentials['password'], $user->password)) {
+            return back()->withErrors([
+                'password' => 'Password salah, silahkan masukan dengan benar',
+            ])->withInput();
+        }
+
+
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
             $role = Auth::user()->role;
+
+            session()->flash('success', 'Halo ' . Auth::user()->name . ', selamat datang kembali!');
+
             if ($role === 'admin') {
                 return redirect()->route('dashboard-admin');
             } elseif ($role === 'bendahara') {
@@ -33,12 +52,10 @@ class AuthController extends Controller
             }
 
             Auth::logout();
-            return back()->withErrors(['email' => 'Role tidak dikenali.']);
+            return back()->withErrors([
+                'email' => 'Role tidak dikenali.',
+            ]);
         }
-
-        return back()->withErrors([
-            'email' => 'Email atau password salah.',
-        ]);
     }
 
     public function logout(Request $request)
@@ -46,6 +63,8 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+
+        session()->flash('success', 'Anda berhasil logout!');
 
         return redirect()->route('login');
     }

@@ -1,5 +1,13 @@
 <x-user-layout>
     <x-slot:title>Dashboard User - Comfinotes</x-slot:title>
+    @if (session('success'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+            showAlert("{{ session('success') }}", "success", 4000);
+            });
+        </script>
+    @endif
+
     <div class="main-content">
         <div class="header-menu">
             <div class="header-title">
