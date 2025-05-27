@@ -32,7 +32,7 @@ class AuthController extends Controller
 
         if (!Hash::check($credentials['password'], $user->password)) {
             return back()->withErrors([
-                'password' => 'Password salah, silahkan masukan dengan benar',
+                'password' => 'Password yang Anda masukan salah!',
             ])->withInput();
         }
 

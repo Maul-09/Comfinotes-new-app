@@ -1,29 +1,37 @@
-function showAlert(message, type = 'info', duration = 4000) {
-    const alertBox = document.getElementById('custom-alert');
-    const alertMessage = document.getElementById('alert-message');
-    const progressBar = document.getElementById('alert-progress');
+function showAlert(message, type = 'info', duration = 3000) {
+  const box = document.getElementById('custom-alert');
+  const title = document.getElementById('alert-title');
+  const msg = document.getElementById('alert-message');
+  const iconWrapper = document.getElementById('alert-icon');
+  const progress = document.getElementById('alert-progress');
 
-    if (!alertBox || !alertMessage || !progressBar) {
-      console.warn("❌ Alert box elements not found!");
-      return;
-    }
+  box.classList.remove('show');
+  iconWrapper.className = 'custom-alert-icon';
 
-    alertBox.className = `alert ${type}`;
-    alertMessage.textContent = message;
-
-    progressBar.style.transition = 'none';
-    progressBar.style.transform = 'scaleX(1)';
-    void progressBar.offsetWidth;
-    progressBar.style.transition = `transform ${duration}ms linear`;
-    progressBar.style.transform = 'scaleX(0)';
-
-    alertBox.classList.remove('hidden');
-    alertBox.classList.add('show');
-
-    setTimeout(() => {
-      alertBox.classList.remove('show');
-      setTimeout(() => {
-        alertBox.classList.add('hidden');
-      }, 500);
-    }, duration);
+  if (type === 'success') {
+    title.innerText = 'Berhasil';
+    iconWrapper.classList.add('success-icon');
+    iconWrapper.innerHTML = '<iconify-icon icon="mdi:check" style="color: white;"></iconify-icon>';
+  } else if (type === 'error') {
+    title.innerText = 'Gagal';
+    iconWrapper.classList.add('error-icon');
+    iconWrapper.innerHTML = '<iconify-icon icon="mdi:close" style="color: white;"></iconify-icon>';
+  } else {
+    title.innerText = 'Info';
+    iconWrapper.classList.add('info-icon');
+    iconWrapper.innerHTML = '<iconify-icon icon="mdi:information" style="color: white;"></iconify-icon>';
   }
+
+  msg.innerText = message;
+  box.classList.add('show');
+
+  progress.style.transition = 'none';
+  progress.style.transform = 'scaleX(1)';
+  void progress.offsetWidth;
+  progress.style.transition = `transform ${duration}ms linear`;
+  progress.style.transform = 'scaleX(0)';
+
+  setTimeout(() => {
+    box.classList.remove('show');
+  }, duration);
+}

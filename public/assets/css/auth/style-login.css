@@ -201,7 +201,7 @@
     left: 0;
     height: 18px;
     width: 18px;
-    border: 1px solid var(--color-light-grey);
+    border: 1px solid var(--color-dark-grey);
     border-radius: 4px;
 }
 

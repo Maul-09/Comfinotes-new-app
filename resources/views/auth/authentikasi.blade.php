@@ -1,19 +1,19 @@
 <x-auth-layout>
     <x-slot:title>Login Page - Comfinote's</x-slot:title>
-    @if ($errors->has('error'))
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-            showAlert("{{ $errors->first('error') }}", "error", 4000);
-            });
-        </script>
+    @if (session('success'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            showAlert("{{ session('success') }}", "success", 4000);
+        });
+    </script>
     @endif
 
-    @if (session('success'))
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-            showAlert("{{ session('success') }}", "success", 4000);
-            });
-        </script>
+    @if ($errors->any())
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            showAlert("{{ $errors->first() }}", "error", 4000);
+        });
+    </script>
     @endif
 
     <div class="container">
@@ -45,9 +45,6 @@
                             <iconify-icon icon="solar:user-linear"></iconify-icon>
                             <input type="email" name="email" placeholder="Input Username/Email" id="username" required>
                         </div>
-                        @error('email')
-                            <small style="color: red;">{{ $message }}</small>
-                        @enderror
                     </div>
                     <div class="label-form">
                         <div class="input-container-login">
@@ -55,9 +52,6 @@
                             <input type="password" name="password" placeholder="Input Password" id="password" required>
                             <iconify-icon icon="proicons:eye-off" class="toggle-password" id="toggle-password"></iconify-icon>
                         </div>
-                        @error('password')
-                            <small style="color: red;">{{ $message }}</small>
-                        @enderror
                     </div>
 
                     <div class="form-link">
