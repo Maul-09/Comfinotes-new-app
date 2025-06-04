@@ -10,7 +10,6 @@ class RoleMiddleware
     public function handle($request, Closure $next, $role = null)
     {
         if (!Auth::check()) {
-            dd('middleware jalan');
             return redirect()->route('login');
         }
 

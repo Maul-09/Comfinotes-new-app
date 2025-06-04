@@ -631,7 +631,6 @@ hr{
 
 .chart-content .chart-items{
     width: 850px;
-    height: 360px;
     padding: 25px;
     background-color: var(--color-light);
     border-radius: 8px;
@@ -738,6 +737,20 @@ hr{
 .chart-menu .list-2::marker {
     font-size: 1.1em;
     color: var(--color-light-red);
+}
+
+
+.graphic {
+    max-width: 100%;
+    margin: 0 auto;
+    background: white;
+    padding: 1rem;
+}
+
+canvas {
+    background: #fff;
+    display: block;
+    border-radius: 12px;
 }
 
 .calendar-container {

@@ -3,7 +3,7 @@
     @if (session('success'))
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            showAlert("{{ session('success') }}", "success", 4000);
+            showAlert("{{ session('success') }}", "success", 3000);
         });
     </script>
     @endif
@@ -11,7 +11,7 @@
     @if ($errors->any())
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            showAlert("{{ $errors->first() }}", "error", 4000);
+            showAlert("{{ $errors->first() }}", "error", 3000);
         });
     </script>
     @endif
@@ -38,7 +38,7 @@
                     <h1>Masuk ke Akun Anda</h1>
                     <p>Selamat datang kembali! silakan masukkan detail Anda</p>
                 </div>
-                <form action="{{ route('auth.login') }}" method="POST" class="form-content">
+                <form id="login-form" action="{{ route('auth.login') }}" method="POST" class="form-content">
                     @csrf
                     <div class="label-form">
                         <div class="input-container-login">

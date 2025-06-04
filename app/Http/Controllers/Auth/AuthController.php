@@ -16,47 +16,45 @@ class AuthController extends Controller
     }
 
     public function login(Request $request)
-    {
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-        ]);
+{
+    $credentials = $request->validate([
+        'email' => ['required', 'email'],
+        'password' => ['required'],
+    ]);
 
-         $user = User::where('email', $credentials['email'])->first();
+    $user = User::where('email', $credentials['email'])->first();
 
-        if (!$user) {
-            return back()->withErrors([
-                'email' => 'Email Anda belum terdaftar.',
-            ])->withInput();
-        }
-
-        if (!Hash::check($credentials['password'], $user->password)) {
-            return back()->withErrors([
-                'password' => 'Password yang Anda masukan salah!',
-            ])->withInput();
-        }
-
-
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            $role = Auth::user()->role;
-
-            session()->flash('success', 'Halo ' . Auth::user()->name . ', selamat datang kembali!');
-
-            if ($role === 'admin') {
-                return redirect()->route('dashboard-admin');
-            } elseif ($role === 'bendahara') {
-                return redirect()->route('dashboard-bendahara');
-            } elseif ($role === 'user') {
-                return redirect()->route('dashboard-user');
-            }
-
-            Auth::logout();
-            return back()->withErrors([
-                'email' => 'Role tidak dikenali.',
-            ]);
-        }
+    if (!$user) {
+        return back()->withErrors([
+            'email' => 'Email Anda belum terdaftar.',
+        ])->withInput();
     }
+
+    if (!Hash::check($credentials['password'], $user->password)) {
+        return back()->withErrors([
+            'password' => 'Password yang Anda masukan salah!',
+        ])->withInput();
+    }
+
+    if (Auth::attempt($credentials)) {
+        $request->session()->regenerate();
+        $role = Auth::user()->role;
+
+        session()->flash('success', 'Halo ' . Auth::user()->name . ', selamat datang kembali!');
+
+        return match ($role) {
+            'admin' => redirect()->route('dashboard-admin'),
+            'bendahara' => redirect()->route('dashboard-bendahara'),
+            'user' => redirect()->route('dashboard-user'),
+            default => back()->withErrors(['email' => 'Role tidak dikenali.']),
+        };
+    }
+
+    return back()->withErrors([
+        'email' => 'Email atau password salah.',
+    ])->withInput();
+}
+
 
     public function logout(Request $request)
     {
