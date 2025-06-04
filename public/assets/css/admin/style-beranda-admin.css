@@ -531,136 +531,74 @@ hr{
 .card-content{
     width: 100%;
     height: fit-content;
+    display: flex;
+    gap: 25px;
     padding: 20px;
 }
 
-.card-box{
-    display: flex;
-    gap: 15px;
-}
-
-.card-box .card-items{
-    width: 300px;
-    height: 200px;
-    padding: 15px;
-    background-color: var(--color-light);
-    border-radius: 12px;
-}
-
-.card-box .card-items .card-icon{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.card-items .card-bg-icon{
-    width: 50px;
-    margin: 10px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--color-white-blue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card-items .button-plus{
-    width: 40px;
-    height: 30px;
-    cursor: pointer;
-    border-radius: 8px;
-    background: var(--color-blue-egg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s ease;
-}
-
-.card-items .button-plus:hover{
-    background-color: #43b3a9;
-}
-
-.card-items .card-bg-icon .icon-card-1{
-    font-size: 1.8em;
-    color: var(--color-blue-light);
-}
-
-.card-icon .card-bg-icon .icon-card-2{
-    font-size: 1.8em;
-    color: var(--color-blue-sky);
-}
-
-.card-icon .button-plus .icon-card-3{
-    font-size: 1.3em;
-    color: var(--color-light);
-}
-
-.card-items .card-bg-icon .icon-card-4{
-    font-size: 1.8em;
-    color: var(--color-blue-egg);
-}
-
-.card-items .card-bg-icon .icon-card-5{
-    font-size: 1.8em;
-    color: var(--color-light-red);
-}
-
-.card-items span{
-    margin: 10px;
-    font-size: 1.2em;
-    font-weight: 500;
-    color: var(--color-dark-grey);
-}
-
-.card-items h3{
-    margin: 10px;
-    font-size: 1.5em;
-    font-weight: 700;
-    color: var(--color-dark);
-}
-
-/* --------------------------------------------------------------- */
-
-.chart-content{
+.card-content .card-acount{
     width: 100%;
-    height: fit-content;
-    display: flex;
-    gap: 25px;
-    padding: 0 20px;
-}
-
-.chart-content .chart-items{
-    width: 850px;
-    height: 350px;
-    padding: 25px;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    padding: 20px;
     background-color: var(--color-light);
-    border-radius: 8px;
 }
 
-.chart-items .chart-header{
+.card-acount .head-card{
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
 }
 
-.chart-header h2{
-    font-size: 1.2em;
+
+.head-title h2{
+    font-size: 1.3em;
+    margin-bottom: 5px;
     color: var(--color-dark);
 }
 
-.chart-items .chart-main{
+.head-title p{
+    font-size: 0.8em;
+    color: var(--color-dark-grey);
+}
+
+.head-button .add-acount{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-transform: capitalize;
+    background-color: var(--color-blue-light);
+    color: var(--color-light);
+    font-size: 0.8em;
+    font-weight: 500;
+    transition: 0.5s ease;
+}
+
+.head-button .add-acount iconify-icon{
+    font-size: 1.7em;
+}
+
+.head-button .add-acount:hover{
+    background: var(--hover-blue-light);
+}
+
+.card-items .card-main{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.chart-header .chart-button{
+.card-header .card-button{
     display: flex;
     gap: 15px;
 }
-.chart-button .button-dropdown,
-.chart-button .button-report{
+.card-button .button-dropdown,
+.card-button .button-report{
     display: flex;
     align-items: center;
     gap: 5px;
@@ -671,197 +609,117 @@ hr{
     transition: 0.5s ease;
 }
 
-.chart-button .button-dropdown{
+.card-button .button-dropdown{
     background-color: var(--color-light);
     color: var(--color-dark);
     font-size: 1em;
     font-weight: 500;
 }
 
-.chart-button .button-report{
+.card-button .button-report{
     background-color: var(--color-blue-light);
     color: var(--color-light);
     font-size: 1em;
 }
 
-.chart-button .button-dropdown:hover{
+.card-button .button-dropdown:hover{
     background-color: var(--color-light-grey);
 }
 
-.chart-button .button-report:hover{
+.card-button .button-report:hover{
     background-color: var(--hover-blue-light);
 }
 
-.chart-main .char-main-title{
-
-}
-
-.chart-main .chart-menu{
-    padding-right: 8em;
+.main-card{
     display: flex;
+    gap: 20px;
     align-items: center;
-    gap: 25px;
+    justify-content: flex-start;
 }
 
-.chart-menu {
-    list-style-type: disc;
+.main-card .card{
+    width: 100%;
+    height: fit-content;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 15px;
 }
 
-.chart-menu .list-1 {
-    color: var(--color-blue-light);
+
+.main-card .card .card-image-head .card-image{
+    display: block;
+    width: 100%;
+    height: 150px;
+    background: var(--color-white-blue);
+    border-radius: 12px;
 }
 
-.chart-menu .list-2 {
-    color: var(--color-light-red);
+.main-card .card .card-text{
+    margin: 15px 0;
 }
 
-.chart-menu .list-1::marker {
-    color: var(--color-blue-light);
+.main-card .card .card-text .label-card{
+    color: var(--color-dark-grey);
+    font-size: 0.75em;
+    margin: 5px 0;
 }
 
-.chart-menu .list-2::marker {
+.main-card .card .card-text h3{
+    font-size: 1.2em;
+    margin: 5px 0;
+    color: var(--color-dark);
+}
+
+.main-card .card .card-text h4{
     font-size: 1.1em;
-    color: var(--color-light-red);
+    margin: 5px 0;
+    color: var(--color-dark);
 }
 
-.calendar-container {
-    width: 370px;
+.main-card .card .card-button{
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
     background: var(--color-light);
-    padding: 20px;
-    border-radius: 10px;
+    font-size: 0.8em;
+    border-radius: 12px;
+    color: var(--color-blue-light);
+    font-weight: 600;
+    border: 1px solid var(--color-blue-light);
 }
 
-.calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 18px;
-    margin-bottom: 15px;
-}
+/* ------------------------------------------------ */
 
-.calendar-header h3{
-    color: var(--color-dark);
-    font-size: 1.1em;
-}
-
-.calendar-header button {
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.calendar-header .icon-calender{
-    font-size: 1.5em;
-    color: var(--color-dark-grey);
-}
-
-.weekdays, .days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-}
-
-.weekdays div {
-    font-size: 1em;
-    font-weight: 500;
-    color: var(--color-dark);
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.day {
-    width: 35px;
-    height: 35px;
-    background: white;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    color: var(--color-dark-grey);
-    align-items: center;
-    justify-content: center;
-    transition: 0.2s;
-}
-
-.day:hover {
-    background: var(--color-blue-light);
-    color: var(--color-light);
-}
-
-.empty {
-    visibility: hidden;
-}
-
-.today {
-    background: var(--color-blue-light) !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: white;
-    border-radius: 50%;
-    font-weight: 700;
-}
-
-/* --------------------------------------------------------------------------- */
-
-.history-record{
+.table-acount{
     width: 100%;
     height: fit-content;
     display: flex;
+    gap: 25px;
     padding: 20px;
 }
 
-.history-record .history-items{
-    width: 1245px;
-    height: 350px;
-    padding: 25px;
-    background-color: var(--color-light);
-    border-radius: 8px;
+.table-acount .header-acount{
+    width: 100%;
+    height: fit-content;
+    background: var(--color-light);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 20px;
 }
 
-.history-items .record-head{
+.header-acount .head-acount{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-.record-head .record-title{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.record-head .record-title h2{
-    font-size: 1.3em;
-    color: var(--color-dark);
-}
-
-.record-head .record-title span{
-    font-size: 0.75em;
-    color: var(--color-dark-grey);
-}
-
-.record-head .button-dropdown-2{
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 0.9em;
-    cursor: pointer;
-    background: var(--color-light);
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    padding: 10px 20px;
-    transition: 0.5s ease;
-}
-
-.record-head .button-dropdown-2:hover{
-    background-color: var(--color-light-grey);
-}
-
-.record-table {
+.data-table {
     width: 100%;
     overflow-x: auto;
 }
 
-.styled-table {
+.style-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 16px;
@@ -870,42 +728,40 @@ hr{
     overflow: hidden;
 }
 
-.styled-table thead {
+.style-table thead {
     background-color: var(--color-white-blue);
     color: var(--color-dark);
 }
 
-.styled-table th,
-.styled-table td {
+.style-table th,
+.style-table td {
     padding: 12px 16px;
-    text-align: left;
+    text-align: center;
 }
 
-.styled-table tbody tr:nth-child(even) {
+.style-table tbody tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-.styled-table tbody tr:hover {
+.style-table tbody tr:hover {
     background-color: #f1f1f1;
 }
 
-.status {
-    padding: 12px 16px;
+.style-table .btn-delete{
+    border: none;
+    border-radius: 8px;
+    background: var(--color-light-red);
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.5s;
 }
 
-.status.success {
-    background-color: var(--color-blue-egg);
+.style-table .btn-delete iconify-icon{
+    font-size: 1.3em;
     color: var(--color-light);
 }
 
-.status.pending {
-    background-color: var(--color-orange-light);
-    color: var(--color-light);
+.style-table .btn-delete:hover{
+    background: #c61b31;
 }
-
-.status.cancel {
-    background-color: var(--color-light-red);
-    color: var(--color-light);
-}
-
 /* ----------------------| End Main Content |------------------------ */
