@@ -1,58 +1,46 @@
-function confirmLogout() {
-    const notification = document.getElementById("logout-notification");
-    if (notification) {
-        notification.style.display = "flex";
-    } else {
-        console.warn("Logout notification element not found.");
-    }
+function toggleDropdown() {
+    const dropdownMenu = document.getElementById('userDropdownMenu');
+    dropdownMenu.classList.toggle('active');
 }
 
-function proceedLogout() {
-    alert("You have logged out.");
-    const notification = document.getElementById("logout-notification");
-    if (notification) {
-        notification.style.display = "none";
+document.addEventListener('click', (event) => {
+    const dropdownMenu = document.getElementById('userDropdownMenu');
+    const dropdownButton = document.getElementById('userDropdownButton');
+    if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.classList.remove('active');
     }
-}
-
-function cancelLogout() {
-    const notification = document.getElementById("logout-notification");
-    if (notification) {
-        notification.style.display = "none";
-    }
-}
+});
 
 document.addEventListener("DOMContentLoaded", function () {
-    const notification = document.getElementById("logout-notification");
-    if (notification) {
-        notification.style.display = "none";
-    }
-});
+    document.querySelectorAll(".logout-notification").forEach(el => {
+        el.style.display = "none";
+    });
 
-function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.style.display = "flex";
-    } else {
-        console.warn(`Modal with ID '${modalId}' not found.`);
-    }
-}
+    document.querySelectorAll("[data-action='confirm-logout']").forEach(btn => {
+        btn.addEventListener("click", function () {
+            const targetId = this.dataset.target || "logout-notification";
+            const modal = document.getElementById(targetId);
+            if (modal) modal.style.display = "flex";
+        });
+    });
 
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.style.display = "none";
-    }
-}
+    document.querySelectorAll("[data-action='cancel-logout']").forEach(btn => {
+        btn.addEventListener("click", function () {
+            const modal = this.closest(".logout-notification");
+            if (modal) modal.style.display = "none";
+        });
+    });
 
-window.addEventListener("click", function (event) {
-    const modals = document.querySelectorAll(".modal");
-    modals.forEach(modal => {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
+    document.querySelectorAll("[data-action='open-modal']").forEach(item => {
+        item.addEventListener("click", function () {
+            const targetId = this.dataset.target;
+            openModal(targetId);
+        });
+    });
+
+    window.addEventListener("click", function (e) {
+        document.querySelectorAll(".modal, .logout-notification").forEach(modal => {
+            if (e.target === modal) modal.style.display = "none";
+        });
     });
 });
-
-
-

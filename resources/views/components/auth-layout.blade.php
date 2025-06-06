@@ -22,8 +22,9 @@
 
 
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<script src={{ asset('assets/js/script-action.js') }}></script>
+<script src={{ asset('assets/js/script-animation.js') }}></script>
 <script src="{{ asset('assets/js/script-button.js') }}"></script>
-<script src="{{ asset('assets/js/script-animation.js') }}"></script>
 <script src="{{ asset('assets/js/script-popup.js') }}"></script>
 <script src="{{ asset('assets/js/script-alert.js') }}"></script>
 </body>
