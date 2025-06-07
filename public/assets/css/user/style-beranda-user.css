@@ -9,6 +9,10 @@
 }
 
 /* ----------------------| Start Hedaer Menu |------------------------ */
+body{
+    max-width: 100%;
+    overflow-y: scroll;
+}
 
 .main-content{
     width: 1265px;
@@ -38,7 +42,7 @@
     height: 350px;
     background: var(--color-light);
     border-radius: 15px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.05);
     padding: 20px;
 }
 
@@ -54,7 +58,7 @@
     font-size: 0.9em;
     cursor: pointer;
     background: var(--color-light);
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     padding: 10px 20px;
     transition: 0.5s ease;
@@ -68,7 +72,7 @@
     display: none;
     position: absolute;
     background: var(--color-light);
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     min-width: 150px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -110,7 +114,7 @@
     width: 100%;
     height: 350px;
     background: var(--color-light);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.05);
     border-radius: 15px;
     padding: 20px;
 }
@@ -132,7 +136,7 @@
     gap: 5px;
     cursor: pointer;
     padding: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     text-transform: capitalize;
     background-color: var(--color-blue-light);
@@ -244,7 +248,7 @@
     padding: 25px;
     background: var(--color-light);
     border-radius: 15px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.05);
 }
 
 .chart-items .chart-header{
@@ -370,7 +374,7 @@ canvas {
     background: var(--color-light);
     padding: 20px;
     border-radius: 15px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.05);
 }
 
 .calendar-header {

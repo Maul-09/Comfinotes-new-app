@@ -1,5 +1,8 @@
 <x-admin-layout>
     <x-slot:title>Admin Dashboard - Comfinote's</x-slot:title>
+    <x-slot:PageTitle>Dashboard</x-slot:PageTitle>
+    <x-slot:PageSubtitle>Informasi terperinci tentang keuangan komunitas Anda</x-slot:PageSubtitle>
+
     @if (session('success'))
         <script>
             document.addEventListener('DOMContentLoaded', function () {

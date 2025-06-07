@@ -7,7 +7,6 @@
         <div class="notif-content">
             <div class="notif">
                 <iconify-icon icon="pepicons-pencil:bell" class="bell icon-notif" data-action="toggle-dropdown" data-target="notif-dropdown"></iconify-icon>
-                <p class="notif-point"></p>
                 <div class="notif-dropdown" id="notif-dropdown">
                     <h2>Notification</h2>
                     <hr class="border">

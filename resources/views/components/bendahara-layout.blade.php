@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('assets/css/aset/color-palete.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/aset/alert.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bendahara/style-money.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bendahara/style-beranda-bendahara.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bendahara/style-sidebar-bendahara.css') }}">
     <link rel="icon" href="{{ asset('assets/image/logo-1.png') }}">
     <title>{{ $title }}</title>
 </head>
 <body>
-<x-sidebar-bendahara></x-sidebar-bendahara>
-<x-alert></x-alert>
+
+<x-sidebar-bendahara :PageTitle="$PageTitle" :PageSubtitle="$PageSubtitle"/>
+<x-alert />
 
     {{ $slot }}
 

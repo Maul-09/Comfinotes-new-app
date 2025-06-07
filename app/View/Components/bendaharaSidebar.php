@@ -21,6 +21,6 @@ class bendaharaSidebar extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.bendahara-sidebar');
+        return view('components.sidebar-bendahara');
     }
 }

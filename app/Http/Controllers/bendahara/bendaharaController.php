@@ -9,5 +9,10 @@ class bendaharaController extends Controller
 {
     public function Bendahara(){
         return view('bendahara.dashboard-bendahara');
+
+    }
+
+    public function detail(){
+        return view('bendahara.detail-info');
     }
 }

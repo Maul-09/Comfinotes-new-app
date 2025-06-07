@@ -1,13 +1,14 @@
+@props(['PageTitle', 'PageSubtitle'])
+
 <div class="main-header">
     <div class="header-menu">
         <div class="header-title">
-            <h1>Dashboard</h1>
-            <p>Informasi terperinci tentang keuangan komunitas Anda</p>
+            <h1>{{ $PageTitle }}</h1>
+            <p>{{ $PageSubtitle }}</p>
         </div>
         <div class="notif-content">
             <div class="notif">
                 <iconify-icon icon="pepicons-pencil:bell" class="bell icon-notif" data-action="toggle-dropdown" data-target="notif-dropdown"></iconify-icon>
-                <p class="notif-point"></p>
                 <div class="notif-dropdown" id="notif-dropdown">
                     <h2>Notification</h2>
                     <hr class="border">
@@ -61,7 +62,12 @@
             <a href="{{ route('dashboard-bendahara') }}"><img src="{{ asset('assets/image/logo-2.png') }}" alt="logo user" class="logo-bendahara"></a>
         </div>
         <ul class="menu">
-            <li class="{{ request()->routeIs('dashboard-bendahara') || request()->routeIs('simpan-uang')  ? 'active-btn' : '' }}"><iconify-icon icon="mage:dashboard-fill"></iconify-icon><a href="{{ route('dashboard-bendahara') }}">Dashboard</a></li>
+            <li class="
+            {{ request()->routeIs('dashboard-bendahara')
+            || request()->routeIs('simpan-uang')
+            || request()->routeIs('see-detail')  ? 'active-btn' : '' }}">
+
+            <iconify-icon icon="mage:dashboard-fill"></iconify-icon><a href="{{ route('dashboard-bendahara') }}">Dashboard</a></li>
         </ul>
     </div>
 </div>
@@ -103,7 +109,7 @@
             <button type="button" class="button-reject">Cancelled</button>
             <button type="button" class="button-approv">Approved</button>
         </div>
-        <a href="#" class="link-info">See Details</a>
+        <a href="{{ route('see-detail') }}" class="link-info">See Details</a>
     </div>
 </div>
 

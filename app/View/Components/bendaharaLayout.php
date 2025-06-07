@@ -3,24 +3,25 @@
 namespace App\View\Components;
 
 use Closure;
-use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use Illuminate\View\View;
 
-class bendaharaLayout extends Component
+class BendaharaLayout extends Component
 {
-    /**
-     * Create a new component instance.
-     */
-    public function __construct()
+    public string $PageTitle;
+    public string $PageSubtitle;
+
+    public function __construct(string $PageTitle = 'Default Title', string $PageSubtitle = 'Default Subtitle')
     {
-        //
+        $this->PageTitle = $PageTitle;
+        $this->PageSubtitle = $PageSubtitle;
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     */
     public function render(): View|Closure|string
     {
-        return view('components.bendahara-layout');
+        return view('components.bendahara-layout', [
+            'PageTitle' => $this->PageTitle,
+            'PageSubtitle' => $this->PageSubtitle,
+        ]);
     }
 }

@@ -20,12 +20,8 @@
     display: flex;
     justify-content: space-between;
     background: var(--color-light);
-    padding: 15px;
+    padding: 15px 25px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.05);
-}
-
-.header-title{
-    padding-left: 20px;
 }
 
 .header-title h1{
@@ -39,7 +35,6 @@
 }
 
 .notif-content{
-    padding-right: 20px;
     display: flex;
     align-items: center;
     gap: 30px;
@@ -233,22 +228,6 @@ hr{
     font-size: 1.6em;
     color: var(--color-dark-grey);
     cursor: pointer;
-}
-
-.notif .notif-point{
-    display: flex;
-    position: absolute;
-    top: 32px;
-    right: 118px;
-    font-size: 0.5em;
-    font-weight: 700;
-    background-color: var(--color-light-red);
-    width: 7px;
-    height: 7px;
-    cursor: pointer;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
 }
 
 .notif-dropdown {

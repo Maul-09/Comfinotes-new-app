@@ -1,13 +1,14 @@
+@props(['PageTitle', 'PageSubtitle'])
+
 <div class="main-header">
     <div class="header-menu">
         <div class="header-title">
-            <h1>Acount Setting</h1>
-            <p>Informasi terperinci tentang keuangan komunitas Anda</p>
+            <h1>{{ $PageTitle }}</h1>
+            <p>{{ $PageSubtitle }}</p>
         </div>
         <div class="notif-content">
             <div class="notif">
                 <iconify-icon icon="pepicons-pencil:bell" class="bell icon-notif"data-action="toggle-dropdown" data-target="notif-dropdown"></iconify-icon>
-                <p class="notif-point"></p>
                 <div class="notif-dropdown" id="notif-dropdown">
                     <h2>Notification</h2>
                     <hr class="border">

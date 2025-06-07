@@ -1,5 +1,7 @@
 <x-bendahara-layout>
-<x-slot:title>Bendahara Dashboard - Comfinotes</x-slot:title>
+<x-slot:title>Simpan uang - Comfinotes</x-slot:title>
+<x-slot:PageTitle>Tambah Dana</x-slot:PageTitle>
+<x-slot:PageSubtitle>Informasi terperinci tentang keuangan komunitas Anda</x-slot:SubTitle>
 
 <div class="main-content">
     <div class="card-submission">
@@ -23,7 +25,7 @@
 
             </div>
             <div class="image-approve">
-
+                <input type="file">
             </div>
             <div class="date">
 

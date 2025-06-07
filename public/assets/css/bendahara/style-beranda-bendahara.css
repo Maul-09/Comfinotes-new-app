@@ -10,6 +10,11 @@
 
 /* ----------------------| Start Hedaer Menu |------------------------ */
 
+body{
+    max-width: 100%;
+    overflow-y: scroll;
+}
+
 .main-content{
     width: 1265px;
     height: 100%;
@@ -37,6 +42,7 @@
     height: 200px;
     padding: 15px;
     background-color: var(--color-light);
+    border: 2px solid rgba(0, 0, 0, 0.05);
     border-radius: 12px;
 }
 
@@ -126,6 +132,7 @@
     width: 850px;
     padding: 25px;
     background-color: var(--color-light);
+    border: 2px solid rgba(0, 0, 0, 0.05);
     border-radius: 8px;
 }
 
@@ -250,6 +257,7 @@ canvas {
     width: 370px;
     height: 360px;
     background: var(--color-light);
+    border: 2px solid rgba(0, 0, 0, 0.05);
     padding: 20px;
     border-radius: 10px;
 }
@@ -337,6 +345,7 @@ canvas {
     height: 350px;
     padding: 25px;
     background-color: var(--color-light);
+    border: 2px solid rgba(0, 0, 0, 0.05);
     border-radius: 8px;
 }
 

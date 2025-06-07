@@ -9,6 +9,10 @@
 }
 
 /* ----------------------| Start Hedaer Menu |------------------------ */
+body{
+    max-width: 100%;
+    overflow-y: scroll;
+}
 
 .main-content{
     width: 1265px;

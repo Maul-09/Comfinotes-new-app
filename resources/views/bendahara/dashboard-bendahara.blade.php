@@ -1,5 +1,8 @@
 <x-bendahara-layout>
     <x-slot:title>Bendahara Dashboard - Comfinotes</x-slot:title>
+    <x-slot:PageTitle>Dashboard</x-slot:PageTitle>
+    <x-slot:PageSubtitle>Informasi terperinci tentang keuangan komunitas Anda</x-slot:SubTitle>
+
     @if (session('success'))
         <script>
             document.addEventListener('DOMContentLoaded', function () {
