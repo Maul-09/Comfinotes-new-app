@@ -15,8 +15,8 @@
     <title>{{ $title }}</title>
 </head>
 <body>
-<x-alert></x-alert>
-<x-loading-screen></x-loading-screen>
+<x-alert />
+<x-loading-screen />
 
     {{ $slot }}
 

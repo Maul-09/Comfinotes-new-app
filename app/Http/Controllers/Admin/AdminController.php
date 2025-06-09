@@ -7,7 +7,7 @@ use Illuminate\Routing\Controller;
 
 class AdminController extends Controller
 {
-    public function Admin()
+    public function admin()
     {
         return view('admin.dashboard-admin');
     }

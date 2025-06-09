@@ -56,7 +56,7 @@
 
                     <div class="form-link">
                         <label class="label">Remember Me
-                            <input type="checkbox">
+                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
                             <span class="checkmark"></span>
                         </label>
                         <a href="{{ route('forgot-password') }}" class="forgot">Forgot Password</a>

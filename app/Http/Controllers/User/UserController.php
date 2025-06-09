@@ -7,7 +7,7 @@ use Illuminate\Routing\Controller;
 
 class UserController extends Controller
 {
-    public function User()
+    public function user()
     {
         return view('user.dashboard-user');
     }
