@@ -12,9 +12,9 @@ class AdminLayout extends Component
      * Create a new component instance.
      */
 
-    public string $PageTitle;
-    public string $PageSubtitle;
-    public function __construct(string $PageTitle = 'Default Title', string $PageSubtitle = 'Default Title')
+    public string $PageTitle = '';
+    public string $PageSubtitle = '';
+    public function mount(string $PageTitle = 'Default Title', string $PageSubtitle = 'Default Title')
     {
         $this->PageTitle = $PageTitle;
         $this->PageSubtitle = $PageSubtitle;

@@ -93,45 +93,33 @@
                             <tr>
                                 <th onclick="sortTable(0)">No</th>
                                 <th onclick="sortTable(1)">Foto</th>
-                                <th onclick="sortTable(2)">Akun</th>
-                                <th onclick="sortTable(3)">Jenis Pengguna</th>
-                                <th onclick="sortTable(4)">Aksi</th>
+                                <th onclick="sortTable(2)">Nama</th>
+                                <th onclick="sortTable(3)">Email</th>
+                                <th onclick="sortTable(4)">Jenis Pengguna</th>
+                                <th onclick="sortTable(5)">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td><img src="#" alt=""></td>
-                                <td>Ajis Maulana</td>
-                                <td>Admin</td>
+                            @foreach ($acountSetting as $key => $acount)
+                                <tr>
+                                <td>{{ $acount->id }}</td>
+                                <td>
+                                    @if($acount->image)
+                                    <img src="{{ asset('image/' . $acount->image) }}" alt="Acount Image" class="img-thumnail">
+                                    @else
+                                    <p>No Image</p>
+                                    @endif
+                                </td>
+                                <td>{{ $acount->name }}</td>
+                                <td>{{ $acount->email }}</td>
+                                <td>{{ $acount->role }}</td>
                                 <td>
                                     <button class="btn-delete">
                                         <iconify-icon icon="tabler:trash-filled" class="icon-card-5"></span>
                                     </button>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td><img src="#" alt=""></td>
-                                <td>Khoppid</td>
-                                <td>Bendahara</td>
-                                <td>
-                                    <button class="btn-delete">
-                                        <iconify-icon icon="tabler:trash-filled" class="icon-card-5"></span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td><img src="#" alt=""></td>
-                                <td>Egy</td>
-                                <td>Admin</td>
-                                <td>
-                                    <button class="btn-delete">
-                                        <iconify-icon icon="tabler:trash-filled" class="icon-card-5"></span>
-                                    </button>
-                                </td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

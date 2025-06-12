@@ -189,10 +189,11 @@ hr{
 }
 
 .logout-actions {
+    max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.2em;
+    gap: 1em;
 }
 
 .btn-confirm {
@@ -200,7 +201,7 @@ hr{
     color: var(--color-light);
     border: none;
     border-radius: 8px;
-    width: 200px;
+    width: 140px;
     height: 50px;
     cursor: pointer;
     font-size: 0.9em;
@@ -212,7 +213,7 @@ hr{
     border: 2px solid rgba(0, 0, 0, 0.1);
     background: var(--color-light);
     border-radius: 8px;
-    width: 200px;
+    width: 140px;
     height: 50px;
     cursor: pointer;
     font-size: 0.9em;

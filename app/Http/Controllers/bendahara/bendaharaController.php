@@ -5,10 +5,14 @@ namespace App\Http\Controllers\bendahara;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
+use function App\Helpers\path_view;
+
 class bendaharaController extends Controller
 {
     public function bendahara(){
-        return view('bendahara.dashboard-bendahara');
+
+        $view = path_view('admin.dashboard-admin');
+        return view($view);
 
     }
 
