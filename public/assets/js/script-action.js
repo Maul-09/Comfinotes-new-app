@@ -47,3 +47,40 @@ function changeMonth(offset) {
 }
 
 generateCalendar(currentMonth, currentYear);
+
+//
+
+document.addEventListener("DOMContentLoaded", function () {
+    const fileInput = document.getElementById("supporting-file");
+    const previewContainer = document.getElementById("image-preview-container");
+    const previewImage = document.getElementById("image-preview");
+    const deleteBtn = document.getElementById("delete-image");
+    const fileLabelText = document.getElementById("file-label-text");
+
+    fileInput.addEventListener("change", function () {
+        const file = this.files[0];
+
+        if (file && file.type.startsWith("image/")) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                previewImage.src = e.target.result;
+                previewContainer.style.display = "block";
+                fileLabelText.textContent = file.name;
+            };
+
+            reader.readAsDataURL(file);
+        } else {
+            previewContainer.style.display = "none";
+            previewImage.src = "";
+            fileLabelText.textContent = "Drag dan Drop di sini, Atau Pilih dari File";
+        }
+    });
+
+    deleteBtn.addEventListener("click", function () {
+        fileInput.value = "";
+        previewImage.src = "";
+        previewContainer.style.display = "none";
+        fileLabelText.textContent = "Drag dan Drop di sini, Atau Pilih dari File";
+    });
+});

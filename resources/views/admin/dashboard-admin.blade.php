@@ -133,27 +133,34 @@
             <form action="{{ route('admin.acount.add') }}" method="POST" enctype="multipart/form-data">
             @csrf
                 <div class="image-add-acount">
-                    <h2 class="img-text">Gambar</h2><strong>
-                    <input type="file" id="supporting-file" hidden>
+                    <h2 class="img-text">Gambar</h2><strong>*</strong>
+                    <input type="file" name="image" id="supporting-file" hidden>
+
                     <label for="supporting-file" class="custom-file-label">
-                        <iconify-icon icon="mdi:upload" class="icon-upload"></iconify-icon>
-                        <span id="file-label-text">Pilih file pendukung</span>
+                        <iconify-icon icon="icon-park-outline:upload-one" class="icon-upload"></iconify-icon>
+                        <span id="file-label-text">Drag dan Drop di sini, Atau Pilih dari File</span>
                     </label>
+
+                    <div id="image-preview-container" style="display: none; margin-top: 1rem;">
+                        <img id="image-preview" src="" alt="Preview" style="max-width: 200px; border-radius: 8px;">
+                        <button type="button" id="delete-image" style="display: block; margin-top: 0.5rem;">Hapus Gambar</button>
+                    </div>
                 </div>
+
                 <div class="input-content-add">
                     <label for="name">Nama<strong>*</strong></label>
-                    <input type="text" name="#" id="name" placeholder="Masukan Nama">
+                    <input type="text" name="name" id="name" placeholder="Masukan Nama">
                 </div>
                 <div class="input-content-add">
                     <label for="email">Email<strong>*</strong></label>
-                    <input type="text" name="#" id="email" placeholder="Masukan Email">
+                    <input type="text" name="email" id="email" placeholder="Masukan Email">
                 </div>
                 <div class="input-content-add">
-                    <label for="amount">Password<strong>*</strong></label>
-                    <input type="text" name="#" id="amount" placeholder="Masukan Password">
+                    <label for="password">Password<strong>*</strong></label>
+                    <input type="password" name="password" id="password" placeholder="Masukan Password minimal 8 character">
                 </div>
                 <div class="input-content-add">
-                    <label for="role">Jenis Pengguna<strong>*</strong></</label>
+                    <label for="role">Jenis Pengguna<strong>*</strong></label>
                     <div class="select-wrapper">
                         <select name="role" id="role" required class="select-role">
                             <option disabled selected>Not Selected</option>
@@ -164,8 +171,8 @@
                     </div>
                 </div>
                 <div class="button-modal">
-                    <button type="submit" class="button-reject">Buat Akun</button>
-                    <button type="button" class="button-approv">Batal</button>
+                    <button type="button" class="button-reject" data-action="close-popup" data-target="addAcount">Batal</button>
+                    <button type="submit" class="button-approv">Buat Akun</button>
                 </div>
             </form>
         </div>

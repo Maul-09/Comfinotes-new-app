@@ -15,6 +15,7 @@ class AdminModel extends Model
         'email',
         'password',
         'role',
+        'image',
         'created_at',
         'updated_at'
     ];

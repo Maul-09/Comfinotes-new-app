@@ -28,7 +28,6 @@
             <div class="delete-action">
                 <form id="deleteForm" method="POST">
                 @csrf
-                @method('GET')
                     <button type="submit" class="btn-confirm">Ya, Hapus</button>
                     <button type="button" class="btn-cancel" data-action="close-modal" data-target="modal-delete">Batal</button>
                 </form>

@@ -20,11 +20,11 @@ class AdminController extends Controller
 
     public function addAcount(Request $request){
        $validated = $request->validate([
-            'image' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg | max:2048',
-            'name' => 'required | string | max:100',
-            'email' => 'required | email | max:100',
-            'password' => 'required | min:8',
-            'role' => 'required | string |in: admin, bendahara'
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'name' => 'required|string|max:100',
+            'email' => 'required|email|max:100',
+            'password' => 'required|min:8',
+            'role' => 'required|string|in:admin,bendahara'
         ]);
 
         $acount = new AdminModel();
@@ -39,11 +39,8 @@ class AdminController extends Controller
             $acount->image = $image;
         }
 
-        if ($acount->save()) {
-            return redirect()->back()->with('success', 'Akun berhasil ditambahkan');
-        } else {
-            return redirect()->back()->with('error', 'Gagal menambahkan akun.');
-        }
+        $acount->save();
+        return redirect()->back()->with('success', 'Akun Berhasil ditambahkan');
     }
 
     public function deleteAcount($id){
@@ -52,6 +49,7 @@ class AdminController extends Controller
         if(!$acount){
             return redirect()->back()->with('error', 'Data tidak ditemukan.');
         }
+
         $acount->delete();
 
         return redirect()->back()->with('success', 'Akun berhasil di hapus');
