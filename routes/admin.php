@@ -10,7 +10,7 @@ Route::middleware(['web', 'auth', 'role:admin'])->group(function(){
 
     // Action
     Route::get('/admin/delete/{id}', [AdminController::class, 'deleteAcount'])->name('admin.delete');
-    Route::get('/add-acount', [AdminController::class, 'addAcount'])->name('add-acount');
+    Route::post('/admin/acount/add', [AdminController::class, 'addAcount'])->name('admin.acount.add');
 });
 
 ?>

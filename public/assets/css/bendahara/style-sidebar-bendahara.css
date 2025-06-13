@@ -325,6 +325,36 @@ hr{
     padding: 10px;
 }
 
+.custom-file-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 1rem;
+  border: 2px dashed #bbb;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  color: #444;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.custom-file-label:hover {
+  background-color: #eee;
+  border-color: #888;
+}
+
+.icon-upload {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+#file-label-text {
+  font-weight: 500;
+}
+
 .img-text{
     display: inline;
     font-size: 0.95em;

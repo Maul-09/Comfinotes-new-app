@@ -23,15 +23,15 @@ class AdminController extends Controller
             'image' => 'nullable | image | mimes:jpeg,png,jpg,gif,svg | max:2048',
             'name' => 'required | string | max:100',
             'email' => 'required | email | max:100',
-            'password' => 'required | min:8 | confirmed',
-            'role' => 'required | string |in: admin, bendahara, user'
+            'password' => 'required | min:8',
+            'role' => 'required | string |in: admin, bendahara'
         ]);
 
         $acount = new AdminModel();
         $acount->name = $validated['name'];
         $acount->email = $validated['email'];
         $acount->role = $validated['role'];
-        $acount->password = Hash::make($validated('password'));
+        $acount->password = Hash::make($validated['password']);
 
         if($request->hasFile('image')){
             $image = time() . "." . $request->image->extension();
@@ -39,8 +39,11 @@ class AdminController extends Controller
             $acount->image = $image;
         }
 
-        $acount->save();
-        return redirect()->back()->with('success', 'Akun berhasil ditambahkan');
+        if ($acount->save()) {
+            return redirect()->back()->with('success', 'Akun berhasil ditambahkan');
+        } else {
+            return redirect()->back()->with('error', 'Gagal menambahkan akun.');
+        }
     }
 
     public function deleteAcount($id){

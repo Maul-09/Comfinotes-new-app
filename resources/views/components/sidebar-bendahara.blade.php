@@ -81,7 +81,11 @@
         <div class="image-aproof">
             <h2 class="img-text">Supporting Files</h2><strong>*</strong><span>Optional</span>
             <p class="img-text-2">Such as receipts, photos of event plans, etc.</p>
-            <img src="#" alt="Proof Not Detected" class="image-1">
+            <input type="file" id="supporting-file" hidden>
+            <label for="supporting-file" class="custom-file-label">
+                <iconify-icon icon="mdi:upload" class="icon-upload"></iconify-icon>
+                <span id="file-label-text">Pilih file pendukung</span>
+            </label>
         </div>
         <div class="input-content">
             <label for="event">Event Name<strong>*</strong></label>

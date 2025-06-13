@@ -128,45 +128,46 @@
     </div>
 
     <div class="modal-add" id="addAcount">
-    <div class="modal-content">
-        <h2>Tambah Akun</h2>
-        <form action="#" method="POST" enctype="multipart/form-data">
-        @csrf
-
-        <div class="form-group">
-            <label for="name">Nama</label>
-            <input type="text" name="name" id="name" required>
+        <div class="modal-content-add">
+            <h2>Tambah Akun</h2>
+            <form action="{{ route('admin.acount.add') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+                <div class="image-add-acount">
+                    <h2 class="img-text">Gambar</h2><strong>
+                    <input type="file" id="supporting-file" hidden>
+                    <label for="supporting-file" class="custom-file-label">
+                        <iconify-icon icon="mdi:upload" class="icon-upload"></iconify-icon>
+                        <span id="file-label-text">Pilih file pendukung</span>
+                    </label>
+                </div>
+                <div class="input-content-add">
+                    <label for="name">Nama<strong>*</strong></label>
+                    <input type="text" name="#" id="name" placeholder="Masukan Nama">
+                </div>
+                <div class="input-content-add">
+                    <label for="email">Email<strong>*</strong></label>
+                    <input type="text" name="#" id="email" placeholder="Masukan Email">
+                </div>
+                <div class="input-content-add">
+                    <label for="amount">Password<strong>*</strong></label>
+                    <input type="text" name="#" id="amount" placeholder="Masukan Password">
+                </div>
+                <div class="input-content-add">
+                    <label for="role">Jenis Pengguna<strong>*</strong></</label>
+                    <div class="select-wrapper">
+                        <select name="role" id="role" required class="select-role">
+                            <option disabled selected>Not Selected</option>
+                            <option value="admin">Admin</option>
+                            <option value="bendahara">Bendahara</option>
+                        </select>
+                        <iconify-icon icon="eva:arrow-down-fill" class="icon-select"></iconify-icon>
+                    </div>
+                </div>
+                <div class="button-modal">
+                    <button type="submit" class="button-reject">Buat Akun</button>
+                    <button type="button" class="button-approv">Batal</button>
+                </div>
+            </form>
         </div>
-
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" required>
-        </div>
-
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" required>
-        </div>
-
-        <div class="form-group">
-            <label for="role">Role</label>
-            <select name="role" id="role" required>
-            <option value="admin">Admin</option>
-            <option value="user">User</option>
-            <!-- Tambah role sesuai kebutuhan -->
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="image">Foto Profil</label>
-            <input type="file" name="image" id="image" accept="image/*">
-        </div>
-
-        <div class="form-actions">
-            <button type="submit" class="btn-confirm">Simpan</button>
-            <button type="button" class="btn-cancel" data-action="close-popup" data-target="addAcount">Batal</button>
-        </div>
-        </form>
-    </div>
     </div>
 </x-admin-layout>
