@@ -82,7 +82,7 @@
                         <p>Lihat daftar semua akun admin</p>
                     </div>
                     <div class="head-button">
-                        <button class="add-acount">
+                        <button class="add-acount" id="addAcountButton" onclick="toggleAcount()">
                             akun baru <iconify-icon icon="ic:outline-plus" class="icon-card-5"></span>
                         </button>
                     </div>
@@ -114,7 +114,7 @@
                                 <td>{{ $acount->email }}</td>
                                 <td>{{ $acount->role }}</td>
                                 <td>
-                                    <button class="btn-delete">
+                                    <button class="btn-delete" data-action="confirm-delete" data-target="modal-delete" data-id="{{ $acount->id }}" data-url="{{ route('admin.delete', $acount->id) }}">
                                         <iconify-icon icon="tabler:trash-filled" class="icon-card-5"></span>
                                     </button>
                                 </td>
@@ -125,5 +125,48 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="modal-add" id="addAcount">
+    <div class="modal-content">
+        <h2>Tambah Akun</h2>
+        <form action="#" method="POST" enctype="multipart/form-data">
+        @csrf
+
+        <div class="form-group">
+            <label for="name">Nama</label>
+            <input type="text" name="name" id="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+
+        <div class="form-group">
+            <label for="role">Role</label>
+            <select name="role" id="role" required>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+            <!-- Tambah role sesuai kebutuhan -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Foto Profil</label>
+            <input type="file" name="image" id="image" accept="image/*">
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-confirm">Simpan</button>
+            <button type="button" class="btn-cancel" data-action="close-popup" data-target="addAcount">Batal</button>
+        </div>
+        </form>
+    </div>
     </div>
 </x-admin-layout>

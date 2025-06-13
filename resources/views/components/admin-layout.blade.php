@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('assets/css/aset/color-palete.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/aset/alert.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/aset/modal.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/admin/style-beranda-admin.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/admin/style-sidebar-admin.css') }}">
     <link rel="icon" href="{{ asset('assets/image/logo-1.png') }}">
@@ -13,6 +14,7 @@
 <body>
 <x-sidebar-admin :PageTitle="$PageTitle" :PageSubtitle="$PageSubtitle"/>
 <x-alert />
+<x-modal-content />
 
     {{ $slot }}
 

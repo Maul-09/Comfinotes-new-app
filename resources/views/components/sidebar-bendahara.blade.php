@@ -74,21 +74,7 @@
 
 <!-- Modal content -->
 
-<div class="logout-notification" id="logout-notification" style="display: none;">
-    <div class="logout-content">
-        <h2>Sign Out?</h2>
-        <p>Do you want to exit the app now?</p>
-        <div class="logout-actions">
-            <button class="btn-cancel" data-action="cancel-logout">Cancel</button>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
-                @csrf
-                <button type="submit" class="btn-confirm">Sign Out</button>
-            </form>
-        </div>
-    </div>
-</div>
-
-<div id="modal-notifications" class="modal">
+<div id="modal-notifications" class="modal-notif">
     <div class="modal-content">
         <span class="close-button" data-action="close-modal" data-target="modal-notifications">&times;</span>
         <h1 class="title-modal">Divisi Logistik</h1>

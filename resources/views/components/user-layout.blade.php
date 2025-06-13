@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('assets/css/aset/color-palete.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/aset/alert.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/aset/modal.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/user/style-beranda-user.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/user/style-sidebar-user.css') }}">
     <link rel="icon" href="{{ asset('assets/image/logo-1.png') }}">
     <title>{{ $title }}</title>
 </head>
 <body>
-<x-sidebar-user></x-sidebar-user>
-<x-alert></x-alert>
+<x-sidebar-user />
+<x-alert />
+<x-modal-content />
 
     {{ $slot }}
 

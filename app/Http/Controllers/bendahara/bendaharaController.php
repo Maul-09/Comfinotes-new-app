@@ -11,7 +11,7 @@ class bendaharaController extends Controller
 {
     public function bendahara(){
 
-        $view = path_view('admin.dashboard-admin');
+        $view = path_view('bendahara.dashboard-bendahara');
         return view($view);
 
     }

@@ -40,6 +40,17 @@ class AdminController extends Controller
         }
 
         $acount->save();
-        return redirect()->back()->with('succes', 'Akun berhasil ditambahkan');
+        return redirect()->back()->with('success', 'Akun berhasil ditambahkan');
+    }
+
+    public function deleteAcount($id){
+        $acount = AdminModel::find( $id);
+
+        if(!$acount){
+            return redirect()->back()->with('error', 'Data tidak ditemukan.');
+        }
+        $acount->delete();
+
+        return redirect()->back()->with('success', 'Akun berhasil di hapus');
     }
 }

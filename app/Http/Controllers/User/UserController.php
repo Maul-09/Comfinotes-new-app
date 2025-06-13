@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     public function user()
     {
-        $view = path_view('admin.dashboard-admin');
+        $view = path_view('user.dashboard-user');
         return view($view);
     }
 }

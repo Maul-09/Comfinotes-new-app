@@ -67,42 +67,10 @@
 
 <!-- Modal content -->
 
-<div class="logout-notification" id="logout-notification" style="display: none;">
-    <div class="logout-content">
-        <h2>Sign Out?</h2>
-        <p>Do you want to exit the app now?</p>
-        <div class="logout-actions">
-            <button class="btn-cancel" data-action="cancel-logout">Cancel</button>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
-                @csrf
-                <button type="submit" class="btn-confirm">Sign Out</button>
-            </form>
-        </div>
-    </div>
-</div>
-
-<div id="modal-notifications" class="modal">
+<div id="modal-notifications" class="modal-notif">
     <div class="modal-content">
         <span class="close-button" data-action="close-modal" data-target="modal-notifications">&times;</span>
-        <h1 class="title-modal">Divisi Logistik</h1>
-        <div class="image-aproof">
-            <h2 class="img-text">Supporting Files</h2><strong>*</strong><span>Optional</span>
-            <p class="img-text-2">Such as receipts, photos of event plans, etc.</p>
-            <img src="#" alt="Proof Not Detected" class="image-1">
-        </div>
-        <div class="input-content">
-            <label for="event">Event Name<strong>*</strong></label>
-            <input type="text" name="#" id="event" placeholder="Contoh : Musyawarah">
-        </div>
-        <div class="input-content">
-            <label for="amount">Amount<strong>*</strong></label>
-            <input type="text" name="#" id="amount" placeholder="Contoh : 2.450.000">
-        </div>
-        <div class="button-modal">
-            <button type="button" class="button-reject">Cancelled</button>
-            <button type="button" class="button-approv">Approved</button>
-        </div>
-        <a href="#" class="link-info">See Details</a>
+        <h1 class="title-modal">Pengajuan Anda masih di proses</h1>
     </div>
 </div>
 

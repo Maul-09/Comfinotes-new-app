@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     window.addEventListener("click", function (e) {
-        document.querySelectorAll(".modal").forEach(modal => {
+        document.querySelectorAll(".modal-notif, .modal-acount").forEach(modal => {
             if (e.target === modal) {
                 modal.style.display = "none";
             }
