@@ -6,6 +6,8 @@ use App\Models\Admin\AdminModel;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 use function App\Helpers\path_view;
 
@@ -25,6 +27,15 @@ class AdminController extends Controller
             'email' => 'required|email|max:100',
             'password' => 'required|min:8',
             'role' => 'required|string|in:admin,bendahara'
+        ],
+        [
+            'name.required' => 'Nama wajib di isi',
+            'name.max' => 'Nama tidak boleh lebih dari 100 charachter',
+            'email.required' => 'Email wajib di isi',
+            'email.max' => 'Email tidak boleh lebih dari 100 charachter',
+            'password.required' => 'Password wajib di isi',
+            'password.min' => 'password tidak boleh kurang dari 8 character'
+
         ]);
 
         $acount = new AdminModel();
@@ -35,7 +46,7 @@ class AdminController extends Controller
 
         if($request->hasFile('image')){
             $image = time() . "." . $request->image->extension();
-            $request->image->move(public_path('image/'), $image);
+            $request->image->move(public_path('profile/'), $image);
             $acount->image = $image;
         }
 
@@ -46,12 +57,14 @@ class AdminController extends Controller
     public function deleteAcount($id){
         $acount = AdminModel::find( $id);
 
-        if(!$acount){
-            return redirect()->back()->with('error', 'Data tidak ditemukan.');
+        $deletAcount = $acount->name;
+
+        if($acount->image && File::exists(public_path('profile' . $acount->image))){
+             File::delete(public_path('profile/' . $acount->image));
         }
 
         $acount->delete();
 
-        return redirect()->back()->with('success', 'Akun berhasil di hapus');
+        return redirect()->back()->with('success', 'Akun ' . $deletAcount . ' berhasil di hapus');
     }
 }

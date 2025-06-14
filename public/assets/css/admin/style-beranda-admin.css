@@ -236,6 +236,13 @@ body{
     text-align: center;
 }
 
+.style-table .img-thumnail{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 .style-table tbody tr:nth-child(even) {
     background-color: #f9f9f9;
 }
@@ -262,10 +269,6 @@ body{
     background: #c61b31;
 }
 /* ----------------------| End Main Content |------------------------ */
-
-.modal-add {
-
-}
 
 .modal-add {
     display: none;
@@ -318,39 +321,47 @@ body{
 }
 
 .image-add-acount {
-    display: inline-block;
+    display: flex;
     width: 100%;
     padding: 10px;
     position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.image-add-acount label.custom-file-label {
+.custom-file-label {
+    width: 100px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px dashed #ccc;
-    padding: 20px;
-    cursor: pointer;
-    border-radius: 10px;
-    text-align: center;
+    flex-direction: column;
+    gap: 12px;
+    padding: 1rem;
+    border: 2px dashed var(--color-blue-light);
+    border-radius: 50%;
     background-color: #f9f9f9;
-    transition: border-color 0.3s ease;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 1rem;
 }
 
-.image-add-acount label.custom-file-label:hover {
-    border-color: #007bff;
+.custom-file-label:hover {
+    background-color: #eee;
+    border-color: #888;
 }
 
-.image-add-acount .icon-upload {
-    font-size: 24px;
-    margin-right: 8px;
-    color: #007bff;
+.icon-upload {
+    font-size: 2rem;
+    color: var(--color-blue-light);
 }
 
-#file-label-text {
-    font-size: 14px;
-    color: #555;
-}
+/* #file-label-text {
+    font-weight: 500;
+    font-size: 0.75rem;
+    color: var(--color-blue-light);
+} */
 
 #image-preview-container {
     display: none;
@@ -379,38 +390,6 @@ body{
 
 #delete-image:hover {
     background-color: #c82333;
-}
-
-
-.custom-file-label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 12px;
-    padding: 1rem;
-    border: 2px dashed var(--color-blue-light);
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    cursor: pointer;
-    transition: 0.3s ease;
-    margin-top: 1rem;
-}
-
-.custom-file-label:hover {
-    background-color: #eee;
-    border-color: #888;
-}
-
-.icon-upload {
-    font-size: 2rem;
-    color: var(--color-blue-light);
-}
-
-#file-label-text {
-    font-weight: 500;
-    font-size: 0.75rem;
-    color: var(--color-blue-light);
 }
 
 .img-text{
@@ -450,6 +429,11 @@ body{
     flex-direction: column;
     padding: 10px;
     gap: 10px;
+}
+
+.input-content-add .pesan-error{
+    color: var(--color-light-red);
+    font-size: 0.9em;
 }
 
 .modal-content-add .input-content-add iconify-icon{

@@ -11,6 +11,17 @@
         </script>
     @endif
 
+    @if ($errors->any())
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                const modal = document.getElementById('addAcount');
+                if (modal) {
+                    modal.classList.add('active');
+                }
+            });
+        </script>
+    @endif
+
     <div class="main-content">
         <div class="card-content">
             <div class="card-acount">
@@ -102,10 +113,10 @@
                         <tbody>
                             @foreach ($acountSetting as $key => $acount)
                                 <tr>
-                                <td>{{ $acount->id }}</td>
+                                <td>{{ $key + 1 }}</td>
                                 <td>
                                     @if($acount->image)
-                                    <img src="{{ asset('image/' . $acount->image) }}" alt="Acount Image" class="img-thumnail">
+                                    <img src="{{ asset('profile/' . $acount->image) }}" alt="Acount Image" class="img-thumnail">
                                     @else
                                     <p>No Image</p>
                                     @endif
@@ -133,31 +144,40 @@
             <form action="{{ route('admin.acount.add') }}" method="POST" enctype="multipart/form-data">
             @csrf
                 <div class="image-add-acount">
-                    <h2 class="img-text">Gambar</h2><strong>*</strong>
+                    <h2 class="img-text">Upload Gambar</h2>
                     <input type="file" name="image" id="supporting-file" hidden>
 
                     <label for="supporting-file" class="custom-file-label">
                         <iconify-icon icon="icon-park-outline:upload-one" class="icon-upload"></iconify-icon>
-                        <span id="file-label-text">Drag dan Drop di sini, Atau Pilih dari File</span>
+                        {{-- <span id="file-label-text">upload gambar</span> --}}
                     </label>
 
-                    <div id="image-preview-container" style="display: none; margin-top: 1rem;">
-                        <img id="image-preview" src="" alt="Preview" style="max-width: 200px; border-radius: 8px;">
-                        <button type="button" id="delete-image" style="display: block; margin-top: 0.5rem;">Hapus Gambar</button>
+                    <div id="image-preview-container">
+                        <img id="image-preview" src="" alt="Preview">
+                        <button type="button" id="delete-image">Hapus Gambar</button>
                     </div>
                 </div>
 
                 <div class="input-content-add">
                     <label for="name">Nama<strong>*</strong></label>
                     <input type="text" name="name" id="name" placeholder="Masukan Nama">
+                    @error('name')
+                        <p class="pesan-error">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="input-content-add">
                     <label for="email">Email<strong>*</strong></label>
                     <input type="text" name="email" id="email" placeholder="Masukan Email">
+                    @error('email')
+                        <p class="pesan-error">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="input-content-add">
                     <label for="password">Password<strong>*</strong></label>
-                    <input type="password" name="password" id="password" placeholder="Masukan Password minimal 8 character">
+                    <input type="password" name="password" id="password" placeholder="Masukan Password">
+                    @error('password')
+                        <p class="pesan-error">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="input-content-add">
                     <label for="role">Jenis Pengguna<strong>*</strong></label>

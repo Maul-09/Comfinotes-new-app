@@ -95,8 +95,12 @@
                 <div class="calendar-header">
                     <h3 id="month-year"></h3>
                     <div class="button-previous">
-                        <button onclick="changeMonth(-1)"><iconify-icon icon="fe:arrow-left" class="icon-calender"></button>
-                        <button onclick="changeMonth(1)"><iconify-icon icon="fe:arrow-right" class="icon-calender"></button>
+                        <button onclick="changeMonth(-1)">
+                            <iconify-icon icon="fe:arrow-left" class="icon-calender"></iconify-icon>
+                        </button>
+                        <button onclick="changeMonth(1)">
+                            <iconify-icon icon="fe:arrow-right" class="icon-calender"></iconify-icon>
+                        </button>
                     </div>
                 </div>
                 <div class="weekdays">
