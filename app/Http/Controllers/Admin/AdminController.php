@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Admin\AdminModel;
+use App\Models\User\UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -15,9 +16,10 @@ class AdminController extends Controller
 {
     public function admin()
     {
-        $acountSetting = AdminModel::all();
+        $acountSetting = AdminModel::whereIn('role', ['bendahara', 'admin'])->get();
+        $departemens = UserModel::all();
         $view = path_view('admin.dashboard-admin');
-        return view($view, compact('acountSetting'));
+        return view($view, compact('acountSetting', 'departemens'));
     }
 
     public function addAcount(Request $request){
@@ -59,12 +61,11 @@ class AdminController extends Controller
 
         $deletAcount = $acount->name;
 
-        if($acount->image && File::exists(public_path('profile' . $acount->image))){
+        if($acount->image && File::exists(public_path('profile/' . $acount->image))){
              File::delete(public_path('profile/' . $acount->image));
         }
 
         $acount->delete();
-
         return redirect()->back()->with('success', 'Akun ' . $deletAcount . ' berhasil di hapus');
     }
 }

@@ -12,7 +12,6 @@ const monthNames = [
         const daysContainer = document.getElementById("calendar-days");
 
         if (!monthYearElement || !daysContainer) {
-            console.error("Elemen dengan ID 'month-year' atau 'calendar-days' tidak ditemukan di DOM.");
             return;
         }
 

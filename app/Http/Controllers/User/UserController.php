@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Models\User\UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 

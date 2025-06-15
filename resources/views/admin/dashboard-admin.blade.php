@@ -37,50 +37,23 @@
                     </div>
                 </div>
                 <div class="main-card">
-                    <div class="card">
-                        <div class="card-image-head">
-                            <img src="{{ asset('assets/image/Profile _ Group.png') }}" alt="" class="card-image">
+                    @foreach ($departemens as $index => $divisi )
+                        <div class="card">
+                            <div class="card-image-head">
+                                @if ($divisi->image)
+                                    <img src="{{ asset('assets/image/Profile _ Group.png') }}" alt="" class="card-image">
+                                @else
+                                    <p>No Image</p>
+                                @endif
+                            </div>
+                            <div class="card-text">
+                                <p class="label-card">Dibuat: 27 Januari 2025</p>
+                                <h3>{{ $divisi->name_divisi }}</h3>
+                                <h4>IDR 4.500.000</h4>
+                            </div>
+                            <button class="card-button">Lihat Group</button>
                         </div>
-                        <div class="card-text">
-                            <p class="label-card">Dibuat: 27 Januari 2025</p>
-                            <h3>Divisi MLBB</h3>
-                            <h4>IDR 4.500.000</h4>
-                        </div>
-                        <button class="card-button">Lihat Group</button>
-                    </div>
-                    <div class="card">
-                        <div class="card-image-head">
-                            <img src="{{ asset('assets/image/Profile _ Group_2.png') }}" alt="" class="card-image">
-                        </div>
-                        <div class="card-text">
-                            <p class="label-card">Dibuat: 27 Januari 2025</p>
-                            <h3>Divisi Logistik</h3>
-                            <h4>IDR 4.500.000</h4>
-                        </div>
-                        <button class="card-button">Lihat Group</button>
-                    </div>
-                    <div class="card">
-                        <div class="card-image-head">
-                            <img src="{{ asset('assets/image/Profile _ Group_2.png') }}" alt="" class="card-image">
-                        </div>
-                        <div class="card-text">
-                            <p class="label-card">Dibuat: 27 Januari 2025</p>
-                            <h3>Divisi Acara</h3>
-                            <h4>IDR 4.500.000</h4>
-                        </div>
-                        <button class="card-button">Lihat Group</button>
-                    </div>
-                    <div class="card">
-                        <div class="card-image-head">
-                            <img src="{{ asset('assets/image/Profile _ Group_3.png') }}" alt="" class="card-image">
-                        </div>
-                        <div class="card-text">
-                            <p class="label-card">Dibuat: 27 Januari 2025</p>
-                            <h3>Divisi PDD</h3>
-                            <h4>IDR 4.500.000</h4>
-                        </div>
-                        <button class="card-button">Lihat Group</button>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
