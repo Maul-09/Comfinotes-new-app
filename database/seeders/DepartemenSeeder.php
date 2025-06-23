@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\User\DepartemenModel;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\User\UserModel;
 
 class DepartemenSeeder extends Seeder
 {
@@ -13,22 +13,22 @@ class DepartemenSeeder extends Seeder
      */
     public function run(): void
     {
-        UserModel::create([
+        DepartemenModel::create([
             'image_divisi' => '',
             'name_divisi' => 'Eksternal'
         ]);
 
-        UserModel::create([
+        DepartemenModel::create([
             'image_divisi' => '',
             'name_divisi' => 'Acara'
         ]);
 
-        UserModel::create([
+        DepartemenModel::create([
             'image_divisi' => '',
             'name_divisi' => 'PDD'
         ]);
 
-        UserModel::create([
+        DepartemenModel::create([
             'image_divisi' => '',
             'name_divisi' => 'Internal'
         ]);

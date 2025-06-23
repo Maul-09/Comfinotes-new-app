@@ -16,7 +16,7 @@
                         <img src="#" alt="">
                     </div>
                     <div class="wallet-head">
-                        <p class="text-wallet">Divisi Mlbb</p>
+                        <p class="text-wallet">{{ $divisi->name_divisi }}</p>
                         <div class="card-bg-icon">
                             <iconify-icon icon="uit:wallet" class="icon-card-2"></iconify-icon>
                         </div>
