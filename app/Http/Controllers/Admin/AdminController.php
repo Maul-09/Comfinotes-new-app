@@ -29,6 +29,11 @@ class AdminController extends Controller
         return view($view, compact('acountSetting', 'departemens'));
     }
 
+    public function detail(){
+        $view = path_view('admin.detail-user');
+        return view($view);
+    }
+
     public function addAcount(Request $request){
        $validated = $request->validate([
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',

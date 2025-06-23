@@ -51,7 +51,7 @@
                                 <h3>{{ $divisi->name_divisi }}</h3>
                                 <h4>IDR 4.500.000</h4>
                             </div>
-                            <button class="card-button">Lihat Group</button>
+                            <a href="{{  route('detail-user') }}" class="card-button">Lihat Group</a>
                         </div>
                     @endforeach
                 </div>
