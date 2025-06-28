@@ -2,6 +2,7 @@
 
 namespace App\Models\Admin;
 
+use App\Models\User\UserModel;
 use Illuminate\Database\Eloquent\Model;
 
 class AdminModel extends Model
@@ -19,4 +20,8 @@ class AdminModel extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function group(){
+        return $this->belongsTo(UserModel::class, 'divisi_id');
+    }
 }
