@@ -4,8 +4,10 @@ namespace App\Models\Admin;
 
 use App\Models\User\UserModel;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Auth\AuthModel;
+use Illuminate\Database\Eloquent\Builder;
 
-class AdminModel extends Model
+class AdminModel extends AuthModel
 {
     protected $table = 'users';
     protected $primaryKey = 'id';
@@ -24,4 +26,12 @@ class AdminModel extends Model
     public function group(){
         return $this->belongsTo(UserModel::class, 'divisi_id');
     }
+    protected static function booted()
+    {
+        static::addGlobalScope('admin', function (Builder $query){
+            $query->where('role', 'admin');
+        });
+    }
 }
+
+

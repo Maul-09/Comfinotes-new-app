@@ -2,17 +2,17 @@
 
 namespace App\Models\User;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Auth\AuthModel;
+use Illuminate\Database\Eloquent\Builder;
 
-class UserModel extends Model
+class UserModel extends AuthModel
 {
-    protected $table = 'departemens';
-    protected $primaryKey = 'id';
-    public $timestamps = true;
-    protected $fillable = [
-        'image',
-        'name_divisi',
-        'created_at',
-        'updated_at'
-    ];
+    protected $table = 'users';
+    protected static function booted()
+    {
+        static::addGlobalScope('user', function(Builder $query){
+            $query->where('role', 'user');
+        });
+    }
+
 }

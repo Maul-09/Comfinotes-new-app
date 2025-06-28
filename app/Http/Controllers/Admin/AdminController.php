@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Admin\AdminModel;
+use App\Models\Bendahara\BendaharaModel;
+use App\Models\User\DepartemenModel;
 use App\Models\User\UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -16,10 +18,20 @@ class AdminController extends Controller
 {
     public function admin()
     {
-        $acountSetting = AdminModel::whereIn('role', ['bendahara', 'admin'])->get();
-        $departemens = UserModel::all();
+        $Admin = AdminModel::all();
+        $Bendahara = BendaharaModel::all();
+        $User = UserModel::all();
+
+
+        $acountSetting = $Admin->concat($Bendahara);
+        $departemens = DepartemenModel::all();
         $view = path_view('admin.dashboard-admin');
         return view($view, compact('acountSetting', 'departemens'));
+    }
+
+    public function detail(){
+        $view = path_view('admin.detail-user');
+        return view($view);
     }
 
     public function addAcount(Request $request){

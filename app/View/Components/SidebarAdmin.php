@@ -4,16 +4,16 @@ namespace App\View\Components;
 
 use Closure;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\Component;
 
 class SidebarAdmin extends Component
 {
-    /**
-     * Create a new component instance.
-     */
+    public $admin;
     public function __construct()
     {
-        //
+
+        $this->admin = Auth::user();
     }
 
     /**

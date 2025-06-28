@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\bendahara;
 
+use App\Models\Bendahara\BendaharaModel;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -11,8 +12,9 @@ class bendaharaController extends Controller
 {
     public function bendahara(){
 
+        $Bendahara = BendaharaModel::all();
         $view = path_view('bendahara.dashboard-bendahara');
-        return view($view);
+        return view($view, compact('Bendahara'));
 
     }
 

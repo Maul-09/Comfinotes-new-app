@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/aset/alert.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/aset/modal.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/admin/style-beranda-admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/admin/style-detail-user.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/admin/style-sidebar-admin.css') }}">
     <link rel="icon" href="{{ asset('assets/image/logo-1.png') }}">
     <title>{{ $title }}</title>

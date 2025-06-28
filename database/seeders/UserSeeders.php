@@ -1,8 +1,9 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\Admin\AdminModel;
-use App\Models\User\UserModel;
+
+use App\Models\Auth\AuthModel;
+use App\Models\User\DepartemenModel;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -17,10 +18,7 @@ class UserSeeders extends Seeder
 
     {
 
-        $divisi1 = UserModel::create(['name_divisi' => 'PDD']);
-        $divisi2 = UserModel::create(['name_divisi' => 'Internal']);
-
-        AdminModel::create([
+        AuthModel::create([
             'image' => '',
             'name' => 'Admin',
             'email' => 'admin123@gmail.com',
@@ -29,25 +27,25 @@ class UserSeeders extends Seeder
             'role' => 'admin',
         ]);
 
-        AdminModel::create([
+        AuthModel::create([
             'image' => '',
             'name' => 'Divisi PDD',
             'email' => 'user1@gmail.com',
             'password' => Hash::make('password'),
-            'divisi_id' => $divisi1->id,
+            'divisi_id' => 1,
             'role' => 'user',
         ]);
 
-        AdminModel::create([
+        AuthModel::create([
             'image' => '',
             'name' => 'Divisi Internal',
             'email' => 'user2@gmail.com',
             'password' => Hash::make('password'),
-            'divisi_id' => $divisi2->id,
+            'divisi_id' => 2,
             'role' => 'user',
         ]);
 
-        AdminModel::create([
+        AuthModel::create([
             'image' => '',
             'name' => 'Bendahara',
             'email' => 'bendahara123@gmail.com',
@@ -56,7 +54,7 @@ class UserSeeders extends Seeder
             'role' => 'bendahara',
         ]);
 
-        AdminModel::create([
+        AuthModel::create([
             'image' => '',
             'name' => 'Azis',
             'email' => 'bendahara@gmail.com',
@@ -65,7 +63,7 @@ class UserSeeders extends Seeder
             'role' => 'bendahara',
         ]);
 
-        AdminModel::create([
+        AuthModel::create([
             'image' => '',
             'name' => 'Khopid',
             'email' => 'admin@gmail.com',

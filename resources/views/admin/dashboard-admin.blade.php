@@ -43,7 +43,7 @@
                                 @if ($divisi->image)
                                     <img src="{{ asset('assets/image/Profile _ Group.png') }}" alt="" class="card-image">
                                 @else
-                                    <p>No Image</p>
+                                    <img src="{{ asset('assets/image/Profile _ Group_3.png') }}" alt="Default Image" class="card-image">
                                 @endif
                             </div>
                             <div class="card-text">
@@ -51,7 +51,9 @@
                                 <h3>{{ $divisi->name_divisi }}</h3>
                                 <h4>IDR 4.500.000</h4>
                             </div>
-                            <button class="card-button">Lihat Group</button>
+                            <div class="card-button">
+                                <a href="{{  route('detail-user') }}" class="btn-detail">Lihat Group</a>
+                            </div>
                         </div>
                     @endforeach
                 </div>
@@ -91,7 +93,7 @@
                                     @if($acount->image)
                                     <img src="{{ asset('profile/' . $acount->image) }}" alt="Acount Image" class="img-thumnail">
                                     @else
-                                    <p>No Image</p>
+                                    <img src="{{ asset('assets/image/profile-1.jpg') }}" alt="gambar default" class="img-thumnail">
                                     @endif
                                 </td>
                                 <td>{{ $acount->name }}</td>

@@ -176,6 +176,8 @@ body{
 .main-card .card .card-button{
     width: 100%;
     padding: 10px;
+    display: flex;
+    justify-content: center;
     cursor: pointer;
     background: var(--color-light);
     font-size: 0.8em;
@@ -185,6 +187,11 @@ body{
     border: 1px solid var(--color-blue-light);
 }
 
+.card-button a{
+    font-size: 1.2em;
+    color: var(--color-blue-light);
+    text-decoration: none;
+}
 /* ------------------------------------------------ */
 
 .table-acount{
