@@ -32,7 +32,7 @@ class AuthController extends Controller
             ])->withInput();
         }
 
-        if (!Hash::check($credentials['password'], $user->password)) {
+        if (!$user || !Hash::check($credentials['password'], (string) $user->password)) {
             return back()->withErrors([
                 'password' => 'Password yang Anda masukan salah!',
             ])->withInput();
@@ -42,7 +42,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
             $role = Auth::user()->role;
 
-            session()->flash('success', 'Halo ' . Auth::user()->name . ', selamat datang kembali!');
+            session()->flash('success', 'Halo ' . Auth::user()->username . ', selamat Bekerja!');
 
             return match ($role) {
                 'admin' => redirect()->route('dashboard-admin'),
@@ -66,7 +66,6 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         session()->flash('success', 'Anda berhasil logout!');
-
         return redirect()->route('login');
     }
 }

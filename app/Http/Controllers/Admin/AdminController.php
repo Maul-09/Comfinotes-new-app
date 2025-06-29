@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Admin\AdminModel;
+use App\Models\Auth\AuthModel;
 use App\Models\Bendahara\BendaharaModel;
 use App\Models\User\DepartemenModel;
 use App\Models\User\UserModel;
@@ -20,8 +21,6 @@ class AdminController extends Controller
     {
         $Admin = AdminModel::all();
         $Bendahara = BendaharaModel::all();
-        $User = UserModel::all();
-
 
         $acountSetting = $Admin->concat($Bendahara);
         $departemens = DepartemenModel::all();
@@ -29,22 +28,24 @@ class AdminController extends Controller
         return view($view, compact('acountSetting', 'departemens'));
     }
 
-    public function detail(){
+    public function detail($key_id){
+        $departemens = DepartemenModel::where('name_divisi', $key_id)->firstOrFail();
+        $data = $departemens->users;
         $view = path_view('admin.detail-user');
-        return view($view);
+        return view($view, compact('departemens', 'data'));
     }
 
     public function addAcount(Request $request){
        $validated = $request->validate([
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'name' => 'required|string|max:100',
+            'username' => 'required|string|max:100',
             'email' => 'required|email|max:100',
             'password' => 'required|min:8',
             'role' => 'required|string|in:admin,bendahara'
         ],
         [
-            'name.required' => 'Nama wajib di isi',
-            'name.max' => 'Nama tidak boleh lebih dari 100 charachter',
+            'username.required' => 'Nama wajib di isi',
+            'username.max' => 'Nama tidak boleh lebih dari 100 charachter',
             'email.required' => 'Email wajib di isi',
             'email.max' => 'Email tidak boleh lebih dari 100 charachter',
             'password.required' => 'Password wajib di isi',
@@ -52,8 +53,8 @@ class AdminController extends Controller
 
         ]);
 
-        $acount = new AdminModel();
-        $acount->name = $validated['name'];
+        $acount = new AuthModel();
+        $acount->username = $validated['username'];
         $acount->email = $validated['email'];
         $acount->role = $validated['role'];
         $acount->password = Hash::make($validated['password']);
@@ -69,9 +70,9 @@ class AdminController extends Controller
     }
 
     public function deleteAcount($id){
-        $acount = AdminModel::find( $id);
+        $acount = AuthModel::find( $id);
 
-        $deletAcount = $acount->name;
+        $deletAcount = $acount->username;
 
         if($acount->image && File::exists(public_path('profile/' . $acount->image))){
              File::delete(public_path('profile/' . $acount->image));
@@ -79,5 +80,28 @@ class AdminController extends Controller
 
         $acount->delete();
         return redirect()->back()->with('success', 'Akun ' . $deletAcount . ' berhasil di hapus');
+    }
+
+    public function AddUser(Request $request){
+        $validated = $request->validate([
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'username' => 'required|string|max:100',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:8',
+            'divisi_id' => 'required|exists:departemens,id'
+        ]);
+
+        $departemen = DepartemenModel::where('name_divisi', $request->divisi_name)->first();
+
+        AuthModel::created([
+            'image' => $departemen->image_divisi,
+            'username' => $departemen->name_divisi,
+            'email' => $request->email,
+            'password' => hash::make($request->password),
+            'role' => 'user',
+            'divisi_id' => $departemen->divisi_id
+        ]);
+
+        return redirect()->back()->with('success', 'User Berhasil ditambahkan');
     }
 }

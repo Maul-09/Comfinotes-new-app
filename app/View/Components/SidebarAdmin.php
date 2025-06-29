@@ -21,6 +21,8 @@ class SidebarAdmin extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.sidebar-admin');
+        return view('components.sidebar-admin', [
+            'admin' => $this->admin
+        ]);
     }
 }

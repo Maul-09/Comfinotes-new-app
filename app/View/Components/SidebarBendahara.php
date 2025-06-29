@@ -7,14 +7,12 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\Component;
 
-class bendaharaSidebar extends Component
+class SidebarBendahara extends Component
 {
     public $bendahara;
     public function __construct()
     {
         $this->bendahara = Auth::user();
-
-        dd($this->bendahara);
     }
 
     /**
@@ -22,6 +20,8 @@ class bendaharaSidebar extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.sidebar-bendahara');
+        return view('components.sidebar-bendahara', [
+            'bendahara' => $this->bendahara
+        ]);
     }
 }

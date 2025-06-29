@@ -58,6 +58,51 @@ const monthNames = [
 
     document.addEventListener("DOMContentLoaded", function () {
         generateCalendar(currentMonth, currentYear);
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const imageUploadBlocks = document.querySelectorAll(".image-add-acount");
+
+    imageUploadBlocks.forEach((block, index) => {
+        const fileInput = block.querySelector(".supporting-file");
+        const previewContainer = block.querySelector(".image-preview-container");
+        const imagePreview = block.querySelector(".image-preview");
+        const deleteButton = block.querySelector(".delete-image");
+        const uploadLabel = block.querySelector(".custom-file-label");
+
+        previewContainer.style.display = "none";
+        imagePreview.src = "";
+
+        if (fileInput && previewContainer && imagePreview && uploadLabel && deleteButton) {
+            fileInput.addEventListener("change", function () {
+                const file = this.files[0];
+                if (file && file.type.startsWith("image/")) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        imagePreview.src = e.target.result;
+                        previewContainer.style.display = "block";
+                        uploadLabel.style.display = "none";
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            deleteButton.addEventListener("click", function () {
+                fileInput.value = '';
+                imagePreview.src = '';
+                previewContainer.style.display = 'none';
+                uploadLabel.style.display = 'inline-flex';
+            });
+
+            uploadLabel.addEventListener("click", function () {
+                fileInput.click();
+            });
+        }
     });
+});
+
+
+
 
 

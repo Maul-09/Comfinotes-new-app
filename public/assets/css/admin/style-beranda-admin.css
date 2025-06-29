@@ -84,62 +84,26 @@ body{
     background: var(--hover-blue-light);
 }
 
-.card-items .card-main{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
-.card-header .card-button{
-    display: flex;
-    gap: 15px;
-}
-.card-button .button-dropdown,
-.card-button .button-report{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-    padding: 13px 18px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    transition: 0.5s ease;
-}
-
-.card-button .button-dropdown{
-    background-color: var(--color-light);
-    color: var(--color-dark);
-    font-size: 1em;
-    font-weight: 500;
-}
-
-.card-button .button-report{
-    background-color: var(--color-blue-light);
-    color: var(--color-light);
-    font-size: 1em;
-}
-
-.card-button .button-dropdown:hover{
-    background-color: var(--color-light-grey);
-}
-
-.card-button .button-report:hover{
-    background-color: var(--hover-blue-light);
-}
 
 .main-card{
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc(25% - 15px); /* 4 card maksimal dalam 100% lebar */
     gap: 20px;
-    align-items: center;
-    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
 }
 
 .main-card .card{
-    width: 100%;
     height: fit-content;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     padding: 15px;
+    scroll-snap-align: start;
+    background-color: white;
+    min-width: 200px;
 }
 
 
@@ -174,23 +138,27 @@ body{
 }
 
 .main-card .card .card-button{
-    width: 100%;
-    padding: 10px;
     display: flex;
     justify-content: center;
+}
+
+.card-button .btn-detail{
+    width: 100%;
+    padding: 13px;
+    text-align: center;
+    text-decoration: none;
     cursor: pointer;
     background: var(--color-light);
-    font-size: 0.8em;
-    border-radius: 12px;
+    font-size: 1em;
+    border-radius: 8px;
     color: var(--color-blue-light);
     font-weight: 600;
     border: 1px solid var(--color-blue-light);
+    transition: 0.5s;
 }
 
-.card-button a{
-    font-size: 1.2em;
-    color: var(--color-blue-light);
-    text-decoration: none;
+.card-button .btn-detail:hover{
+    background-color: var(--color-light-grey);
 }
 /* ------------------------------------------------ */
 
@@ -337,15 +305,16 @@ body{
     align-items: center;
 }
 
+.image-preview,
 .custom-file-label {
-    width: 100px;
-    height: 100px;
+    width: 125px;
+    height: 125px;
     display: flex;
+    object-fit: cover;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 12px;
-    padding: 1rem;
     border: 2px dashed var(--color-blue-light);
     border-radius: 50%;
     background-color: #f9f9f9;
@@ -364,35 +333,32 @@ body{
     color: var(--color-blue-light);
 }
 
-/* #file-label-text {
+#file-label-text {
     font-weight: 500;
     font-size: 0.75rem;
     color: var(--color-blue-light);
-} */
+}
 
-#image-preview-container {
+.image-preview-container {
     display: none;
     margin-top: 15px;
     text-align: center;
 }
 
-#image-preview {
-    max-width: 200px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
 
-#delete-image {
-    margin-top: 10px;
-    padding: 6px 12px;
-    background-color: #dc3545;
+.delete-image {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 75%;
+    left: 35%;
+    background-color: var(--color-light-red);
     border: none;
     color: white;
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s
 }
 
 #delete-image:hover {

@@ -11,7 +11,7 @@ class AuthModel extends Authenticatable
     public $timestamps = true;
     protected $fillable = [
         'id',
-        'name',
+        'username',
         'email',
         'password',
         'role',
@@ -23,7 +23,7 @@ class AuthModel extends Authenticatable
 
     public function departemen()
     {
-        return $this->belongsTo(\App\Models\User\DepartemenModel::class, 'divisi_id');
+        return $this->belongsTo(\App\Models\User\DepartemenModel::class, 'id');
     }
 
     public function scopeAdmin($query){

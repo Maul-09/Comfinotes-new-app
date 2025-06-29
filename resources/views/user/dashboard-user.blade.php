@@ -12,18 +12,18 @@
         <div class="main-menu">
             <div class="card-wallet">
                 <div class="header-wallet">
-                    <div class="wallet-image">
-                        <img src="#" alt="">
-                    </div>
-                    <div class="wallet-head">
-                        <p class="text-wallet">{{ $divisi->name_divisi }}</p>
-                        <div class="card-bg-icon">
-                            <iconify-icon icon="uit:wallet" class="icon-card-2"></iconify-icon>
+                    <img src="{{ asset('assets/image/Profile _ Group.png') }}" alt="Wallet Background" class="wallet-bg" />
+                    <div class="wallet-content">
+                        <div class="wallet-head">
+                            <p class="text-wallet">{{ $divisi->name_divisi }}</p>
+                            <div class="card-bg-icon">
+                                <iconify-icon icon="uit:wallet" class="icon-card-2"></iconify-icon>
+                            </div>
                         </div>
-                    </div>
-                    <div class="wallet-amount">
-                        <h2>IDR 4.400.000</h2>
-                        <span>Pengeluaran Divisi</span>
+                        <div class="wallet-amount">
+                            <h2>IDR 4.400.000</h2>
+                            <span>Pengeluaran Divisi</span>
+                        </div>
                     </div>
                 </div>
             </div>

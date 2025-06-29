@@ -32,19 +32,97 @@ body{
     max-width: 100%;
 }
 
-.card-wallet{
+.card-wallet {
     width: 30%;
     padding: 20px 0 20px 20px;
 }
 
-.card-wallet .header-wallet{
+.card-wallet .header-wallet {
+    position: relative;
     width: 100%;
     height: 350px;
-    background: var(--color-light);
     border-radius: 15px;
+    overflow: hidden;
     border: 2px solid rgba(0, 0, 0, 0.05);
-    padding: 20px;
 }
+
+.header-wallet .wallet-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.wallet-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3.5em;
+    justify-content: space-between;
+    color: white;
+}
+
+.wallet-content::before {
+    content: "";
+    background-color: #272742;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    z-index: -3;
+}
+
+.wallet-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-wallet {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.card-bg-icon{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+.card-bg-icon .icon-card-2 {
+    font-size: 1.2rem;
+}
+
+.wallet-amount h2 {
+    margin: 0;
+    font-size: 1.7rem;
+}
+
+.wallet-amount span {
+    font-size: 1.1rem;
+}
+
+
+.text-wallet {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.icon-card-2 {
+    font-size: 2rem;
+    color: white;
+}
+
 
 .dropdown-table {
     position: relative;

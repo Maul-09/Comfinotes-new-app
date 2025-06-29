@@ -14,7 +14,7 @@ class UserController extends Controller
     public function user()
     {
         $user = Auth::user();
-        $divisi = $user->group;
+        $divisi = $user->departemen;
 
         $view = path_view('user.dashboard-user');
         return view($view, compact('user', 'divisi'));

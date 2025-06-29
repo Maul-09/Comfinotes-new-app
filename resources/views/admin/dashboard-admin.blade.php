@@ -14,9 +14,11 @@
     @if ($errors->any())
         <script>
             window.addEventListener('DOMContentLoaded', () => {
-                const modal = document.getElementById('addAcount');
-                if (modal) {
-                    modal.classList.add('active');
+                const source = @json(old('source'));
+                if (source === 'addAcount') {
+                    document.getElementById('addAcount')?.classList.add('active');
+                } else if (source === 'addUser') {
+                    document.getElementById('addUser')?.classList.add('active');
                 }
             });
         </script>
@@ -31,7 +33,7 @@
                         <p>Lihat daftar semua grup</p>
                     </div>
                     <div class="head-button">
-                        <button class="add-acount">
+                        <button class="add-acount" id="addUserButton">
                             grup baru <iconify-icon icon="ic:outline-plus" class="icon-card-5"></span>
                         </button>
                     </div>
@@ -52,7 +54,7 @@
                                 <h4>IDR 4.500.000</h4>
                             </div>
                             <div class="card-button">
-                                <a href="{{  route('detail-user') }}" class="btn-detail">Lihat Group</a>
+                                <a href="{{ route('detail-user', $divisi->key_id) }} " class="btn-detail">Lihat Group</a>
                             </div>
                         </div>
                     @endforeach
@@ -79,7 +81,7 @@
                             <tr>
                                 <th onclick="sortTable(0)">No</th>
                                 <th onclick="sortTable(1)">Foto</th>
-                                <th onclick="sortTable(2)">Nama</th>
+                                <th onclick="sortTable(2)">Username</th>
                                 <th onclick="sortTable(3)">Email</th>
                                 <th onclick="sortTable(4)">Jenis Pengguna</th>
                                 <th onclick="sortTable(5)">Aksi</th>
@@ -96,7 +98,7 @@
                                     <img src="{{ asset('assets/image/profile-1.jpg') }}" alt="gambar default" class="img-thumnail">
                                     @endif
                                 </td>
-                                <td>{{ $acount->name }}</td>
+                                <td>{{ $acount->username }}</td>
                                 <td>{{ $acount->email }}</td>
                                 <td>{{ $acount->role }}</td>
                                 <td>
@@ -116,40 +118,41 @@
     <div class="modal-add" id="addAcount">
         <div class="modal-content-add">
             <h2>Tambah Akun</h2>
-            <form action="{{ route('admin.acount.add') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.acount.add') }}" method="POST" enctype="multipart/form-data" id="formAddAccount">
             @csrf
+                <input type="hidden" name="source" value="addAcount">
                 <div class="image-add-acount">
                     <h2 class="img-text">Upload Gambar</h2>
-                    <input type="file" name="image" id="supporting-file" hidden>
-
-                    <label for="supporting-file" class="custom-file-label">
+                    <input type="file" name="image" class="supporting-file" hidden>
+                    <label class="custom-file-label">
                         <iconify-icon icon="icon-park-outline:upload-one" class="icon-upload"></iconify-icon>
-                        {{-- <span id="file-label-text">upload gambar</span> --}}
                     </label>
 
-                    <div id="image-preview-container">
-                        <img id="image-preview" src="" alt="Preview">
-                        <button type="button" id="delete-image">Hapus Gambar</button>
+                    <div class="image-preview-container">
+                        <img class="image-preview" src="" alt="Preview">
+                        <button type="button" class="delete-image">
+                            <iconify-icon icon="tabler:trash-filled" class="icon-sampah"></iconify-icon>
+                        </button>
                     </div>
                 </div>
 
                 <div class="input-content-add">
-                    <label for="name">Nama<strong>*</strong></label>
-                    <input type="text" name="name" id="name" placeholder="Masukan Nama">
-                    @error('name')
+                    <label for="name-acount">Nama<strong>*</strong></label>
+                    <input type="text" name="username" id="name-acount" placeholder="Masukan Nama">
+                    @error('username')
                         <p class="pesan-error">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="input-content-add">
-                    <label for="email">Email<strong>*</strong></label>
-                    <input type="text" name="email" id="email" placeholder="Masukan Email">
+                    <label for="email-acount">Email<strong>*</strong></label>
+                    <input type="text" name="email" id="email-acount" placeholder="Masukan Email">
                     @error('email')
                         <p class="pesan-error">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="input-content-add">
-                    <label for="password">Password<strong>*</strong></label>
-                    <input type="password" name="password" id="password" placeholder="Masukan Password">
+                    <label for="password-acount">Password<strong>*</strong></label>
+                    <input type="password" name="password" id="password-acount" placeholder="Masukan Password">
                     @error('password')
                         <p class="pesan-error">{{ $message }}</p>
                     @enderror
@@ -172,4 +175,59 @@
             </form>
         </div>
     </div>
+
+
+    <div class="modal-add" id="addUser">
+        <div class="modal-content-add">
+            <h2>Tambah Group</h2>
+            <form action="{{ route('admin.users.add') }}" method="POST" enctype="multipart/form-data" id="formAddUser">
+                @csrf
+                <input type="hidden" name="source" value="addUser">
+                <div class="image-add-acount">
+                    <h2 class="img-text">Upload Gambar</h2>
+                    <input type="file" name="image_divisi" class="supporting-file" hidden>
+                    <label class="custom-file-label">
+                        <iconify-icon icon="icon-park-outline:upload-one" class="icon-upload"></iconify-icon>
+                    </label>
+
+                    <div class="image-preview-container">
+                        <img class="image-preview" src="" alt="Preview">
+                        <button type="button" class="delete-image">
+                            <iconify-icon icon="tabler:trash-filled" class="icon-sampah"></iconify-icon>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-content-add">
+                    <label for="username-user">Group Name<strong>*</strong></label>
+                    <input type="text" name="username" id="username-user" placeholder="Masukan Nama">
+                    @error('username')
+                        <p class="pesan-error">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="input-content-add">
+                    <label for="email-user">Username<strong>*</strong></label>
+                    <input type="text" name="email" id="email-user" placeholder="Masukan Email">
+                    @error('email')
+                        <p class="pesan-error">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="input-content-add">
+                    <label for="password-user">Password<strong>*</strong></label>
+                    <input type="password" name="password" id="password-user" placeholder="Masukan Password">
+                    @error('password')
+                        <p class="pesan-error">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="button-modal">
+                    <button type="button" class="button-reject" data-action="close-popup" data-target="addUser">Batal</button>
+                    <button type="submit" class="button-approv">Buat Akun</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
 </x-admin-layout>

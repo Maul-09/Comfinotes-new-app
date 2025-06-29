@@ -20,7 +20,7 @@ class UserSeeders extends Seeder
 
         AuthModel::create([
             'image' => '',
-            'name' => 'Admin',
+            'username' => 'Admin',
             'email' => 'admin123@gmail.com',
             'password' => Hash::make('password'),
             'divisi_id' => null,
@@ -29,7 +29,7 @@ class UserSeeders extends Seeder
 
         AuthModel::create([
             'image' => '',
-            'name' => 'Divisi PDD',
+            'username' => 'Divisi PDD',
             'email' => 'user1@gmail.com',
             'password' => Hash::make('password'),
             'divisi_id' => 1,
@@ -38,7 +38,7 @@ class UserSeeders extends Seeder
 
         AuthModel::create([
             'image' => '',
-            'name' => 'Divisi Internal',
+            'username' => 'Divisi Internal',
             'email' => 'user2@gmail.com',
             'password' => Hash::make('password'),
             'divisi_id' => 2,
@@ -47,7 +47,7 @@ class UserSeeders extends Seeder
 
         AuthModel::create([
             'image' => '',
-            'name' => 'Bendahara',
+            'username' => 'Bendahara',
             'email' => 'bendahara123@gmail.com',
             'password' => Hash::make('password'),
             'divisi_id' => null,
@@ -56,7 +56,7 @@ class UserSeeders extends Seeder
 
         AuthModel::create([
             'image' => '',
-            'name' => 'Azis',
+            'username' => 'Azis',
             'email' => 'bendahara@gmail.com',
             'password' => Hash::make('password123'),
             'divisi_id' => null,
@@ -65,7 +65,7 @@ class UserSeeders extends Seeder
 
         AuthModel::create([
             'image' => '',
-            'name' => 'Khopid',
+            'username' => 'Khopid',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('password123'),
             'divisi_id' => null,

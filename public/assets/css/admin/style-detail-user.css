@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'outfit', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* ----------------------| Start Hedaer Menu |------------------------ */
+body{
+    max-width: 100%;
+    overflow-y: scroll;
+}
+
+.main-content{
+    width: 1265px;
+    height: 100%;
+    position: relative;
+    top: 90px;
+    left: 250px;
+    background: var(--color-white-blue);
+}
+
+/* --------------------------------------------------------------- */
+
+.main-menu{
+    width: 300%;
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+}
+
+.card-section{
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    padding: 20px 0 20px 20px;
+    gap: 1em;
+}
+
+.card-wallet {
+    width: 100%;
+}
+
+.card-wallet .header-wallet {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.card-wallet .content-wallet{
+    position: relative;
+    background: var(--color-light);
+    width: 100%;
+    height: fit-content;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 12px;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.content-wallet .input-content-detail{
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    gap: 10px;
+}
+
+.input-content-detail .pesan-error{
+    color: var(--color-light-red);
+    font-size: 0.95em;
+}
+
+.input-content-detail .sub-label{
+    font-size: 0.85em;
+    color: var(--color-dark-grey);
+    font-weight: 500;
+}
+
+.content-wallet .input-content-detail iconify-icon{
+    position: absolute;
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    padding: 8px;
+    font-size: 1.5em;
+    color: var(--color-dark-grey);
+}
+
+.content-wallet .input-content-detail label{
+    font-size: 0.82em;
+    font-weight: 600;
+}
+
+.content-wallet .input-content-detail label strong{
+    color: var(--color-light-red);
+}
+
+.input-content-detail input{
+    width: 100%;
+    outline: none;
+    padding: 0 1.3em;
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.content-wallet .button-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.content-wallet .button-card .button-delete{
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    background: var(--color-light-red);
+    color: var(--color-light);
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 5px 0;
+}
+
+.header-wallet .wallet-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.wallet-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+
+.wallet-content::before {
+    content: "";
+    background-color: #272742;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    z-index: -3;
+}
+
+.wallet-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-wallet {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.card-bg-icon{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+.card-bg-icon .icon-card-2 {
+    font-size: 1.2rem;
+}
+
+.wallet-amount h2 {
+    margin: 0;
+    font-size: 1.7rem;
+}
+
+.wallet-amount span {
+    font-size: 1.1rem;
+}
+
+
+.text-wallet {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.icon-card-2 {
+    font-size: 2rem;
+    color: white;
+}
+
+
+.dropdown-table {
+    position: relative;
+    display: inline-block;
+}
+
+.button-dropdown{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.9em;
+    cursor: pointer;
+    background: var(--color-light);
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: 0.5s ease;
+}
+
+.button-dropdown:hover{
+    background-color: var(--color-light-grey);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: var(--color-light);
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    min-width: 150px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    top: 44px;
+    left: -38px;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+
+.dropdown-content a:hover {
+    background: var(--color-light-grey);
+}
+
+.show {
+    display: block;
+}
+
+.table-acount-user{
+    width: 70%;
+    display: flex;
+    float: right;
+    gap: 25px;
+    padding: 20px;
+}
+
+.table-acount-user
+.header-acount-user {
+    width: 100%;
+    height: 350px;
+    background: var(--color-light);
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.head-title-user h2{
+    font-size: 1.3em;
+    margin-bottom: 5px;
+    color: var(--color-dark);
+}
+
+.head-title-user p{
+    font-size: 0.8em;
+    color: var(--color-dark-grey);
+}
+
+.head-button-user .add-acount{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    text-transform: capitalize;
+    background-color: var(--color-blue-light);
+    color: var(--color-light);
+    font-size: 0.8em;
+    font-weight: 500;
+    transition: 0.5s ease;
+}
+
+.head-button-user .add-acount iconify-icon{
+    font-size: 1.7em;
+}
+
+.head-button-user .add-acount:hover{
+    background: var(--hover-blue-light);
+}
+
+.header-acount-user .head-acount-user{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.data-table-user {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.style-table-user {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.style-table-user thead {
+    background-color: var(--color-white-blue);
+    color: var(--color-dark);
+}
+
+.style-table-user th,
+.style-table-user td {
+    padding: 12px 16px;
+    text-align: center;
+}
+
+.style-table-user tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.style-table-user tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.btn-delete{
+    border: none;
+    border-radius: 8px;
+    background: var(--color-light-red);
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn-delete iconify-icon{
+    font-size: 1.3em;
+    color: var(--color-light);
+}
+
+.btn-delete:hover{
+    background: #c61b31;
+}
