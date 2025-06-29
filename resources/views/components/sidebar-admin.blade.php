@@ -36,14 +36,14 @@
                     <li class="dropbutton">
                         <button class="dropdown-button" id="userDropdownButton" onclick="toggleDropdown()">
                             @if($admin->image)
-                            <img src="{{ asset('profile/' . $acount->image) }}" alt="User Logo" class="user-logo">
+                            <img src="{{ asset('profile/' . $admin->image) }}" alt="User Logo" class="user-logo">
                             @else
                             <img src="{{ asset('assets/image/profile-1.jpg') }}" alt="User Logo" class="user-logo">
                             @endif
                         </button>
                         <div class="drop-down" id="userDropdownMenu">
                             <div class="drop-title">
-                                <h2>Hello, {{ $admin->name }}</h2>
+                                <h2>Hello, {{ $admin->username }}</h2>
                                 <p>{{ $admin->role }}</p>
                             </div>
                             <hr>
