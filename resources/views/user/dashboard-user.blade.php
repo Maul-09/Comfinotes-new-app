@@ -12,7 +12,11 @@
         <div class="main-menu">
             <div class="card-wallet">
                 <div class="header-wallet">
+                    @if ($user->image_divisi)
+                    <img src="{{ asset('uploads/' . $user->image_divisi) }}" alt="Wallet Background" class="wallet-bg" />
+                    @else
                     <img src="{{ asset('assets/image/Profile _ Group.png') }}" alt="Wallet Background" class="wallet-bg" />
+                    @endif
                     <div class="wallet-content">
                         <div class="wallet-head">
                             <p class="text-wallet">{{ $user->username }}</p>

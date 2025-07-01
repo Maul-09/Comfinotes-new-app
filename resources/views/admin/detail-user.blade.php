@@ -8,7 +8,11 @@
         <div class="card-section">
             <div class="card-wallet">
                 <div class="header-wallet">
+                    @if ($departemens->image_divisi)
+                    <img src="{{ asset('uploads/' . $departemens->image_divisi) }}" alt="Wallet Background" class="wallet-bg" />
+                    @else
                     <img src="{{ asset('assets/image/Profile _ Group.png') }}" alt="Wallet Background" class="wallet-bg" />
+                    @endif
                     <div class="wallet-content">
                         <div class="wallet-head">
                             <p class="text-wallet">{{ $departemens->name_divisi }}</p>

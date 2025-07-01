@@ -117,7 +117,7 @@ class AdminController extends Controller
         $user->username = $validated['user_username'];
         $user->email = $validated['user_email'];
         $user->password = Hash::make($validated['user_password']);
-        $user->image = $depatemen->image_divisi ?? null;
+        $user->image = $validated['user_image'];
         $user->role = 'user';
         $user->divisi_id = $departemen->id;
         $user->save();

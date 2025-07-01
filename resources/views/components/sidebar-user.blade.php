@@ -33,7 +33,7 @@
                 <ul class="dropdown-menu">
                     <li class="dropbutton">
                         <button class="dropdown-button" id="userDropdownButton" onclick="toggleDropdown()">
-                            <img src="assets/image/profile-1.jpg" alt="User Logo" class="user-logo">
+                            <img src="{{ asset('assets/image/profile-1.jpg') }}" alt="User Logo" class="user-logo">
                         </button>
                         <div class="drop-down" id="userDropdownMenu">
                             <div class="drop-title">
