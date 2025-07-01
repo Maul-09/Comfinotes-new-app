@@ -15,7 +15,7 @@
                     <img src="{{ asset('assets/image/Profile _ Group.png') }}" alt="Wallet Background" class="wallet-bg" />
                     <div class="wallet-content">
                         <div class="wallet-head">
-                            <p class="text-wallet">{{ $divisi->name_divisi }}</p>
+                            <p class="text-wallet">{{ $user->username }}</p>
                             <div class="card-bg-icon">
                                 <iconify-icon icon="uit:wallet" class="icon-card-2"></iconify-icon>
                             </div>

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,8 @@ class AppServiceProvider extends ServiceProvider
 
         Route::middleware('web')
             ->group(base_path('routes/auth.php'));
+
+        Carbon::setLocale('id');
 
     }
 

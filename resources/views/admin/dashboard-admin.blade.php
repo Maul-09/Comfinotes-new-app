@@ -11,18 +11,27 @@
         </script>
     @endif
 
-    @if ($errors->any())
+    @php
+        $addAcountErrors = $errors->hasAny(['acount_username', 'acount_email', 'acount_password']);
+        $addUserErrors = $errors->hasAny(['user_username', 'user_email', 'user_password', 'divisi_id']);
+    @endphp
+
+    @if ($addAcountErrors)
         <script>
-            window.addEventListener('DOMContentLoaded', () => {
-                const source = @json(old('source'));
-                if (source === 'addAcount') {
-                    document.getElementById('addAcount')?.classList.add('active');
-                } else if (source === 'addUser') {
-                    document.getElementById('addUser')?.classList.add('active');
-                }
+            document.addEventListener("DOMContentLoaded", function () {
+                document.getElementById("addAcount")?.classList.add("active");
             });
         </script>
     @endif
+
+    @if ($addUserErrors)
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                document.getElementById("addUser")?.classList.add("active");
+            });
+        </script>
+    @endif
+
 
     <div class="main-content">
         <div class="card-content">
@@ -42,14 +51,14 @@
                     @foreach ($departemens as $index => $divisi )
                         <div class="card">
                             <div class="card-image-head">
-                                @if ($divisi->image)
-                                    <img src="{{ asset('assets/image/Profile _ Group.png') }}" alt="" class="card-image">
+                                @if ($divisi->image_divisi)
+                                    <img src="{{ asset('uploads/' . $divisi->image_divisi) }}" alt="" class="card-image">
                                 @else
                                     <img src="{{ asset('assets/image/Profile _ Group_3.png') }}" alt="Default Image" class="card-image">
                                 @endif
                             </div>
                             <div class="card-text">
-                                <p class="label-card">Dibuat: 27 Januari 2025</p>
+                                <p class="label-card">Dibuat: {{ \Carbon\Carbon::parse($divisi->created_at)->translatedFormat('d F Y') }}</p>
                                 <h3>{{ $divisi->name_divisi }}</h3>
                                 <h4>IDR 4.500.000</h4>
                             </div>
@@ -123,7 +132,7 @@
                 <input type="hidden" name="source" value="addAcount">
                 <div class="image-add-acount">
                     <h2 class="img-text">Upload Gambar</h2>
-                    <input type="file" name="image" class="supporting-file" hidden>
+                    <input type="file" name="acount_image" class="supporting-file" hidden>
                     <label class="custom-file-label">
                         <iconify-icon icon="icon-park-outline:upload-one" class="icon-upload"></iconify-icon>
                     </label>
@@ -138,22 +147,22 @@
 
                 <div class="input-content-add">
                     <label for="name-acount">Nama<strong>*</strong></label>
-                    <input type="text" name="username" id="name-acount" placeholder="Masukan Nama">
-                    @error('username')
+                    <input type="text" name="acount_username" id="name-acount" placeholder="Masukan Nama">
+                    @error('acount_username')
                         <p class="pesan-error">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="input-content-add">
                     <label for="email-acount">Email<strong>*</strong></label>
-                    <input type="text" name="email" id="email-acount" placeholder="Masukan Email">
-                    @error('email')
+                    <input type="text" name="acount_email" id="email-acount" placeholder="Masukan Email">
+                    @error('acount_email')
                         <p class="pesan-error">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="input-content-add">
                     <label for="password-acount">Password<strong>*</strong></label>
-                    <input type="password" name="password" id="password-acount" placeholder="Masukan Password">
-                    @error('password')
+                    <input type="password" name="acount_password" id="password-acount" placeholder="Masukan Password">
+                    @error('acount_password')
                         <p class="pesan-error">{{ $message }}</p>
                     @enderror
                 </div>
@@ -185,7 +194,7 @@
                 <input type="hidden" name="source" value="addUser">
                 <div class="image-add-acount">
                     <h2 class="img-text">Upload Gambar</h2>
-                    <input type="file" name="image_divisi" class="supporting-file" hidden>
+                    <input type="file" name="user_image" class="supporting-file" hidden>
                     <label class="custom-file-label">
                         <iconify-icon icon="icon-park-outline:upload-one" class="icon-upload"></iconify-icon>
                     </label>
@@ -200,28 +209,27 @@
 
                 <div class="input-content-add">
                     <label for="username-user">Group Name<strong>*</strong></label>
-                    <input type="text" name="username" id="username-user" placeholder="Masukan Nama">
-                    @error('username')
+                    <input type="text" name="user_username" id="username-user" placeholder="Masukan Nama">
+                    @error('user_username')
                         <p class="pesan-error">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div class="input-content-add">
                     <label for="email-user">Username<strong>*</strong></label>
-                    <input type="text" name="email" id="email-user" placeholder="Masukan Email">
-                    @error('email')
+                    <input type="text" name="user_email" id="email-user" placeholder="Masukan Email">
+                    @error('user_email')
                         <p class="pesan-error">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div class="input-content-add">
                     <label for="password-user">Password<strong>*</strong></label>
-                    <input type="password" name="password" id="password-user" placeholder="Masukan Password">
-                    @error('password')
+                    <input type="password" name="user_password" id="password-user" placeholder="Masukan Password">
+                    @error('user_password')
                         <p class="pesan-error">{{ $message }}</p>
                     @enderror
                 </div>
-
                 <div class="button-modal">
                     <button type="button" class="button-reject" data-action="close-popup" data-target="addUser">Batal</button>
                     <button type="submit" class="button-approv">Buat Akun</button>
