@@ -9,8 +9,11 @@ Route::middleware(['web', 'auth', 'role:admin'])->group(function(){
     Route::get('/detail-user/{key_id}', [AdminController::class, 'detail'])->name('detail-user');
 
 
-    // Action
+    // Action user
     Route::post('/admin/users/add-user', [AdminController::class, 'AddUser'])->name('admin.users.add');
+    Route::post('/admin/users/{id}', [AdminController::class, 'DeleteUser'])->name('admin.users.delete');
+
+    // Action Admin
     Route::post('/admin/delete/{id}', [AdminController::class, 'deleteAcount'])->name('admin.delete');
     Route::post('/admin/acount/add', [AdminController::class, 'addAcount'])->name('admin.acount.add');
 });

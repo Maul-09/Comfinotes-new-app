@@ -84,12 +84,35 @@ body{
     background: var(--hover-blue-light);
 }
 
+.no-data-message {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 2px dashed rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
 
+.text-default {
+    font-size: 1.7em;
+    color: var(--text-color);
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.text-message{
+    font-size: 1em;
+    color: var(--color-dark-grey);
+    font-style: italic;
+}
 
 .main-card{
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: calc(25% - 15px); /* 4 card maksimal dalam 100% lebar */
+    grid-auto-columns: calc(25% - 15px);
     gap: 20px;
     overflow-x: auto;
     padding: 10px;
@@ -109,6 +132,7 @@ body{
 
 .main-card .card .card-image-head .card-image{
     display: block;
+    object-fit: cover;
     width: 100%;
     height: 150px;
     background: var(--color-white-blue);
@@ -426,6 +450,13 @@ body{
 
 .modal-content-add .input-content-add label strong{
     color: var(--color-light-red);
+}
+
+.modal-content-add .input-content-add label span{
+    display: inline;
+    margin-left: 5px;
+    font-size: 0.8em;
+    color: var(--color-dark-grey);
 }
 
 .input-content-add input{

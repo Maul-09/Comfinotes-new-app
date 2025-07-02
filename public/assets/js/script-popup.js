@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // === Dropdown User ===
     (function handleDropdown() {
         const dropdownMenu = document.getElementById('userDropdownMenu');
         const dropdownButton = document.getElementById('userDropdownButton');
@@ -41,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // === Handle Add Account Modal ===
     (function handleAddAccountModal() {
         const btn = document.getElementById('addAcountButton');
         const modalId = 'addAcount';
@@ -51,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     })();
 
-    // === Handle Add User Modal ===
     (function handleAddUserModal() {
         const btn = document.getElementById('addUserButton');
         const modalId = 'addUser';
@@ -61,7 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     })();
 
-    // === Handle Close Buttons ===
     document.querySelectorAll('[data-action="close-popup"]').forEach(btn => {
         btn.addEventListener('click', function () {
             const id = this.getAttribute('data-target');
@@ -69,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // === Handle Logout Modal ===
     (function handleLogoutModal() {
         document.querySelectorAll(".logout-notification").forEach(el => el.style.display = "none");
 
@@ -87,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     })();
 
-    // === Handle Delete Confirmation Modal ===
     (function handleDeleteModal() {
         document.querySelectorAll('[data-action="confirm-delete"]').forEach(button => {
             button.addEventListener("click", function () {

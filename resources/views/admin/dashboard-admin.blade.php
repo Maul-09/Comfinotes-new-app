@@ -47,27 +47,34 @@
                         </button>
                     </div>
                 </div>
+                @if ($departemens->isEmpty())
+                    <div class="no-data-message">
+                        <h1 class="text-default">Tidak ada Group</h1>
+                        <p class="text-message">Silahkan untuk menambahkan akun group terlebih dahulu</p>
+                    </div>
+                @else
                 <div class="main-card">
-                    @foreach ($departemens as $index => $divisi )
-                        <div class="card">
-                            <div class="card-image-head">
-                                @if ($divisi->image_divisi)
-                                    <img src="{{ asset('uploads/' . $divisi->image_divisi) }}" alt="" class="card-image">
-                                @else
-                                    <img src="{{ asset('assets/image/Profile _ Group_3.png') }}" alt="Default Image" class="card-image">
-                                @endif
-                            </div>
-                            <div class="card-text">
-                                <p class="label-card">Dibuat: {{ \Carbon\Carbon::parse($divisi->created_at)->translatedFormat('d F Y') }}</p>
-                                <h3>{{ $divisi->name_divisi }}</h3>
-                                <h4>IDR 4.500.000</h4>
-                            </div>
-                            <div class="card-button">
-                                <a href="{{ route('detail-user', $divisi->key_id) }} " class="btn-detail">Lihat Group</a>
-                            </div>
+                    @foreach ($departemens as $divisi)
+                    <div class="card">
+                        <div class="card-image-head">
+                            @if ($divisi->image_divisi)
+                                <img src="{{ asset('uploads/' . $divisi->image_divisi) }}" alt="" class="card-image">
+                            @else
+                                <img src="{{ asset('assets/image/Profile _ Group_3.png') }}" alt="Default Image" class="card-image">
+                            @endif
                         </div>
+                        <div class="card-text">
+                            <p class="label-card">Dibuat: {{ \Carbon\Carbon::parse($divisi->created_at)->translatedFormat('d F Y') }}</p>
+                            <h3>Divisi {{ $divisi->name_divisi }}</h3>
+                            <h4>IDR 4.500.000</h4>
+                        </div>
+                        <div class="card-button">
+                            <a href="{{ route('detail-user', $divisi->key_id) }}" class="btn-detail">Lihat Group</a>
+                        </div>
+                    </div>
                     @endforeach
                 </div>
+                @endif
             </div>
         </div>
 
@@ -208,7 +215,7 @@
                 </div>
 
                 <div class="input-content-add">
-                    <label for="username-user">Group Name<strong>*</strong></label>
+                    <label for="username-user">Group Name<strong>*</strong><span>Tidak perlu mencantumkan "Divisi" untuk penamaan</span></label>
                     <input type="text" name="user_username" id="username-user" placeholder="Masukan Nama">
                     @error('user_username')
                         <p class="pesan-error">{{ $message }}</p>

@@ -1,5 +1,19 @@
 @props(['PageTitle', 'PageSubtitle'])
 
+<div class="sidebar-bendahara">
+    <div class="title-side-bendahara">
+        <a href="{{ route('dashboard-bendahara') }}"><img src="{{ asset('assets/image/logo-2.png') }}" alt="logo user" class="logo-bendahara"></a>
+    </div>
+    <ul class="menu">
+        <li class="
+        {{ request()->routeIs('dashboard-bendahara')
+        || request()->routeIs('simpan-uang')
+        || request()->routeIs('see-detail')  ? 'active-btn' : '' }}">
+
+        <iconify-icon icon="mage:dashboard-fill"></iconify-icon><a href="{{ route('dashboard-bendahara') }}">Dashboard</a></li>
+    </ul>
+</div>
+
 <div class="main-header">
     <div class="header-menu">
         <div class="header-title">
@@ -59,20 +73,6 @@
                 </ul>
             </div>
         </div>
-    </div>
-
-    <div class="sidebar-bendahara">
-        <div class="title-side-bendahara">
-            <a href="{{ route('dashboard-bendahara') }}"><img src="{{ asset('assets/image/logo-2.png') }}" alt="logo user" class="logo-bendahara"></a>
-        </div>
-        <ul class="menu">
-            <li class="
-            {{ request()->routeIs('dashboard-bendahara')
-            || request()->routeIs('simpan-uang')
-            || request()->routeIs('see-detail')  ? 'active-btn' : '' }}">
-
-            <iconify-icon icon="mage:dashboard-fill"></iconify-icon><a href="{{ route('dashboard-bendahara') }}">Dashboard</a></li>
-        </ul>
     </div>
 </div>
 

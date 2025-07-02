@@ -6,11 +6,9 @@ use App\Models\Admin\AdminModel;
 use App\Models\Auth\AuthModel;
 use App\Models\Bendahara\BendaharaModel;
 use App\Models\User\DepartemenModel;
-use App\Models\User\UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
 use Illuminate\Support\Str;
@@ -117,11 +115,34 @@ class AdminController extends Controller
         $user->username = $validated['user_username'];
         $user->email = $validated['user_email'];
         $user->password = Hash::make($validated['user_password']);
-        $user->image = $validated['user_image'];
+        $user->image = $departemen->image_divisi;
         $user->role = 'user';
         $user->divisi_id = $departemen->id;
         $user->save();
 
         return redirect()->back()->with('success', 'Group Berhasil dibuat');
     }
+
+    public function deleteUser($id)
+    {
+        $user = AuthModel::find($id);
+        if (!$user) {
+            return back()->withErrors(['error' => 'User tidak ditemukan.']);
+        }
+
+        $departemen = $user->departemen;
+        $user->delete();
+
+        if ($departemen && $departemen->users()->count() === 0) {
+            if ($departemen->image_divisi && File::exists(public_path('uploads/' . $departemen->image_divisi))) {
+                File::delete(public_path('uploads/' . $departemen->image_divisi));
+            }
+
+            $deletedName = $departemen->name_divisi;
+            $departemen->delete();
+
+            return redirect()->route('dashboard-admin')->with('success', 'Divisi ' . $deletedName . ' berhasil dihapus.');
+        }
+    }
+
 }

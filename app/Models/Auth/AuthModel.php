@@ -23,7 +23,7 @@ class AuthModel extends Authenticatable
 
     public function departemen()
     {
-        return $this->belongsTo(\App\Models\User\DepartemenModel::class, 'id');
+        return $this->belongsTo(\App\Models\User\DepartemenModel::class, 'divisi_id');
     }
 
     public function scopeAdmin($query){

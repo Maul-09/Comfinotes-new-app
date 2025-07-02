@@ -19,7 +19,7 @@
     <div class="modal" id="modal-delete" style="display: none;">
         <div class="modal-box">
             <div class="modal-icon">
-                <iconify-icon icon="tabler:trash-filled" class="icon-delete"></span>
+                <iconify-icon icon="tabler:trash-filled" class="icon-delete"></iconify-icon>
             </div>
             <div class="modal-text">
                 <h2>Hapus Akun?</h2>
