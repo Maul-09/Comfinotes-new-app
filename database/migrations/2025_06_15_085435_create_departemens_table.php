@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('image_divisi')->nullable();
             $table->string('name_divisi');
-            $table->string('key_id')->nullable();
+            $table->string('key_id')->unique()->nullable();
             $table->timestamps();
         });
     }

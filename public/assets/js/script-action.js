@@ -102,6 +102,37 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+function formatRupiah(angka) {
+    angka = angka.replace(/[^,\d]/g, '').toString();
+    let split = angka.split(',');
+    let sisa = split[0].length % 3;
+    let rupiah = split[0].substr(0, sisa);
+    let ribuan = split[0].substr(sisa).match(/\d{3}/g);
+
+    if (ribuan) {
+        let separator = sisa ? '.' : '';
+        rupiah += separator + ribuan.join('.');
+    }
+
+    rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+    return rupiah ? 'Rp ' + rupiah : '';
+}
+
+document.querySelectorAll('.rupiah-format').forEach(function(input) {
+    input.addEventListener('input', function(e) {
+        let raw = this.value.replace(/[^,\d]/g, '');
+        this.value = formatRupiah(raw);
+        document.getElementById('jumlah-real').value = raw.replace(/\./g, '');
+    });
+});
+
+document.getElementById('.format').addEventListener('input', function (e) {
+    let raw = e.target.value.replace(/[^0-9]/g, '');
+    let formatted = new Intl.NumberFormat('id-ID').format(raw);
+    e.target.value = 'Rp ' + formatted;
+
+    document.getElementById('raw_amount').value = raw;
+});
 
 
 

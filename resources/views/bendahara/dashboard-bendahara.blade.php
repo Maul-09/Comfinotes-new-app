@@ -23,14 +23,14 @@
                             <iconify-icon icon="mdi:plus" class="icon-card-3"></iconify-icon>
                         </a>
                     </div>
-                    <span>Total Revenue</span>
-                    <h3>IDR25.500.000</h3>
+                    <span>Total Dana</span>
+                    <h3>IDR {{ number_format($totalIncome, '0',',','.') }}</h3>
                 </div>
                 <div class="card-items">
                     <div class="card-bg-icon">
                         <iconify-icon icon="iconoir:send-mail" class="icon-card-1"></iconify-icon>
                     </div>
-                    <span>Total Submisions</span>
+                    <span>Total Pengajuan</span>
                     <h3>250</h3>
                 </div>
 
@@ -38,16 +38,16 @@
                     <div class="card-bg-icon">
                         <iconify-icon icon="hugeicons:money-receive-flow-02" class="icon-card-4"></iconify-icon>
                     </div>
-                    <span>Income</span>
-                    <h3>IDR34.150.000</h3>
+                    <span>Pemasukan</span>
+                    <h3>IDR 34.150.000</h3>
                 </div>
 
                 <div class="card-items">
                     <div class="card-bg-icon">
                         <iconify-icon icon="hugeicons:money-send-flow-02" class="icon-card-5"></iconify-icon>
                     </div>
-                    <span>Expenses</span>
-                    <h3>IDR8.650.000</h3>
+                    <span>Pengeluaran</span>
+                    <h3>IDR 8.650.000</h3>
                 </div>
             </div>
         </div>

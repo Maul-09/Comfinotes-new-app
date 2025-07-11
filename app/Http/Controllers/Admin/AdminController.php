@@ -83,16 +83,17 @@ class AdminController extends Controller
 
     public function AddUser(Request $request){
         $validated = $request->validate([
-            'user_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'user_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
             'user_username' => 'required|string|max:100',
             'user_email' => 'required|email|unique:users,email',
             'user_password' => 'required|min:8',
         ], [
+            'user_image' => 'Ukuran gambar tidak boleh lebih dari 5 MB',
+            'user_image.image' => 'File yang diunggah harus berupa gambar.',
             'user_username.required' => 'Username tidak boleh kosong',
             'user_username.unique' => 'Username sudah tersedia',
             'user_username.max' => 'Username tidak boleh lebih dari 100 karakter',
             'user_email.required' => 'Email tidak boleh kosong',
-            'user_email.max' => 'Email tidak boleh lebih dari 100 karakter',
             'user_email.unique' => 'Email sudah tersedia',
             'user_password.required' => 'Password tidak boleh kosong',
             'user_password.min' => 'Password tidak boleh kurang dari 8 karakter'

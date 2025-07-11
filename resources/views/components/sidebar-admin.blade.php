@@ -18,7 +18,7 @@
             <p>{{ $PageSubtitle }}</p>
         </div>
         <div class="notif-content">
-            <div class="notif">
+            {{-- <div class="notif">
                 <iconify-icon icon="pepicons-pencil:bell" class="bell icon-notif" data-action="toggle-dropdown" data-target="notif-dropdown"></iconify-icon>
                 <div class="notif-dropdown" id="notif-dropdown">
                     <h2>Notification</h2>
@@ -40,7 +40,7 @@
                     </div>
                     <hr class="border">
                 </div>
-            </div>
+            </div> --}}
 
             <div class="drop-akun">
                 <ul class="dropdown-menu">

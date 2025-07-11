@@ -7,3 +7,319 @@
     font-family: 'outfit', sans-serif;
     scroll-behavior: smooth;
 }
+
+.card-submission{
+    display: flex;
+}
+
+.card-total {
+    width: 30%;
+    padding: 20px;
+}
+
+.card-total .header-total {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.header-total .total-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.total-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+
+.total-content::before {
+    content: "";
+    background-color: var(--color-light);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    z-index: -3;
+}
+
+.total-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-dark);
+}
+
+.card-bg-icon{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-blue-egg);
+    border-radius: 50%;
+}
+.card-bg-icon .icon-card-2 {
+    font-size: 1.2rem;
+    color: var(--color-blue-egg);
+}
+
+.total-amount h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--color-dark);
+    margin-bottom: 5px;
+}
+
+.total-amount span {
+    font-size: 1.1rem;
+    color: var(--color-dark);
+}
+
+/* Add Submision ======================================= */
+
+.submission-content{
+    width: 70%;
+    padding: 20px 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.submission-content .submission-add{
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    border-radius: 15px;
+    padding: 15px;
+    background: var(--color-light);
+    border: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.submission-add .add-money{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+}
+
+.add-money iconify-icon{
+    position: absolute;
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    padding: 8px;
+    font-size: 1.5em;
+    color: var(--color-dark-grey);
+}
+
+.add-money label{
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.add-money label strong{
+    color: var(--color-light-red);
+}
+
+.add-money label span{
+    display: inline;
+    margin-left: 5px;
+    font-size: 0.8em;
+    color: var(--color-dark-grey);
+}
+
+.add-money input{
+    width: 100%;
+    outline: none;
+    padding: 0 1.3em;
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.add-money input::placeholder{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.select-method {
+    appearance: none;
+    width: 100%;
+    padding: 12px 40px 12px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-size: 0.85em;
+    color: var(--color-dark);
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.select-method:focus {
+  border-color: #777;
+  outline: none;
+}
+
+.icon-select {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 1.2rem;
+  color: var(--color-dark);
+}
+
+.button-add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.button-add .button-submission{
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    background: var(--hover-blue-light);
+    color: var(--color-light);
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 5px 0;
+}
+
+.pesan-error{
+    color: var(--color-light-red);
+    font-size: 0.9em;
+}
+/* Table Submision ======================================= */
+
+
+.submission-content .submission-table{
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    border-radius: 15px;
+    padding: 15px;
+    background: var(--color-light);
+    border: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.table-acount-user
+.header-acount-user {
+    width: 100%;
+    height: 350px;
+    background: var(--color-light);
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.head-title-user h2{
+    font-size: 1.3em;
+    margin-bottom: 5px;
+    color: var(--color-dark);
+}
+
+.head-title-user p{
+    font-size: 0.8em;
+    color: var(--color-dark-grey);
+}
+
+.head-button-user .add-acount{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    text-transform: capitalize;
+    background-color: var(--color-blue-light);
+    color: var(--color-light);
+    font-size: 0.8em;
+    font-weight: 500;
+    transition: 0.5s ease;
+}
+
+.head-button-user .add-acount iconify-icon{
+    font-size: 1.7em;
+}
+
+.head-button-user .add-acount:hover{
+    background: var(--hover-blue-light);
+}
+
+.header-acount-user .head-acount-user{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.data-table-user {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.style-table-user {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.style-table-user thead {
+    background-color: var(--color-white-blue);
+    color: var(--color-dark);
+}
+
+.style-table-user th,
+.style-table-user td {
+    padding: 12px 16px;
+    text-align: center;
+}
+
+.style-table-user tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.style-table-user tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.nominal{
+    color: var(--color-blue-egg);
+}

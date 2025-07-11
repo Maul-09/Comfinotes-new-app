@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('transaction', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+            $table->foreignId('departemen_id')->nullable()->constrained('departemens');
+            $table->decimal('amount', 11, 2)->default(0);
+            $table->decimal('approval_amount', 11, 2)->nullable();
+            $table->string('event_name');
+            $table->enum('status', ['pending', 'rejected', 'approved'])->default('pending');
+            $table->date('submission_date');
+            $table->text('note')->nullable();
             $table->timestamps();
         });
     }
