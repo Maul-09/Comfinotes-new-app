@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('event_name');
             $table->enum('status', ['pending', 'rejected', 'approved'])->default('pending');
             $table->date('submission_date');
+            $table->boolean('is_read')->default(false);
             $table->text('note')->nullable();
             $table->timestamps();
         });
