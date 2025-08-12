@@ -23,6 +23,10 @@ return Application::configure(basePath: dirname(__DIR__))
             'web' => \App\Http\Middleware\Encryption::class,
         ]);
     })
+    ->withProviders([
+        App\Providers\NotificationServiceProvice::class,
+
+    ])
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })->create();

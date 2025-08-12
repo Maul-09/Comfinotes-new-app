@@ -329,8 +329,8 @@ body{
     align-items: center;
 }
 
-.image-preview,
-.custom-file-label {
+.image-add-admin .image-preview,
+.image-add-admin .custom-file-label {
     width: 125px;
     height: 125px;
     display: flex;
@@ -345,6 +345,33 @@ body{
     cursor: pointer;
     transition: 0.3s ease;
     margin-top: 1rem;
+}
+
+
+.image-add-user .custom-file-label {
+    width: 100%;
+    height: 25vh;
+    display: flex;
+    object-fit: cover;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    border-radius: 8px;
+    background-color: var(--background-color-1);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.image-add-user .image-preview{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: var(--background-color-1);
+    cursor: pointer;
+    transition: 0.5s ease;
+    display: block;
 }
 
 .custom-file-label:hover {
@@ -372,26 +399,44 @@ body{
 
 .delete-image {
     position: absolute;
-    width: 25px;
-    height: 25px;
-    top: 75%;
-    left: 35%;
-    background-color: var(--color-light-red);
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(246, 65, 89, 0.9);
     border: none;
     color: white;
-    border-radius: 6px;
+    border-radius: 50%;
     cursor: pointer;
-    font-size: 14px;
-    display: flex;
+    font-size: 16px;
+    display: none;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.2s
+    z-index: 2;
+    transition: background-color 0.2s;
 }
 
-#delete-image:hover {
-    background-color: #c82333;
+.image-preview-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 0.3s ease;
+  border-radius: 8px;
+  z-index: 1;
 }
 
+.image-preview-container:hover::after {
+  opacity: 1;
+}
+
+.image-preview-container:hover .delete-image {
+  display: flex;
+}
+
+.delete-image:hover {
+  background-color: #c82333;
+}
 .img-text{
     display: inline;
     font-size: 0.95em;

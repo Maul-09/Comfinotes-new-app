@@ -11,6 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::dropIfExists('expenses');
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+
         Schema::create('expenses', function (Blueprint $table) {
             $table->id();
             $table->foreignId('created_by')->constrained('users')->cascadeOnDelete();
@@ -20,13 +29,5 @@ return new class extends Migration
             $table->text('keterangan')->nullable();
             $table->timestamps();
         });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('expenses');
     }
 };

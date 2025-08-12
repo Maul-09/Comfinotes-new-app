@@ -19,7 +19,12 @@ class DepartemenModel extends Model
     ];
 
     public function users(){
-        return $this->hasMany(\App\Models\Auth\AuthModel::class, 'divisi_id');
+        return $this->hasMany(\App\Models\Auth\AuthModel::class, 'departemen_id');
+    }
+
+    public function transactions()
+    {
+        return $this->hasMany(\App\Models\Bendahara\TransactionModel::class, 'departemen_id');
     }
 
     protected static function booted(){

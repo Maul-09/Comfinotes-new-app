@@ -1,12 +1,16 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 
 Route::middleware(['web', 'auth', 'role:admin'])->group(function(){
     Route::get('/dashboard-admin', [AdminController::class, 'admin'])->name('dashboard-admin');
     Route::get('/detail-user/{key_id}', [AdminController::class, 'detail'])->name('detail-user');
+
+    Route::get('/admin/profile-admin', [ProfileController::class, 'profileAdmin'])->name('dashboard.profile');
+    Route::post('/update/profile/{id}', [ProfileController::class, 'updateProfile'])->name('admin.update.profile');
 
 
     // Action user

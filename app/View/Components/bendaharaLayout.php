@@ -10,11 +10,17 @@ class BendaharaLayout extends Component
 {
     public string $PageTitle;
     public string $PageSubtitle;
+    public $notifications;
 
     public function __construct(string $PageTitle = 'Default Title', string $PageSubtitle = 'Default Subtitle')
     {
         $this->PageTitle = $PageTitle;
         $this->PageSubtitle = $PageSubtitle;
+        $this->notifications = \App\Models\Bendahara\TransactionModel::with('departemen')
+            ->where('status', 'pending')
+            ->latest()
+            ->get();
+
     }
 
     public function render(): View|Closure|string
@@ -22,6 +28,7 @@ class BendaharaLayout extends Component
         return view('components.bendahara-layout', [
             'PageTitle' => $this->PageTitle,
             'PageSubtitle' => $this->PageSubtitle,
+            'notifications' => $this->notifications
         ]);
     }
 }

@@ -34,7 +34,7 @@ class IncomeModel extends Model
 
     public function departemen()
     {
-        return $this->belongsTo(\App\Models\User\DepartemenModel::class);
+        return $this->belongsTo(\App\Models\User\DepartemenModel::class, 'departemen_id');
     }
 
 }

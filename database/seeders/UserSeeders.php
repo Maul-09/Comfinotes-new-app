@@ -23,7 +23,7 @@ class UserSeeders extends Seeder
             'username' => 'Admin',
             'email' => 'admin123@gmail.com',
             'password' => Hash::make('password'),
-            'divisi_id' => null,
+            'departemen_id' => null,
             'role' => 'admin',
         ]);
 
@@ -32,7 +32,7 @@ class UserSeeders extends Seeder
             'username' => 'Bendahara',
             'email' => 'bendahara123@gmail.com',
             'password' => Hash::make('password'),
-            'divisi_id' => null,
+            'departemen_id' => null,
             'role' => 'bendahara',
         ]);
     }

@@ -78,43 +78,35 @@
                                 <th onclick="sortTable(1)">Nama acara</th>
                                 <th onclick="sortTable(2)">Jumlah</th>
                                 <th onclick="sortTable(3)">Tanggal</th>
-                                <th onclick="sortTable(5)">Aksi</th>
+                                <th onclick="sortTable(5)">Status</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Musyawarah Besar</td>
-                                <td>- IDR 2.000.000</td>
-                                <td>12, Januari 2025</td>
-                                <td>
-                                <button class="btn-delete" data-action="confirm-delete" data-target="modal-delete" data-url="#">
-                                    <iconify-icon icon="tabler:trash-filled" class="icon-trash"></iconify-icon>
-                                </button>
-                            </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Makrab</td>
-                                <td>+ IDR 750.000</td>
-                                <td>20, Februari 2025</td>
-                                <td>
-                                <button class="btn-delete" data-action="confirm-delete" data-target="modal-delete" data-url="#">
-                                    <iconify-icon icon="tabler:trash-filled" class="icon-card-5"></iconify-icon>
-                                </button>
-                            </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Sewa Barang</td>
-                                <td>- IDR 500.000</td>
-                                <td>15, Maret 2025</td>
-                                <td>
-                                <button class="btn-delete" data-action="confirm-delete" data-target="modal-delete" data-url="#">
-                                    <iconify-icon icon="tabler:trash-filled" class="icon-card-5"></iconify-icon>
-                                </button>
-                            </td>
-                            </tr>
+                            <tbody>
+                                @forelse ($transactions as $key => $transaction)
+                                    <tr>
+                                        <td>{{ $key + 1 }}</td>
+                                        <td>{{ $transaction->nama_acara }}</td>
+                                        <td>- IDR {{ number_format($transaction->approval_amount, 0, ',', '.') }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($transaction->created_at)->format('d F Y') }}</td>
+                                        <td class="status">
+                                            @if ($transaction->status == "approved")
+                                                <p class="success">Success</p>
+                                            @elseif ($transaction->status == "pending")
+                                                <p class="pending">Pending</p>
+                                            @elseif ($transaction->status == "rejected")
+                                                <p class="cancel">Cancel</p>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="5">
+                                            <div class="no-history">
+                                                <h2 class="text-no">Tidak ada riwayat transaksi</h2>
+                                            </div>
+                                        </td>
+                                    </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>

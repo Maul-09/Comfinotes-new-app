@@ -19,11 +19,12 @@ return new class extends Migration
             $table->string('password');
             $table->string('image')->nullable();
             $table->enum('role', ['admin', 'bendahara', 'user'])->default('user');
-            $table->foreignId('divisi_id')->nullable()->constrained('departemens')->nullOnDelete();
+            $table->foreignId('departemen_id')->nullable()->constrained('departemens')->nullOnDelete();
             $table->rememberToken();
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

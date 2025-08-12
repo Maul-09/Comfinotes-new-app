@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/aset/color-palete.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/aset/alert.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/aset/modal.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/aset/profile.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/admin/style-beranda-admin.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/admin/style-detail-user.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/admin/style-sidebar-admin.css') }}">

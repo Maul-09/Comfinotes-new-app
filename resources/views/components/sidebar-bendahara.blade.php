@@ -1,4 +1,4 @@
-@props(['PageTitle', 'PageSubtitle'])
+@props(['PageTitle', 'PageSubtitle', 'notifications' => collect()])
 
 <div class="sidebar-bendahara">
     <div class="title-side-bendahara">
@@ -26,22 +26,34 @@
                 <div class="notif-dropdown" id="notif-dropdown">
                     <h2>Notification</h2>
                     <hr class="border">
-                    <div class="notif-items" data-action="open-modal" data-target="modal-notifications">
-                        <div class="bg-icon">
-                            <iconify-icon icon="iconoir:send-mail" class="icon-notif"></iconify-icon>
-                        </div>
-                        <div class="notif-box">
-                            <div class="notif-text">
-                                <h3 class="title-notif">Divisi Logistik</h3>
-                                <p class="des-notif">waiting for approved notes financial</p>
+                    @forelse ($notifications as $trx)
+                        <div class="notif-items"
+                            data-action="open-modal"
+                            data-target="modal-notifications"
+                            data-id="{{ $trx->id }}"
+                            data-acara="{{ $trx->nama_acara }}"
+                            data-jumlah="{{ number_format($trx->amount, 0, ',', '.') }}"
+                            data-file="{{ $trx->supporting_file ? asset($trx->supporting_file) : '' }}"
+                            data-divisi="{{ $trx->departemen->nama ?? 'Tanpa Divisi' }}">
+
+                            <div class="bg-icon">
+                                <iconify-icon icon="iconoir:send-mail" class="icon-notif"></iconify-icon>
                             </div>
-                            <div class="notif-date">
-                                <iconify-icon icon="tabler:clock" class="history"></iconify-icon>
-                                <p>40 Minutes Ago</p>
+                            <div class="notif-box">
+                                <div class="notif-text">
+                                    <h3 class="title-notif">{{ $trx->departemen->name_divisi ?? 'Umum' }}</h3>
+                                    <p class="des-notif">Menunggu persetujuan untuk {{ $trx->nama_acara }}</p>
+                                </div>
+                                <div class="notif-date">
+                                    <iconify-icon icon="tabler:clock" class="history"></iconify-icon>
+                                    <p>{{ $trx->created_at->diffForHumans() }}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <hr class="border">
+                        <hr class="border">
+                    @empty
+                        <p class="px-4 py-2 text-gray-500">Belum ada notifikasi</p>
+                    @endforelse
                 </div>
             </div>
 
@@ -62,7 +74,7 @@
                             </div>
                             <hr>
                             <div class="drop-menu">
-                                <a href="#" class="menu-items"><iconify-icon icon="solar:user-linear" class="icon-user-1"></iconify-icon>Profile</a>
+                                <a href="{{ route('dashboard-bendahara.bendahara') }}" class="menu-items"><iconify-icon icon="solar:user-linear" class="icon-user-1"></iconify-icon>Profile</a>
                                 <hr>
                                 <button type="button" class="menu-items logout-button" data-action="confirm-logout" data-target="logout-notification">
                                     <iconify-icon icon="mdi-light:logout" class="icon-user-2"></iconify-icon>Logout
@@ -78,33 +90,76 @@
 
 <!-- Modal content -->
 
-<div id="modal-notifications" class="modal-notif">
+<div id="modal-notifications" class="modal">
     <div class="modal-content">
         <span class="close-button" data-action="close-modal" data-target="modal-notifications">&times;</span>
         <h1 class="title-modal">Divisi Logistik</h1>
-        <div class="image-aproof">
-            <h2 class="img-text">Supporting Files</h2><strong>*</strong><span>Optional</span>
-            <p class="img-text-2">Such as receipts, photos of event plans, etc.</p>
-            <input type="file" id="supporting-file" hidden>
-            <label for="supporting-file" class="custom-file-label">
-                <iconify-icon icon="mdi:upload" class="icon-upload"></iconify-icon>
-                <span id="file-label-text">Pilih file pendukung</span>
-            </label>
-        </div>
-        <div class="input-content">
-            <label for="event">Event Name<strong>*</strong></label>
-            <input type="text" name="#" id="event" placeholder="Contoh : Musyawarah">
-        </div>
-        <div class="input-content">
-            <label for="amount">Amount<strong>*</strong></label>
-            <input type="text" name="#" id="amount" placeholder="Contoh : 2.450.000">
-        </div>
-        <div class="button-modal">
-            <button type="button" class="button-reject">Cancelled</button>
-            <button type="button" class="button-approv">Approved</button>
-        </div>
-        <a href="{{ route('see-detail') }}" class="link-info">See Details</a>
+        <form action="{{ route('bendahara.submit') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <input type="hidden" name="notif_id" id="notif-id">
+
+            <div class="file-section">
+                <h2 class="img-text">File Pendukung</h2>
+                <p class="img-text-2">Download file pendukung seperti proposal, nota, dll.</p>
+                <a id="file-download" href="#" target="_blank" class="download-btn" style="display:none;">
+                    <iconify-icon icon="mdi:file-pdf-box" class="download-icon"></iconify-icon>
+                    <span>Download File</span>
+                </a>
+                <p id="no-file" class="no-file-text">Tidak ada file pendukung</p>
+            </div>
+
+            <div class="input-content">
+                <label for="event">Nama Acara<strong>*</strong></label>
+                <input type="text" name="event_name" id="event" disabled>
+            </div>
+
+            <div class="input-content">
+                <label for="kebutuhan">Kebutuhan<strong>*</strong></label>
+                <input type="text" name="catatan_detail" id="kebutuhan" disabled>
+            </div>
+
+            <div class="input-row">
+                <div class="input-content half-width">
+                    <label for="amount">Jumlah<strong>*</strong></label>
+                    <input type="text" name="amount" id="amount" disabled>
+                </div>
+                <div class="input-content half-width">
+                    <label>Metode Pembayaran<strong>*</strong></label>
+                    <div class="metode-options">
+                        <label class="metode-option">
+                            <input type="radio" name="metode" value="tunai" disabled>
+                            <span class="metode-text">Tunai</span>
+                        </label>
+                        <label class="metode-option">
+                            <input type="radio" name="metode" value="transfer" disabled>
+                            <span class="metode-text">Transfer</span>
+                        </label>
+                    </div>
+
+                    <div id="bank-info" style="display:none; margin-top:10px;">
+                        <input type="text" id="bank_name" placeholder="Nama Bank" disabled>
+                        <input type="text" id="bank_account" placeholder="Nomor Rekening" disabled>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-content">
+                <label for="jumlah_hari">Jumlah Hari<strong>*</strong></label>
+                <div class="split">
+                    <input type="number" id="jumlah_hari" disabled>
+                    <span class="hari-label">Hari</span>
+                </div>
+            </div>
+
+            <div class="button-modal">
+                <button type="submit" name="action" value="rejected" class="button-reject">Cancelled</button>
+                <button type="submit" name="action" value="approved" class="button-approv">Approved</button>
+            </div>
+        </form>
     </div>
 </div>
+
+
+
 
 

@@ -65,7 +65,7 @@
                         </div>
                         <div class="card-text">
                             <p class="label-card">Dibuat: {{ \Carbon\Carbon::parse($divisi->created_at)->translatedFormat('d F Y') }}</p>
-                            <h3>Divisi {{ $divisi->name_divisi }}</h3>
+                            <h3>{{ $divisi->name_divisi }}</h3>
                             <h4>IDR 4.500.000</h4>
                         </div>
                         <div class="card-button">
@@ -137,13 +137,12 @@
             <form action="{{ route('admin.acount.add') }}" method="POST" enctype="multipart/form-data" id="formAddAccount">
             @csrf
                 <input type="hidden" name="source" value="addAcount">
-                <div class="image-add-acount">
+                <div class="image-add-acount image-add-admin">
                     <h2 class="img-text">Upload Gambar</h2>
                     <input type="file" name="acount_image" class="supporting-file" hidden>
                     <label class="custom-file-label">
                         <iconify-icon icon="icon-park-outline:upload-one" class="icon-upload"></iconify-icon>
                     </label>
-
                     <div class="image-preview-container">
                         <img class="image-preview" src="" alt="Preview">
                         <button type="button" class="delete-image">
@@ -199,13 +198,13 @@
             <form action="{{ route('admin.users.add') }}" method="POST" enctype="multipart/form-data" id="formAddUser">
                 @csrf
                 <input type="hidden" name="source" value="addUser">
-                <div class="image-add-acount">
+                <div class="image-add-acount image-add-user">
                     <h2 class="img-text">Upload Gambar</h2>
                     <input type="file" name="user_image" class="supporting-file" hidden>
                     <label class="custom-file-label">
                         <iconify-icon icon="icon-park-outline:upload-one" class="icon-upload"></iconify-icon>
+                        <p id="file-label-text">Seret dan Jatuhkan di sini, Atau Pilih dari File</p>
                     </label>
-
                     <div class="image-preview-container">
                         <img class="image-preview" src="" alt="Preview">
                         <button type="button" class="delete-image">
@@ -215,7 +214,7 @@
                 </div>
 
                 <div class="input-content-add">
-                    <label for="username-user">Group Name<strong>*</strong><span>Tidak perlu mencantumkan "Divisi" untuk penamaan</span></label>
+                    <label for="username-user">Group Name<strong>*</strong></label>
                     <input type="text" name="user_username" id="username-user" placeholder="Masukan Nama">
                     @error('user_username')
                         <p class="pesan-error">{{ $message }}</p>

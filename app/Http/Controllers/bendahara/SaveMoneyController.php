@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 
+use App\Helpers\Helper;
 use function App\Helpers\path_view;
 
 class SaveMoneyController extends Controller
@@ -14,8 +15,9 @@ class SaveMoneyController extends Controller
     public function money() {
         $history = IncomeModel::all();
         $total = IncomeModel::sum('total');
+        $saldo = Helper::getSaldo();
         $view = path_view('bendahara.save-money');
-        return view($view, compact('history', 'total'));
+        return view($view, compact('history', 'total', 'saldo'));
     }
 
     public function AddDana(Request $request){
@@ -40,6 +42,8 @@ class SaveMoneyController extends Controller
         $money->income_date = $validated['tanggal'];
         $money->keterangan = $validated['keterangan'];
         $money->save();
+
+        Helper::tambahSaldo($validated['jumlah']);
 
         return redirect()->back()->with('success', 'Dana Berhasil ditambahkan');
     }

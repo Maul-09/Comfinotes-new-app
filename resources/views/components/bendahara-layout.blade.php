@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/aset/alert.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/aset/modal.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bendahara/style-money.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/aset/profile.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bendahara/style-beranda-bendahara.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bendahara/style-sidebar-bendahara.css') }}">
     <link rel="icon" href="{{ asset('assets/image/logo-1.png') }}">
@@ -14,7 +15,7 @@
 </head>
 <body>
 
-<x-sidebar-bendahara :PageTitle="$PageTitle" :PageSubtitle="$PageSubtitle"/>
+<x-sidebar-bendahara :PageTitle="$PageTitle" :PageSubtitle="$PageSubtitle" :notifications="$notifications"/>
 <x-alert />
 <x-modal-content />
 

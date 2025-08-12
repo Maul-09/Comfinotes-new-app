@@ -18,24 +18,19 @@ class AuthModel extends Authenticatable
         'password',
         'role',
         'image',
-        'divisi_id',
+        'departemen_id',
         'created_at',
         'updated_at'
     ];
 
-    public function departemen()
+    public function divisi()
     {
-        return $this->belongsTo(\App\Models\User\DepartemenModel::class, 'divisi_id');
+        return $this->belongsTo(\App\Models\User\DepartemenModel::class, 'departemen_id');
     }
 
     public function incomes()
     {
         return $this->hasMany(IncomeModel::class, 'created_by');
-    }
-
-    public function expenses()
-    {
-        return $this->hasMany(ExpensesModel::class, 'created_by');
     }
 
     public function submission()

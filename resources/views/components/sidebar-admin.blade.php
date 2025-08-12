@@ -1,4 +1,4 @@
-@props(['PageTitle', 'PageSubtitle'])
+@props(['PageTitle', 'PageSubtitle', 'notifications' => collect()])
 
 <div class="sidebar-admin">
     <div class="title-side-admin">
@@ -18,30 +18,6 @@
             <p>{{ $PageSubtitle }}</p>
         </div>
         <div class="notif-content">
-            {{-- <div class="notif">
-                <iconify-icon icon="pepicons-pencil:bell" class="bell icon-notif" data-action="toggle-dropdown" data-target="notif-dropdown"></iconify-icon>
-                <div class="notif-dropdown" id="notif-dropdown">
-                    <h2>Notification</h2>
-                    <hr class="border">
-                    <div class="notif-items" data-action="open-modal" data-target="modal-notifications">
-                        <div class="bg-icon">
-                            <iconify-icon icon="iconoir:send-mail" class="icon-notif"></iconify-icon>
-                        </div>
-                        <div class="notif-box">
-                            <div class="notif-text">
-                                <h3 class="title-notif">Divisi Logistik</h3>
-                                <p class="des-notif">waiting for approved notes financial</p>
-                            </div>
-                            <div class="notif-date">
-                                <iconify-icon icon="tabler:clock" class="history"></iconify-icon>
-                                <p>40 Minutes Ago</p>
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="border">
-                </div>
-            </div> --}}
-
             <div class="drop-akun">
                 <ul class="dropdown-menu">
                     <li class="dropbutton">
@@ -49,7 +25,7 @@
                             @if($admin->image)
                             <img src="{{ asset('profile/' . $admin->image) }}" alt="User Logo" class="user-logo">
                             @else
-                            <img src="{{ asset('assets/image/profile-1.jpg') }}" alt="User Logo" class="user-logo">
+                            <img src="{{ asset('assets/image/profile-2.jpg') }}" alt="User Logo" class="user-logo">
                             @endif
                         </button>
                         <div class="drop-down" id="userDropdownMenu">
@@ -59,7 +35,7 @@
                             </div>
                             <hr>
                             <div class="drop-menu">
-                                <a href="#" class="menu-items"><iconify-icon icon="solar:user-linear" class="icon-user-1"></iconify-icon>Profile</a>
+                                <a href="{{ route('dashboard.profile') }}" class="menu-items"><iconify-icon icon="solar:user-linear" class="icon-user-1"></iconify-icon>Profile</a>
                                 <hr>
                                 <button type="button" class="menu-items logout-button" data-action="confirm-logout" data-target="logout-notification">
                                     <iconify-icon icon="mdi-light:logout" class="icon-user-2"></iconify-icon>Logout

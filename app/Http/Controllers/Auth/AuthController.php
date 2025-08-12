@@ -38,6 +38,12 @@ class AuthController extends Controller
             ])->withInput();
         }
 
+        if($user->role == 'user' && is_null($user->departemen_id)){
+            return back()->withErrors([
+                'email' => 'Akun Anda sudah tidak Aktif'
+            ]);
+        }
+
         if (Auth::attempt($credentials,  $remember)) {
             $request->session()->regenerate();
             $role = Auth::user()->role;

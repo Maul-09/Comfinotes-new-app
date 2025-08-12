@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Admin\AdminModel;
 use App\Models\Auth\AuthModel;
 use App\Models\Bendahara\BendaharaModel;
+use App\Models\Bendahara\TransactionModel;
 use App\Models\User\DepartemenModel;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -20,7 +21,6 @@ class AdminController extends Controller
     {
         $Admin = AdminModel::all();
         $Bendahara = BendaharaModel::all();
-
         $acountSetting = $Admin->concat($Bendahara);
         $departemens = DepartemenModel::all();
         $view = path_view('admin.dashboard-admin');
@@ -30,8 +30,18 @@ class AdminController extends Controller
     public function detail($key_id){
         $departemens = DepartemenModel::where('key_id', $key_id)->firstOrFail();
         $data = $departemens->users;
+
+        $transactions = TransactionModel::with('user.divisi')
+        ->whereIn('user_id', AuthModel::where('departemen_id', $departemens->id)->pluck('id'))
+        ->orderBy('created_at', 'desc')
+        ->get();
+
+        $userApprove = TransactionModel::where('status', 'approved')
+        ->whereIn('user_id', AuthModel::where('departemen_id', $departemens->id)->pluck('id'))
+        ->sum('approval_amount');
+
         $view = path_view('admin.detail-user');
-        return view($view, compact('departemens', 'data'));
+        return view($view, compact('departemens', 'data', 'transactions', 'userApprove'));
     }
 
     public function addAcount(Request $request){
@@ -118,7 +128,7 @@ class AdminController extends Controller
         $user->password = Hash::make($validated['user_password']);
         $user->image = $departemen->image_divisi;
         $user->role = 'user';
-        $user->divisi_id = $departemen->id;
+        $user->departemen_id = $departemen->id;
         $user->save();
 
         return redirect()->back()->with('success', 'Group Berhasil dibuat');

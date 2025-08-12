@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <div class="total-amount">
-                        <h2>IDR {{ number_format($total, '0', ',', '.') }}</h2>
+                        <h2>IDR {{ number_format($saldo, '0', ',', '.') }}</h2>
                         <span>Saldo komunitas Saat ini</span>
                     </div>
                 </div>
